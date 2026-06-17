@@ -1,0 +1,2 @@
+source_id,body_start_marker,body_start_marker_occurrence,body_end_marker,trim_trailing_blank_lines,notes
+homer-iliad-en-butler-pg2199,BOOK I.,2,*** END OF THE PROJECT GUTENBERG EBOOK THE ILIAD ***,yes,Second BOOK I. skips Project Gutenberg title and contents; end marker removes Project Gutenberg license/back matter.

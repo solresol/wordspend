@@ -1,0 +1,2 @@
+source_id,work_id,download_url,download_format,raw_path,bytes,sha256,retrieved_at_utc,http_last_modified,rights_status,machine_human_status,paper_facing_eligible,text_stage,front_back_matter_status
+homer-iliad-en-butler-pg2199,homer-iliad,https://www.gutenberg.org/cache/epub/2199/pg2199.txt,plain_text,data/raw/translations/homer-iliad-en-butler-pg2199.txt,928957,72673dcefeaa5d302b4ac1cc9ce6fd0b236831e816de41391e5cfe138ab5b077,2026-06-10T00:05:12Z,"Mon, 01 Jun 2026 15:41:54 GMT",public_domain_us,human_published,yes,raw_provider_text,not_stripped
