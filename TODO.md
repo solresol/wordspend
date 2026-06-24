@@ -11,11 +11,14 @@
 - [x] Strip Project Gutenberg front/back matter from the downloaded Butler
   *Iliad* raw text into a prepared translation-body file, with raw and prepared
   checksums recorded.
+- [x] Add a second human-published translation of the same work: Project
+  Gutenberg eBook #6130, Homer, *The Iliad*, translated into English by
+  Alexander Pope. The row records target language, translator, edition,
+  publication date, catalog and download URLs, rights status, and
+  machine/human status; its raw and prepared checksum provenance is recorded.
 
 ## Next
 
-- [ ] Add at least one second human-published translation of the same work so
-  word-spend comparisons are not single-row metadata only.
 - [ ] Add a validation gate for prepared-text manifests so paper-facing
   analysis can require `front_back_matter_status=stripped`.
 - [ ] Add paper-facing analysis filters that select only validated rows where

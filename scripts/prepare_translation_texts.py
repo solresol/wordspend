@@ -334,7 +334,7 @@ def main() -> int:
         )
 
     with manifest.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=MANIFEST_COLUMNS)
+        writer = csv.DictWriter(handle, fieldnames=MANIFEST_COLUMNS, lineterminator="\n")
         writer.writeheader()
         writer.writerows(manifest_rows)
 

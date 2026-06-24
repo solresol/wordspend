@@ -1,6 +1,6 @@
 # Status
 
-Last updated: 2026-06-17
+Last updated: 2026-06-24
 
 ## Current state
 
@@ -45,18 +45,32 @@ paper-facing translation provenance.
 - Prepared `data/prepared/translations/homer-iliad-en-butler-pg2199.txt` from
   raw lines 77-14591, leaving the raw provider text unchanged.
 
+## 2026-06-24 progress
+
+- Added a second metadata-complete, human-published source for the same work:
+  Project Gutenberg eBook #6130, Homer, *The Iliad*, translated into English by
+  Alexander Pope.
+- Recorded its target language, translator, edition, publication date, catalog
+  URL, plain-text download URL, rights status, rights basis, and machine/human
+  status in `data/translation_sources.csv`.
+- Added source-specific preparation boundaries that start after the Buckley
+  introduction and Pope preface and stop before the concluding note, notes, and
+  Project Gutenberg license.
+- Made the fetcher retry transient incomplete reads observed while retrieving
+  the larger Project Gutenberg plain-text file.
+
 ## Paper-facing readiness
 
-There is one metadata-complete, paper-facing-eligible source row. Its raw
-provider text has been fetched and checksum-recorded, and a prepared
-translation-body text with front/back matter stripped is now available. It has
-not yet been tokenized, aligned, compared with another translation, or analyzed,
-so no word-spend claims are paper-ready.
+There are two metadata-complete, paper-facing-eligible source rows for the
+same work. Their raw provider texts have been fetched and checksum-recorded,
+and prepared translation-body texts with front/back matter stripped are
+available. They have not yet been tokenized, aligned, compared, or analyzed, so
+no word-spend claims are paper-ready.
 
 ## Blocked or pending
 
 - A validator for prepared-text manifests is still pending.
-- At least one comparable second translation or language source is still needed
-  before comparative claims are meaningful.
+- Comparative claims still need tokenization/alignment and paper-facing filters
+  over the prepared-text manifest.
 - Rights status is recorded for the United States; use outside the United States
   needs jurisdiction-specific review.

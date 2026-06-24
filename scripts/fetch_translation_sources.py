@@ -7,8 +7,11 @@ import argparse
 import csv
 import datetime as dt
 import hashlib
+import http.client
 import sys
+import time
 from pathlib import Path
+from urllib.error import URLError
 from urllib.request import Request, urlopen
 
 from validate_translation_sources import PAPER_RIGHTS_ALLOWED, is_yes, validate_registry
@@ -87,15 +90,24 @@ def eligible_for_default_fetch(row: dict[str, str]) -> bool:
     )
 
 
-def fetch_resource(url: str) -> tuple[bytes, str]:
+def fetch_resource(url: str, attempts: int = 3) -> tuple[bytes, str]:
     request = Request(
         url,
         headers={
             "User-Agent": "wordspend-provenance-fetch/0.1 (+https://github.com/solresol/wordspend)",
         },
     )
-    with urlopen(request, timeout=60) as response:
-        return response.read(), response.headers.get("Last-Modified", "")
+    last_error = None
+    for attempt in range(1, attempts + 1):
+        try:
+            with urlopen(request, timeout=120) as response:
+                return response.read(), response.headers.get("Last-Modified", "")
+        except (http.client.IncompleteRead, TimeoutError, URLError) as error:
+            last_error = error
+            if attempt < attempts:
+                time.sleep(2)
+
+    raise RuntimeError(f"failed to fetch {url} after {attempts} attempt(s): {last_error}") from last_error
 
 
 def relative_to_root(path: Path, root: Path) -> str:
@@ -141,12 +153,16 @@ def main() -> int:
     output_dir.mkdir(parents=True, exist_ok=True)
     manifest.parent.mkdir(parents=True, exist_ok=True)
 
-    retrieved_at = dt.datetime.now(dt.UTC).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+    retrieved_at = dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
     manifest_rows = []
     for row in selected_rows:
         source_id = row["source_id"]
         download_url = row["download_url"]
-        payload, http_last_modified = fetch_resource(download_url)
+        try:
+            payload, http_last_modified = fetch_resource(download_url)
+        except RuntimeError as error:
+            print(f"{source_id}: {error}", file=sys.stderr)
+            return 1
         raw_path = output_dir / f"{source_id}.txt"
         raw_path.write_bytes(payload)
         digest = hashlib.sha256(payload).hexdigest()
@@ -170,7 +186,7 @@ def main() -> int:
         )
 
     with manifest.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=MANIFEST_COLUMNS)
+        writer = csv.DictWriter(handle, fieldnames=MANIFEST_COLUMNS, lineterminator="\n")
         writer.writeheader()
         writer.writerows(manifest_rows)
 
