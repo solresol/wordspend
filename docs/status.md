@@ -59,17 +59,26 @@ paper-facing translation provenance.
 - Made the fetcher retry transient incomplete reads observed while retrieving
   the larger Project Gutenberg plain-text file.
 
+## 2026-07-01 progress
+
+- Added `scripts/validate_prepared_translation_texts.py` as a reusable
+  prepared-text manifest gate for paper-facing analysis.
+- The validator checks that prepared manifest rows match the source registry,
+  raw and prepared checksum provenance matches the files on disk, and
+  paper-facing prepared rows have `text_stage=prepared_translation_body`,
+  `front_back_matter_status=stripped`, `machine_human_status=human_published`,
+  and a publication-usable rights status.
+
 ## Paper-facing readiness
 
 There are two metadata-complete, paper-facing-eligible source rows for the
 same work. Their raw provider texts have been fetched and checksum-recorded,
 and prepared translation-body texts with front/back matter stripped are
-available. They have not yet been tokenized, aligned, compared, or analyzed, so
-no word-spend claims are paper-ready.
+available behind a local validation gate. They have not yet been tokenized,
+aligned, compared, or analyzed, so no word-spend claims are paper-ready.
 
 ## Blocked or pending
 
-- A validator for prepared-text manifests is still pending.
 - Comparative claims still need tokenization/alignment and paper-facing filters
   over the prepared-text manifest.
 - Rights status is recorded for the United States; use outside the United States

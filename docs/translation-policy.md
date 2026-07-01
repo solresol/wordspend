@@ -54,3 +54,6 @@ translation-body files may be used for paper-facing analysis only when they are
 derived from the raw provider file by declared source-specific boundary rules
 and their manifest records the raw checksum, prepared checksum, line boundaries,
 `machine_human_status`, and `front_back_matter_status=stripped`.
+Run `scripts/validate_prepared_translation_texts.py` before paper-facing
+analysis to verify those manifest rows against the registry and the files on
+disk.

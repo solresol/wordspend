@@ -16,11 +16,11 @@
   Alexander Pope. The row records target language, translator, edition,
   publication date, catalog and download URLs, rights status, and
   machine/human status; its raw and prepared checksum provenance is recorded.
+- [x] Add a validation gate for prepared-text manifests so paper-facing
+  analysis can require `front_back_matter_status=stripped`.
 
 ## Next
 
-- [ ] Add a validation gate for prepared-text manifests so paper-facing
-  analysis can require `front_back_matter_status=stripped`.
 - [ ] Add paper-facing analysis filters that select only validated rows where
   `paper_facing_eligible=yes`, `machine_human_status=human_published`, and the
   rights status is usable for publication.

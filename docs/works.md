@@ -5,6 +5,8 @@
 - Title: *The Iliad*
 - Source language: Ancient Greek (`grc`)
 - Prepared sources: 2
+- Prepared manifest status: validated by
+  `scripts/validate_prepared_translation_texts.py`
 
 ### Prepared translation sources
 

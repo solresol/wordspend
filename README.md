@@ -13,4 +13,6 @@ download provenance, rights status, and machine/human status recorded.
   raw-text cache and records checksum provenance.
 - `scripts/prepare_translation_texts.py` strips source-specific front/back
   matter into prepared body text while preserving raw-text checksums.
+- `scripts/validate_prepared_translation_texts.py` validates prepared-text
+  manifests, checksum links, and paper-facing prepared-body requirements.
 - `docs/translation-policy.md` defines paper-facing eligibility.
