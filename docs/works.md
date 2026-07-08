@@ -7,6 +7,8 @@
 - Prepared sources: 2
 - Prepared manifest status: validated by
   `scripts/validate_prepared_translation_texts.py`
+- Paper-facing selection status: selected by
+  `scripts/select_paper_facing_translation_texts.py`
 
 ### Prepared translation sources
 

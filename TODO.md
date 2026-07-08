@@ -18,11 +18,14 @@
   machine/human status; its raw and prepared checksum provenance is recorded.
 - [x] Add a validation gate for prepared-text manifests so paper-facing
   analysis can require `front_back_matter_status=stripped`.
+- [x] Add paper-facing prepared-text filters that validate the prepared-text
+  manifest, then select only rows where `paper_facing_eligible=yes`,
+  `machine_human_status=human_published`, rights are publication-usable,
+  `text_stage=prepared_translation_body`, and front/back matter is stripped.
 
 ## Next
 
-- [ ] Add paper-facing analysis filters that select only validated rows where
-  `paper_facing_eligible=yes`, `machine_human_status=human_published`, and the
-  rights status is usable for publication.
+- [ ] Tokenize and align the selected paper-facing prepared-text rows against
+  source text before residual analysis.
 - [ ] Keep machine-generated translations, if any are added for bootstrap tests,
   explicitly labelled `machine_bootstrap` and excluded from paper-facing claims.

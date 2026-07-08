@@ -57,3 +57,16 @@ and their manifest records the raw checksum, prepared checksum, line boundaries,
 Run `scripts/validate_prepared_translation_texts.py` before paper-facing
 analysis to verify those manifest rows against the registry and the files on
 disk.
+
+## Paper-facing prepared-text selection
+
+Before alignment or residual analysis, run:
+
+```bash
+uv run python scripts/select_paper_facing_translation_texts.py
+```
+
+The selector first validates the prepared-text manifest, then writes only rows
+that are `paper_facing_eligible=yes`, `machine_human_status=human_published`,
+publication-usable by rights status, `text_stage=prepared_translation_body`,
+and `front_back_matter_status=stripped`.

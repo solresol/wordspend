@@ -219,6 +219,9 @@ that builds and validates that registry:
   matter into prepared body text while preserving raw-text checksums.
 - `scripts/validate_prepared_translation_texts.py` validates prepared-text
   manifests, checksum links, and paper-facing prepared-body requirements.
+- `scripts/select_paper_facing_translation_texts.py` validates the prepared-text
+  manifest and writes the subset eligible for paper-facing alignment and
+  analysis.
 
 ## Methodological Cautions
 
