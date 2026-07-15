@@ -70,3 +70,18 @@ The selector first validates the prepared-text manifest, then writes only rows
 that are `paper_facing_eligible=yes`, `machine_human_status=human_published`,
 publication-usable by rights status, `text_stage=prepared_translation_body`,
 and `front_back_matter_status=stripped`.
+
+## Tokenization staging
+
+Run `scripts/tokenize_paper_facing_translation_texts.py` after prepared-text
+validation. The tokenization summary carries forward source, edition, rights,
+machine/human, eligibility, and prepared-text checksum fields. Each generated
+token table records ordered tokens, normalized tokens, character offsets, and
+line locations; the summary records its versioned tokenizer ID and SHA-256
+checksum.
+
+Tokenization must fail closed when a target language does not have an explicit
+profile. In particular, Classical and Modern Chinese require a separately
+versioned segmentation policy rather than the alphabetic tokenizer. Tokenized
+whole texts are preparation inputs only and are not paper-facing evidence until
+they are aligned to a provenance-complete source edition.

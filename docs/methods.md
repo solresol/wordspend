@@ -39,6 +39,20 @@ models for source terms and target terms. The predictors are surface unigrams
 and bigrams. Coefficients are not final inferential statistics; they are ranked
 leads for validation and close reading.
 
+## Tokenization
+
+Paper-facing prepared texts are tokenized before alignment with the versioned
+`unicode-alphabetic-apostrophe-v1` profile. It extracts Unicode alphabetic
+sequences, retains internal straight or curly apostrophes, requires NFC input,
+and records case-folded forms, character offsets, and line locations. The
+tokenizer preserves the decoded file's CRLF characters when calculating
+offsets, while the source and generated token files are tied to their byte-level
+SHA-256 checksums.
+
+The profile is limited to configured alphabetic, space-delimited languages.
+Classical and Modern Chinese must use an explicit, versioned segmenter; the
+pipeline rejects those language codes rather than applying this profile.
+
 ## Required Robustness Checks
 
 - Repeat at sentence and paragraph level.

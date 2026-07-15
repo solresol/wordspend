@@ -9,6 +9,10 @@
   `scripts/validate_prepared_translation_texts.py`
 - Paper-facing selection status: selected by
   `scripts/select_paper_facing_translation_texts.py`
+- Tokenization status: both selected rows are tokenized by
+  `scripts/tokenize_paper_facing_translation_texts.py`; generated token tables
+  retain prepared-text and token-file checksum provenance.
+- Alignment status: pending a provenance-complete Ancient Greek source edition.
 
 ### Prepared translation sources
 

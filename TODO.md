@@ -22,10 +22,13 @@
   manifest, then select only rows where `paper_facing_eligible=yes`,
   `machine_human_status=human_published`, rights are publication-usable,
   `text_stage=prepared_translation_body`, and front/back matter is stripped.
+- [x] Tokenize the selected paper-facing prepared texts with an explicit,
+  versioned language profile and record deterministic token-file checksums,
+  character offsets, and line locations for downstream alignment.
 
 ## Next
 
-- [ ] Tokenize and align the selected paper-facing prepared-text rows against
-  source text before residual analysis.
+- [ ] Import a provenance-complete Ancient Greek source edition and align it
+  against the tokenized paper-facing translation rows before residual analysis.
 - [ ] Keep machine-generated translations, if any are added for bootstrap tests,
   explicitly labelled `machine_bootstrap` and excluded from paper-facing claims.

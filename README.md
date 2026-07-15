@@ -222,6 +222,9 @@ that builds and validates that registry:
 - `scripts/select_paper_facing_translation_texts.py` validates the prepared-text
   manifest and writes the subset eligible for paper-facing alignment and
   analysis.
+- `scripts/tokenize_paper_facing_translation_texts.py` tokenizes that validated
+  subset with an explicit language profile and records token-file checksums and
+  offsets for downstream alignment.
 
 ## Methodological Cautions
 

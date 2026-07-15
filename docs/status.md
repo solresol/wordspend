@@ -1,6 +1,6 @@
 # Status
 
-Last updated: 2026-07-08
+Last updated: 2026-07-15
 
 ## Current state
 
@@ -80,18 +80,30 @@ paper-facing translation provenance.
   translation rows and selected the 2 human-published, publication-usable,
   stripped *Iliad* prepared texts by Samuel Butler and Alexander Pope.
 
+## 2026-07-15 progress
+
+- Added an explicit tokenization stage for the validated paper-facing prepared
+  texts. It records the tokenizer ID, source prepared-text checksum, token-table
+  checksum, token count, character offsets, and line locations.
+- The tokenizer accepts only configured alphabetic, space-delimited language
+  profiles; languages such as Classical Chinese fail closed until a suitable
+  segmenter and version are configured.
+- Tokenization remains a corpus-preparation output. It does not create aligned
+  source-target segments or paper-facing residual claims.
+
 ## Paper-facing readiness
 
 There are two metadata-complete, paper-facing-eligible source rows for the
 same work. Their raw provider texts have been fetched and checksum-recorded,
 and prepared translation-body texts with front/back matter stripped are
 available behind local validation and selection gates. They have not yet been
-tokenized, aligned, compared, or analyzed, so no word-spend claims are
-paper-ready.
+aligned, compared, or analyzed, so no word-spend claims are paper-ready. Their
+deterministic token tables are now available as generated build outputs for the
+next alignment step.
 
 ## Blocked or pending
 
-- Comparative claims still need tokenization/alignment over the selected
-  paper-facing prepared-text manifest.
+- Comparative claims still need a provenance-complete Ancient Greek source
+  edition and alignment against the tokenized translation texts.
 - Rights status is recorded for the United States; use outside the United States
   needs jurisdiction-specific review.
