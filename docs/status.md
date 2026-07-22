@@ -1,6 +1,6 @@
 # Status
 
-Last updated: 2026-07-15
+Last updated: 2026-07-22
 
 ## Current state
 
@@ -91,19 +91,36 @@ paper-facing translation provenance.
 - Tokenization remains a corpus-preparation output. It does not create aligned
   source-target segments or paper-facing residual claims.
 
+## 2026-07-22 progress
+
+- Added `data/source_editions.csv` with a provenance-complete Ancient Greek
+  *Iliad*: Monro and Allen's *Homeri Opera*, third edition, volumes 1-2,
+  published 1908-1920 and supplied as TEI XML by the Perseus Project.
+- Recorded the CTS edition URN, editors, publication details, catalog URL,
+  commit-pinned download URL, CC BY-SA 4.0 rights basis, and
+  `human_edited_published` / paper-facing status.
+- Added `scripts/import_source_editions.py` and reusable validation/extraction
+  code in `wordspend/source_editions.py`. The importer preserves the raw XML
+  checksum and writes deterministic, NFC-normalized `book.line` records.
+- Prepared all 24 books as 15,687 unique line records, with raw and prepared
+  SHA-256 provenance in `data/prepared/source_editions.csv`; four TEI
+  editorial-deletion lines are retained but explicitly flagged.
+
 ## Paper-facing readiness
 
-There are two metadata-complete, paper-facing-eligible source rows for the
+There are two metadata-complete, paper-facing-eligible translation rows for the
 same work. Their raw provider texts have been fetched and checksum-recorded,
 and prepared translation-body texts with front/back matter stripped are
-available behind local validation and selection gates. They have not yet been
-aligned, compared, or analyzed, so no word-spend claims are paper-ready. Their
-deterministic token tables are now available as generated build outputs for the
-next alignment step.
+available behind local validation and selection gates. A provenance-complete,
+open-licensed, human-edited Ancient Greek source edition is now prepared as a
+checksum-linked line table. The source and translations have not yet been
+aligned, compared, or analyzed, so no word-spend claims are paper-ready.
 
 ## Blocked or pending
 
-- Comparative claims still need a provenance-complete Ancient Greek source
-  edition and alignment against the tokenized translation texts.
-- Rights status is recorded for the United States; use outside the United States
-  needs jurisdiction-specific review.
+- Comparative claims still need an explicit, reviewable alignment between the
+  prepared Greek `book.line` rows and the tokenized translation texts.
+- The English translation rights status is recorded for the United States; use
+  outside the United States needs jurisdiction-specific review. The Perseus
+  source edition is recorded under CC BY-SA 4.0 and must retain attribution and
+  share-alike terms when redistributed.

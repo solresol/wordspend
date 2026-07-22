@@ -12,7 +12,22 @@
 - Tokenization status: both selected rows are tokenized by
   `scripts/tokenize_paper_facing_translation_texts.py`; generated token tables
   retain prepared-text and token-file checksum provenance.
-- Alignment status: pending a provenance-complete Ancient Greek source edition.
+- Source edition status: Monro and Allen's Ancient Greek third edition is
+  prepared as 15,687 checksum-linked `book.line` records.
+- Alignment status: source-to-translation alignment remains pending.
+
+### Prepared source edition
+
+- `homer-iliad-grc-monro-allen-perseus`: Ancient Greek (`grc`), Homer,
+  *Homeri Opera*, edited by David B. Monro and Thomas W. Allen, third edition,
+  volumes 1-2, Oxford: Clarendon Press, 1908-1920. The Perseus TEI edition is
+  identified by `urn:cts:greekLit:tlg0012.tlg001.perseus-grc2`; its download is
+  pinned to canonical-greekLit commit
+  `91595f89e15b4d3000cd93efcf8990720c8be2b9`. Rights status is `open_license`
+  under CC BY-SA 4.0; editorial status is `human_edited_published`; paper-facing
+  metadata eligibility is `yes`. The raw XML is retained in the ignored raw
+  cache, and the committed prepared line table and checksum manifest are under
+  `data/prepared/source_editions/` and `data/prepared/source_editions.csv`.
 
 ### Prepared translation sources
 

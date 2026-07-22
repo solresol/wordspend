@@ -226,6 +226,21 @@ that builds and validates that registry:
   subset with an explicit language profile and records token-file checksums and
   offsets for downstream alignment.
 
+### Source edition pipeline
+
+Paper-facing alignment also requires a provenance-complete edition of the
+source-language text. `data/source_editions.csv` records edition, editor,
+publication, canonical identifier, version-pinned download, rights, and
+human/machine editorial status. Run:
+
+```bash
+uv run python scripts/import_source_editions.py
+```
+
+The importer validates paper-facing eligibility, preserves the raw provider TEI
+XML in the ignored raw cache, and writes a checksum-linked, line-addressable
+source table plus manifest under `data/prepared/source_editions/`.
+
 ## Methodological Cautions
 
 Residuals are not self-interpreting. A source word predicting English expansion

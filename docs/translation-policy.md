@@ -85,3 +85,26 @@ profile. In particular, Classical and Modern Chinese require a separately
 versioned segmentation policy rather than the alphabetic tokenizer. Tokenized
 whole texts are preparation inputs only and are not paper-facing evidence until
 they are aligned to a provenance-complete source edition.
+
+## Source edition staging
+
+Paper-facing alignment must use a source-language edition recorded in
+`data/source_editions.csv`. Each row records the author, editors, edition and
+publication details, canonical identifier, provider, version-pinned download,
+rights basis, editorial status, and paper-facing eligibility.
+
+Source-edition editorial status uses these values:
+
+- `human_edited_published`: an identified published edition prepared by human
+  editors;
+- `machine_bootstrap`: synthetic or generated source text used only for tests;
+- `mixed_or_unclear`: editorial provenance is not clear enough for claims.
+
+Only `human_edited_published` rows with publication-usable rights may be
+paper-facing. Run `scripts/import_source_editions.py` to validate that gate,
+retain raw-download checksum provenance, and extract deterministic,
+NFC-normalized source records with stable edition-local references. Prepared
+source records must preserve explicit editorial states such as TEI deletions so
+they can be reviewed or excluded during alignment. Source lines are alignment
+inputs, not evidence of translation spending until a reviewable source-target
+alignment exists.

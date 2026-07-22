@@ -25,10 +25,15 @@
 - [x] Tokenize the selected paper-facing prepared texts with an explicit,
   versioned language profile and record deterministic token-file checksums,
   character offsets, and line locations for downstream alignment.
+- [x] Import a provenance-complete Ancient Greek *Iliad* source edition: Monro
+  and Allen's 1908-1920 third edition from Perseus. Record its edition,
+  publication, canonical ID, commit-pinned download, CC BY-SA 4.0 rights, and
+  human-edited status, then prepare 15,687 checksum-linked `book.line` rows
+  with TEI editorial deletions explicitly flagged.
 
 ## Next
 
-- [ ] Import a provenance-complete Ancient Greek source edition and align it
-  against the tokenized paper-facing translation rows before residual analysis.
+- [ ] Align the prepared Ancient Greek source lines against the tokenized
+  paper-facing translation rows before residual analysis.
 - [ ] Keep machine-generated translations, if any are added for bootstrap tests,
   explicitly labelled `machine_bootstrap` and excluded from paper-facing claims.
