@@ -30,10 +30,18 @@
   publication, canonical ID, commit-pinned download, CC BY-SA 4.0 rights, and
   human-edited status, then prepare 15,687 checksum-linked `book.line` rows
   with TEI editorial deletions explicitly flagged.
+- [x] Prepare the Samuel Butler translation as 24 checksum-linked book bodies,
+  removing the declared Project Gutenberg editorial summary after each book
+  heading, and record 24 structural alignments to the corresponding Monro and
+  Allen source-book ranges. These rows support book-length review only, not
+  lexical residual claims.
 
 ## Next
 
-- [ ] Align the prepared Ancient Greek source lines against the tokenized
-  paper-facing translation rows before residual analysis.
+- [ ] Produce a finer, reviewable alignment between the prepared Ancient Greek
+  source lines and Butler translation tokens before lexical residual analysis.
+- [ ] Define and review a separate paratext-removal policy for Pope's
+  translation arguments, illustrations, and captions before preparing its book
+  alignments.
 - [ ] Keep machine-generated translations, if any are added for bootstrap tests,
   explicitly labelled `machine_bootstrap` and excluded from paper-facing claims.

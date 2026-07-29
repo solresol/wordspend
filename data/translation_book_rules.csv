@@ -1,0 +1,2 @@
+rule_id,source_id,work_id,source_edition_id,segmentation_method,expected_book_count,leading_paragraphs_to_skip,alignment_level,paper_facing_eligible,notes
+gutenberg-book-heading-skip-summary-v1,homer-iliad-en-butler-pg2199,homer-iliad,homer-iliad-grc-monro-allen-perseus,gutenberg_book_heading_v1,24,1,book,yes,"Each BOOK heading is followed by one Project Gutenberg editorial summary paragraph; skip that paragraph and retain the published translation body through the next BOOK heading."

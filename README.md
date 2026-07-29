@@ -225,6 +225,10 @@ that builds and validates that registry:
 - `scripts/tokenize_paper_facing_translation_texts.py` tokenizes that validated
   subset with an explicit language profile and records token-file checksums and
   offsets for downstream alignment.
+- `scripts/prepare_book_alignments.py` applies explicit translation-structure
+  rules, removes declared per-book paratext, and records checksum-linked
+  source-target book alignments. The current rule prepares the Butler
+  *Iliad* only; book alignment is not fine enough for lexical residual claims.
 
 ### Source edition pipeline
 
@@ -240,6 +244,12 @@ uv run python scripts/import_source_editions.py
 The importer validates paper-facing eligibility, preserves the raw provider TEI
 XML in the ignored raw cache, and writes a checksum-linked, line-addressable
 source table plus manifest under `data/prepared/source_editions/`.
+
+Run `uv run python scripts/prepare_book_alignments.py` to prepare configured
+translation book bodies and pair them with the corresponding source-edition
+book ranges. Rules are declared in `data/translation_book_rules.csv`; generated
+book bodies and structural alignment manifests are committed under
+`data/prepared/` for review and reproducibility.
 
 ## Methodological Cautions
 

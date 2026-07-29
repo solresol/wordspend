@@ -1,6 +1,6 @@
 # Status
 
-Last updated: 2026-07-22
+Last updated: 2026-07-29
 
 ## Current state
 
@@ -106,20 +106,42 @@ paper-facing translation provenance.
   SHA-256 provenance in `data/prepared/source_editions.csv`; four TEI
   editorial-deletion lines are retained but explicitly flagged.
 
+## 2026-07-29 progress
+
+- Added `data/translation_book_rules.csv` with an explicit Butler rule: identify
+  the 24 canonical `BOOK` headings and skip the single Project Gutenberg
+  editorial summary paragraph after each heading.
+- Added `wordspend/book_alignment.py` and
+  `scripts/prepare_book_alignments.py` to validate upstream prepared-text
+  provenance, extract deterministic book bodies, and retain prepared-text
+  character and line offsets plus per-book SHA-256 checksums.
+- Prepared 24 Butler translation-book rows containing 153,268 translation
+  tokens, with a checksum-linked summary in
+  `data/prepared/translation_books.csv`.
+- Recorded 24 structural Greek-to-English book alignments in
+  `data/prepared/book_alignments.csv`. Each carries the Greek edition and
+  translation checksums, source reference range, source editorial-deletion
+  count, target checksum and token count, rights and human/editorial statuses,
+  and an explicit restriction to book-length analysis.
+
 ## Paper-facing readiness
 
 There are two metadata-complete, paper-facing-eligible translation rows for the
 same work. Their raw provider texts have been fetched and checksum-recorded,
 and prepared translation-body texts with front/back matter stripped are
 available behind local validation and selection gates. A provenance-complete,
-open-licensed, human-edited Ancient Greek source edition is now prepared as a
-checksum-linked line table. The source and translations have not yet been
-aligned, compared, or analyzed, so no word-spend claims are paper-ready.
+open-licensed, human-edited Ancient Greek source edition is prepared as a
+checksum-linked line table. Butler is now structurally aligned to that edition
+at book level after its per-book editorial summaries are removed. No
+source-line-to-translation alignment or lexical residual analysis is
+paper-ready.
 
 ## Blocked or pending
 
-- Comparative claims still need an explicit, reviewable alignment between the
-  prepared Greek `book.line` rows and the tokenized translation texts.
+- Lexical comparative claims still need an explicit, reviewable finer alignment
+  between the prepared Greek `book.line` rows and Butler translation tokens.
+- Pope's per-book arguments, illustrations, and captions still need an explicit
+  removal policy before that translation can enter structural alignment.
 - The English translation rights status is recorded for the United States; use
   outside the United States needs jurisdiction-specific review. The Perseus
   source edition is recorded under CC BY-SA 4.0 and must retain attribution and
