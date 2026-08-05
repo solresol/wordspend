@@ -95,17 +95,22 @@ in `data/translation_book_rules.csv` and run:
 uv run python scripts/prepare_book_alignments.py
 ```
 
-The rule must state how much leading per-book paratext is removed. Generated
-book rows retain the prepared translation checksum, prepared-text character and
-line offsets, per-book text checksum, tokenizer ID, and token count. The alignment
-manifest must also retain the source-edition checksum and reference range,
-rights and human/editorial statuses, and any flagged source lines.
+The rule must state how much leading per-book paratext is removed and identify
+any internal-paratext policy. Generated book rows retain the prepared
+translation checksum, prepared-text character and line offsets, applied
+internal-paratext policy, excluded-paragraph count, per-book text checksum,
+tokenizer ID, and token count. The alignment manifest must also retain those
+paratext audit fields, the source-edition checksum and reference range, rights
+and human/editorial statuses, and any flagged source lines.
 
 Book-level structural alignment permits review or book-length exploratory
 comparison only. It is not sufficient for lexical residual claims, which
 require a finer reviewed alignment. A translation with additional internal
 paratext, such as arguments, illustration captions, or notes, must have an
 explicit removal policy before it is prepared.
+The Pope rule skips its three leading argument paragraphs per book and removes
+each Gutenberg paragraph beginning `[Illustration: ]`, including continuation
+lines in wrapped captions.
 
 ## Source edition staging
 

@@ -13,6 +13,10 @@ from .tokenization import tokenize_with_offsets, tokenizer_id_for_language
 BOOK_HEADING_RE = re.compile(r"(?m)^BOOK ([IVXLCDM]+)\.\r?$")
 PARAGRAPH_RE = re.compile(r"(?m)(?:^[^\r\n]+\r?\n?)+")
 ROMAN_VALUES = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
+INTERNAL_PARATEXT_POLICIES = {
+    "retain_all",
+    "strip_gutenberg_illustration_paragraphs_v1",
+}
 
 
 @dataclass(frozen=True)
@@ -27,6 +31,7 @@ class TranslationBook:
     text: str
     text_sha256: str
     token_count: int
+    excluded_paragraph_count: int
 
 
 def roman_to_int(value: str) -> int:
@@ -80,6 +85,7 @@ def extract_translation_books(
     *,
     expected_book_count: int,
     leading_paragraphs_to_skip: int,
+    internal_paratext_policy: str = "retain_all",
 ) -> list[TranslationBook]:
     """Extract book bodies after headings and declared leading paratext."""
     if not unicodedata.is_normalized("NFC", text):
@@ -88,6 +94,8 @@ def extract_translation_books(
         raise ValueError("expected_book_count must be positive")
     if leading_paragraphs_to_skip < 0:
         raise ValueError("leading_paragraphs_to_skip must not be negative")
+    if internal_paratext_policy not in INTERNAL_PARATEXT_POLICIES:
+        raise ValueError(f"unsupported internal_paratext_policy {internal_paratext_policy!r}")
 
     headings = list(BOOK_HEADING_RE.finditer(text))
     if len(headings) != expected_book_count:
@@ -122,7 +130,20 @@ def extract_translation_books(
         while end_char > start_char and text[end_char - 1].isspace():
             end_char -= 1
 
-        body = text[start_char:end_char].replace("\r\n", "\n").replace("\r", "\n")
+        body = text[start_char:end_char]
+        excluded_paragraph_count = 0
+        if internal_paratext_policy == "strip_gutenberg_illustration_paragraphs_v1":
+            body_parts: list[str] = []
+            body_offset = 0
+            for paragraph in PARAGRAPH_RE.finditer(body):
+                if paragraph.group(0).lstrip().startswith("[Illustration: ]"):
+                    body_parts.append(body[body_offset : paragraph.start()])
+                    body_offset = paragraph.end()
+                    excluded_paragraph_count += 1
+            body_parts.append(body[body_offset:])
+            body = "".join(body_parts)
+
+        body = body.replace("\r\n", "\n").replace("\r", "\n")
         body = unicodedata.normalize("NFC", body)
         if not body:
             raise ValueError(f"BOOK {heading.group(1)} has no translation body")
@@ -140,6 +161,7 @@ def extract_translation_books(
                 text=body,
                 text_sha256=hashlib.sha256(body.encode("utf-8")).hexdigest(),
                 token_count=len(tokens),
+                excluded_paragraph_count=excluded_paragraph_count,
             )
         )
     return books

@@ -1,5 +1,5 @@
-source_id,work_id,book,segment_ref,target_language_code,translator,publication_date,prepared_translation_sha256,prepared_start_char,prepared_end_char,prepared_start_line,prepared_end_line,book_text_sha256,tokenizer_id,token_count,text
-homer-iliad-en-butler-pg2199,homer-iliad,1,1,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,218,34355,8,564,91731d8521f9f89792d8ca3b9d6dcbd03f41b4e37459da94bea7035812ed55d5,unicode-alphabetic-apostrophe-v1,5835,"Sing, O goddess, the anger of Achilles son of Peleus, that
+source_id,work_id,book,segment_ref,target_language_code,translator,publication_date,prepared_translation_sha256,prepared_start_char,prepared_end_char,prepared_start_line,prepared_end_line,internal_paratext_policy,excluded_paragraph_count,book_text_sha256,tokenizer_id,token_count,text
+homer-iliad-en-butler-pg2199,homer-iliad,1,1,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,218,34355,8,564,retain_all,0,91731d8521f9f89792d8ca3b9d6dcbd03f41b4e37459da94bea7035812ed55d5,unicode-alphabetic-apostrophe-v1,5835,"Sing, O goddess, the anger of Achilles son of Peleus, that
       brought countless ills upon the Achaeans. Many a brave soul did
       it send hurrying down to Hades, and many a hero did it yield a
       prey to dogs and vultures, for so were the counsels of Jove
@@ -556,7 +556,7 @@ homer-iliad-en-butler-pg2199,homer-iliad,1,1,en,Samuel Butler,2000-06-01,a7ef38f
       him to the bed in which he always slept; and when he had got on
       to it he went to sleep, with Juno of the golden throne by his
       side."
-homer-iliad-en-butler-pg2199,homer-iliad,2,2,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,34614,82684,577,1373,2f7fb0e81e50eef395fdc7b6c746fe7a40cf5989b31c937a44d5d1059a8e3832,unicode-alphabetic-apostrophe-v1,7945,"Now the other gods and the armed warriors on the plain slept
+homer-iliad-en-butler-pg2199,homer-iliad,2,2,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,34614,82684,577,1373,retain_all,0,2f7fb0e81e50eef395fdc7b6c746fe7a40cf5989b31c937a44d5d1059a8e3832,unicode-alphabetic-apostrophe-v1,7945,"Now the other gods and the armed warriors on the plain slept
       soundly, but Jove was wakeful, for he was thinking how to do
       honour to Achilles, and destroyed much people at the ships of the
       Achaeans. In the end he deemed it would be best to send a lying
@@ -1353,7 +1353,7 @@ homer-iliad-en-butler-pg2199,homer-iliad,2,2,en,Samuel Butler,2000-06-01,a7ef38f
 
       Sarpedon and Glaucus led the Lycians from their distant land, by
       the eddying waters of the Xanthus."
-homer-iliad-en-butler-pg2199,homer-iliad,3,3,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,82967,106894,1386,1779,d2133716485f3a24055bdc3482b687a99620bc3348aac7effc6ac6cf9f488105,unicode-alphabetic-apostrophe-v1,4040,"When the companies were thus arrayed, each under its own captain,
+homer-iliad-en-butler-pg2199,homer-iliad,3,3,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,82967,106894,1386,1779,retain_all,0,d2133716485f3a24055bdc3482b687a99620bc3348aac7effc6ac6cf9f488105,unicode-alphabetic-apostrophe-v1,4040,"When the companies were thus arrayed, each under its own captain,
       the Trojans advanced as a flight of wild-fowl or cranes that
       scream overhead when rain and winter drive them over the flowing
       waters of Oceanus to bring death and destruction on the Pygmies,
@@ -1747,7 +1747,7 @@ homer-iliad-en-butler-pg2199,homer-iliad,3,3,en,Samuel Butler,2000-06-01,a7ef38f
 
       Thus spoke the son of Atreus, and the Achaeans shouted in
       applause."
-homer-iliad-en-butler-pg2199,homer-iliad,4,4,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,107333,136973,1794,2265,778ed0dc7ad4c42be481c403eb09f24510f42ab75b1b34853590271269f98bcc,unicode-alphabetic-apostrophe-v1,5048,"Now the gods were sitting with Jove in council upon the golden
+homer-iliad-en-butler-pg2199,homer-iliad,4,4,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,107333,136973,1794,2265,retain_all,0,778ed0dc7ad4c42be481c403eb09f24510f42ab75b1b34853590271269f98bcc,unicode-alphabetic-apostrophe-v1,5048,"Now the gods were sitting with Jove in council upon the golden
       floor while Hebe went round pouring out nectar for them to drink,
       and as they pledged one another in their cups of gold they looked
       down upon the town of Troy. The son of Saturn then began to tease
@@ -2219,7 +2219,7 @@ homer-iliad-en-butler-pg2199,homer-iliad,4,4,en,Samuel Butler,2000-06-01,a7ef38f
       leading him by the hand, and protecting him from the storm of
       spears and arrows. For many Trojans and Achaeans on that day lay
       stretched side by side face downwards upon the earth."
-homer-iliad-en-butler-pg2199,homer-iliad,5,5,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,137523,188022,2282,3085,4ec147676593e007e9cbe6dec965adfead4731454a92ba55330ed25334c963c5,unicode-alphabetic-apostrophe-v1,8590,"Then Pallas Minerva put valour into the heart of Diomed, son of
+homer-iliad-en-butler-pg2199,homer-iliad,5,5,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,137523,188022,2282,3085,retain_all,0,4ec147676593e007e9cbe6dec965adfead4731454a92ba55330ed25334c963c5,unicode-alphabetic-apostrophe-v1,8590,"Then Pallas Minerva put valour into the heart of Diomed, son of
       Tydeus, that he might excel all the other Argives, and cover
       himself with glory. She made a stream of fire flare from his
       shield and helmet like the star that shines most brilliantly in
@@ -3023,7 +3023,7 @@ homer-iliad-en-butler-pg2199,homer-iliad,5,5,en,Samuel Butler,2000-06-01,a7ef38f
       But Juno of Argos and Minerva of Alalcomene, now that they had
       put a stop to the murderous doings of Mars, went back again to
       the house of Jove."
-homer-iliad-en-butler-pg2199,homer-iliad,6,6,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,188135,217513,3096,3560,235e474fdba3bf22e4759101dda3b4e7c91ce66437da5e71be0586a4838806cc,unicode-alphabetic-apostrophe-v1,4984,"The fight between Trojans and Achaeans was now left to rage as it
+homer-iliad-en-butler-pg2199,homer-iliad,6,6,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,188135,217513,3096,3560,retain_all,0,235e474fdba3bf22e4759101dda3b4e7c91ce66437da5e71be0586a4838806cc,unicode-alphabetic-apostrophe-v1,4984,"The fight between Trojans and Achaeans was now left to rage as it
       would, and the tide of war surged hither and thither over the
       plain as they aimed their bronze-shod spears at one another
       between the streams of Simois and Xanthus.
@@ -3488,7 +3488,7 @@ homer-iliad-en-butler-pg2199,homer-iliad,6,6,en,Samuel Butler,2000-06-01,a7ef38f
       things right hereafter, should Jove vouchsafe us to set the cup
       of our deliverance before ever-living gods of heaven in our own
       homes, when we have chased the Achaeans from Troy.”"
-homer-iliad-en-butler-pg2199,homer-iliad,7,7,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,217820,243800,3573,3986,6f1cd141b84fb74b27128fbbc40c26d734573d0cffd932967e5a8c96889040f2,unicode-alphabetic-apostrophe-v1,4400,"With these words Hector passed through the gates, and his brother
+homer-iliad-en-butler-pg2199,homer-iliad,7,7,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,217820,243800,3573,3986,retain_all,0,6f1cd141b84fb74b27128fbbc40c26d734573d0cffd932967e5a8c96889040f2,unicode-alphabetic-apostrophe-v1,4400,"With these words Hector passed through the gates, and his brother
       Alexandrus with him, both eager for the fray. As when heaven
       sends a breeze to sailors who have long looked for one in vain,
       and have laboured at their oars till they are faint with toil,
@@ -3902,7 +3902,7 @@ homer-iliad-en-butler-pg2199,homer-iliad,7,7,en,Samuel Butler,2000-06-01,a7ef38f
       nor did any dare drink till he had made offerings to the most
       mighty son of Saturn. Then they laid themselves down to rest and
       enjoyed the boon of sleep."
-homer-iliad-en-butler-pg2199,homer-iliad,8,8,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,244309,275489,4002,4499,0c3d67a9144b42f9a1004c0b7bd0a637643889bc23c1db90638c8b9116ca6f18,unicode-alphabetic-apostrophe-v1,5289,"Now when Morning, clad in her robe of saffron, had begun to
+homer-iliad-en-butler-pg2199,homer-iliad,8,8,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,244309,275489,4002,4499,retain_all,0,0c3d67a9144b42f9a1004c0b7bd0a637643889bc23c1db90638c8b9116ca6f18,unicode-alphabetic-apostrophe-v1,5289,"Now when Morning, clad in her robe of saffron, had begun to
       suffuse light over the earth, Jove called the gods in council on
       the topmost crest of serrated Olympus. Then he spoke and all the
       other gods gave ear. “Hear me,” said he, “gods and goddesses,
@@ -4400,7 +4400,7 @@ homer-iliad-en-butler-pg2199,homer-iliad,8,8,en,Samuel Butler,2000-06-01,a7ef38f
       camp-fires gleamed upon the plain, and in the glow of each there
       sat fifty men, while the horses, champing oats and corn beside
       their chariots, waited till dawn should come."
-homer-iliad-en-butler-pg2199,homer-iliad,9,9,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,275553,315355,4509,5117,c2829e2f31f970e40705210e3467b21ad5ec4c0ea74ca102867cc1f6f48e5f3c,unicode-alphabetic-apostrophe-v1,6895,"Thus did the Trojans watch. But Panic, comrade of blood-stained
+homer-iliad-en-butler-pg2199,homer-iliad,9,9,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,275553,315355,4509,5117,retain_all,0,c2829e2f31f970e40705210e3467b21ad5ec4c0ea74ca102867cc1f6f48e5f3c,unicode-alphabetic-apostrophe-v1,6895,"Thus did the Trojans watch. But Panic, comrade of blood-stained
       Rout, had taken fast hold of the Achaeans, and their princes were
       all of them in despair. As when the two winds that blow from
       Thrace—the north and the northwest—spring up of a sudden and
@@ -5009,7 +5009,7 @@ homer-iliad-en-butler-pg2199,homer-iliad,9,9,en,Samuel Butler,2000-06-01,a7ef38f
       Thus he spoke, and the other chieftains approved his words. They
       then made their drink-offerings and went every man to his own
       tent, where they laid down to rest and enjoyed the boon of sleep."
-homer-iliad-en-butler-pg2199,homer-iliad,10,10,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,315609,347722,5130,5651,0f2da486da0120f0e7ef2534e98537a4f3efaf054f8e38e31fcb1405238e9a1f,unicode-alphabetic-apostrophe-v1,5518,"Now the other princes of the Achaeans slept soundly the whole
+homer-iliad-en-butler-pg2199,homer-iliad,10,10,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,315609,347722,5130,5651,retain_all,0,0f2da486da0120f0e7ef2534e98537a4f3efaf054f8e38e31fcb1405238e9a1f,unicode-alphabetic-apostrophe-v1,5518,"Now the other princes of the Achaeans slept soundly the whole
       night through, but Agamemnon son of Atreus was troubled, so that
       he could get no rest. As when fair Juno’s lord flashes his
       lightning in token of great rain or hail or snow when the
@@ -5531,7 +5531,7 @@ homer-iliad-en-butler-pg2199,homer-iliad,10,10,en,Samuel Butler,2000-06-01,a7ef3
       anointed themselves with oil, they sat down to table, and drawing
       from a full mixing-bowl, made a drink-offering of wine to
       Minerva."
-homer-iliad-en-butler-pg2199,homer-iliad,11,11,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,348338,398232,5669,6451,1becd12a75535c089a0743518965a2eee4e50d30524d0b50f4a3277d00b56998,unicode-alphabetic-apostrophe-v1,8499,"And now as Dawn rose from her couch beside Tithonus, harbinger of
+homer-iliad-en-butler-pg2199,homer-iliad,11,11,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,348338,398232,5669,6451,retain_all,0,1becd12a75535c089a0743518965a2eee4e50d30524d0b50f4a3277d00b56998,unicode-alphabetic-apostrophe-v1,8499,"And now as Dawn rose from her couch beside Tithonus, harbinger of
       light alike to mortals and immortals, Jove sent fierce Discord
       with the ensign of war in her hands to the ships of the Achaeans.
       She took her stand by the huge black hull of Ulysses’ ship which
@@ -6314,7 +6314,7 @@ homer-iliad-en-butler-pg2199,homer-iliad,11,11,en,Samuel Butler,2000-06-01,a7ef3
       it between his hands, and spread it upon the wound; this was a
       virtuous herb which killed all pain; so the wound presently dried
       and the blood left off flowing."
-homer-iliad-en-butler-pg2199,homer-iliad,12,12,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,398335,426257,6461,6886,7fd697b0ef8c9582019fb9fcf0075e20cc2c5ea5fbf3b9009a6e80efdc5927b3,unicode-alphabetic-apostrophe-v1,4769,"So the son of Menoetius was attending to the hurt of Eurypylus
+homer-iliad-en-butler-pg2199,homer-iliad,12,12,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,398335,426257,6461,6886,retain_all,0,7fd697b0ef8c9582019fb9fcf0075e20cc2c5ea5fbf3b9009a6e80efdc5927b3,unicode-alphabetic-apostrophe-v1,4769,"So the son of Menoetius was attending to the hurt of Eurypylus
       within the tent, but the Argives and Trojans still fought
       desperately, nor were the trench and the high wall above it, to
       keep the Trojans in check longer. They had built it to protect
@@ -6740,7 +6740,7 @@ homer-iliad-en-butler-pg2199,homer-iliad,12,12,en,Samuel Butler,2000-06-01,a7ef3
       climbing over the wall, while others passed through the gates.
       The Danaans then fled panic-stricken towards their ships, and all
       was uproar and confusion."
-homer-iliad-en-butler-pg2199,homer-iliad,13,13,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,426376,476348,6897,7680,19a2744516b148d20ef1331c8fec6d4fbbe7d0d479aa9a7745eab856f36058df,unicode-alphabetic-apostrophe-v1,8428,"Now when Jove had thus brought Hector and the Trojans to the
+homer-iliad-en-butler-pg2199,homer-iliad,13,13,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,426376,476348,6897,7680,retain_all,0,19a2744516b148d20ef1331c8fec6d4fbbe7d0d479aa9a7745eab856f36058df,unicode-alphabetic-apostrophe-v1,8428,"Now when Jove had thus brought Hector and the Trojans to the
       ships, he left them to their never-ending toil, and turned his
       keen eyes away, looking elsewhither towards the horse-breeders of
       Thrace, the Mysians, fighters at close quarters, the noble
@@ -7524,7 +7524,7 @@ homer-iliad-en-butler-pg2199,homer-iliad,13,13,en,Samuel Butler,2000-06-01,a7ef3
       forget their prowess, but stood firm against the onslaught of the
       Trojan chieftains, and the cry from both the hosts rose up to
       heaven and to the brightness of Jove’s presence."
-homer-iliad-en-butler-pg2199,homer-iliad,14,14,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,476517,507182,7691,8179,7f96ee91cf22d31bdecb73b64984218f74cabec62ec05ba1b9a2f5b8f85be0bf,unicode-alphabetic-apostrophe-v1,5245,"Nestor was sitting over his wine, but the cry of battle did not
+homer-iliad-en-butler-pg2199,homer-iliad,14,14,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,476517,507182,7691,8179,retain_all,0,7f96ee91cf22d31bdecb73b64984218f74cabec62ec05ba1b9a2f5b8f85be0bf,unicode-alphabetic-apostrophe-v1,5245,"Nestor was sitting over his wine, but the cry of battle did not
       escape him, and he said to the son of Aesculapius, “What, noble
       Machaon, is the meaning of all this? The shouts of men fighting
       by our ships grow stronger and stronger; stay here, therefore,
@@ -8013,7 +8013,7 @@ homer-iliad-en-butler-pg2199,homer-iliad,14,14,en,Samuel Butler,2000-06-01,a7ef3
       his eyes were closed in darkness. Ajax son of Oileus killed more
       than any other, for there was no man so fleet as he to pursue
       flying foes when Jove had spread panic among them."
-homer-iliad-en-butler-pg2199,homer-iliad,15,15,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,507311,550659,8190,8880,886820b7c38cacc06ef3e91a142829f5f97581ac5bf12803ae28e80737998b42,unicode-alphabetic-apostrophe-v1,7424,"But when their flight had taken them past the trench and the set
+homer-iliad-en-butler-pg2199,homer-iliad,15,15,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,507311,550659,8190,8880,retain_all,0,886820b7c38cacc06ef3e91a142829f5f97581ac5bf12803ae28e80737998b42,unicode-alphabetic-apostrophe-v1,7424,"But when their flight had taken them past the trench and the set
       stakes, and many had fallen by the hands of the Danaans, the
       Trojans made a halt on reaching their chariots, routed and pale
       with fear. Jove now woke on the crests of Ida, where he was lying
@@ -8704,7 +8704,7 @@ homer-iliad-en-butler-pg2199,homer-iliad,15,15,en,Samuel Butler,2000-06-01,a7ef3
       bidding, he would be on the look-out for him, and drive at him
       with his long spear. Twelve men did he thus kill in hand-to-hand
       fight before the ships."
-homer-iliad-en-butler-pg2199,homer-iliad,16,16,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,550884,603487,8892,9713,66395539a4522832a2fa36e5e3c8164a02211948ae49acaf11708a1ca1c2ce32,unicode-alphabetic-apostrophe-v1,8934,"Thus did they fight about the ship of Protesilaus. Then Patroclus
+homer-iliad-en-butler-pg2199,homer-iliad,16,16,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,550884,603487,8892,9713,retain_all,0,66395539a4522832a2fa36e5e3c8164a02211948ae49acaf11708a1ca1c2ce32,unicode-alphabetic-apostrophe-v1,8934,"Thus did they fight about the ship of Protesilaus. Then Patroclus
       drew near to Achilles with tears welling from his eyes, as from
       some spring whose crystal stream falls over the ledges of a high
       precipice. When Achilles saw him thus weeping he was sorry for
@@ -9526,7 +9526,7 @@ homer-iliad-en-butler-pg2199,homer-iliad,16,16,en,Samuel Butler,2000-06-01,a7ef3
       descendant of Aeacus, for he longed to lay him low, but the
       immortal steeds which the gods had given as a rich gift to Peleus
       bore him swiftly from the field."
-homer-iliad-en-butler-pg2199,homer-iliad,17,17,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,603568,646247,9723,10397,a453f44d41978194bb7ab78f91dbe4567d6b51b57513546a9dfc790792aa0651,unicode-alphabetic-apostrophe-v1,7300,"Brave Menelaus son of Atreus now came to know that Patroclus had
+homer-iliad-en-butler-pg2199,homer-iliad,17,17,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,603568,646247,9723,10397,retain_all,0,a453f44d41978194bb7ab78f91dbe4567d6b51b57513546a9dfc790792aa0651,unicode-alphabetic-apostrophe-v1,7300,"Brave Menelaus son of Atreus now came to know that Patroclus had
       fallen, and made his way through the front ranks clad in full
       armour to bestride him. As a cow stands lowing over her first
       calf, even so did yellow-haired Menelaus bestride Patroclus. He
@@ -10201,7 +10201,7 @@ homer-iliad-en-butler-pg2199,homer-iliad,17,17,en,Samuel Butler,2000-06-01,a7ef3
       Aeneas and Hector, unmindful of their former prowess. In the rout
       of the Danaans much goodly armour fell round about the trench,
       and of fighting there was no end."
-homer-iliad-en-butler-pg2199,homer-iliad,18,18,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,646405,681584,10408,10972,984978c10a7a9e5b5c8dc6d6c40b430d0fa558b00fd2f0ef28c2672d5893a4dc,unicode-alphabetic-apostrophe-v1,6038,"Thus then did they fight as it were a flaming fire. Meanwhile the
+homer-iliad-en-butler-pg2199,homer-iliad,18,18,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,646405,681584,10408,10972,retain_all,0,984978c10a7a9e5b5c8dc6d6c40b430d0fa558b00fd2f0ef28c2672d5893a4dc,unicode-alphabetic-apostrophe-v1,6038,"Thus then did they fight as it were a flaming fire. Meanwhile the
       fleet runner Antilochus, who had been sent as messenger, reached
       Achilles, and found him sitting by his tall ships and boding that
       which was indeed too surely true. “Alas,” said he to himself in
@@ -10766,7 +10766,7 @@ homer-iliad-en-butler-pg2199,homer-iliad,18,18,en,Samuel Butler,2000-06-01,a7ef3
       it and set it before the mother of Achilles; whereon she darted
       like a falcon from the snowy summits of Olympus and bore away the
       gleaming armour from the house of Vulcan."
-homer-iliad-en-butler-pg2199,homer-iliad,19,19,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,681739,705058,10983,11351,7c9b0c325f9916f5a8a35fd6a1ec187348a7781c518140e18accb187583d4afe,unicode-alphabetic-apostrophe-v1,4018,"Now when Dawn in robe of saffron was hasting from the streams of
+homer-iliad-en-butler-pg2199,homer-iliad,19,19,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,681739,705058,10983,11351,retain_all,0,7c9b0c325f9916f5a8a35fd6a1ec187348a7781c518140e18accb187583d4afe,unicode-alphabetic-apostrophe-v1,4018,"Now when Dawn in robe of saffron was hasting from the streams of
       Oceanus, to bring light to mortals and immortals, Thetis reached
       the ships with the armour that the god had given her. She found
       her son fallen about the body of Patroclus and weeping bitterly.
@@ -11135,7 +11135,7 @@ homer-iliad-en-butler-pg2199,homer-iliad,19,19,en,Samuel Butler,2000-06-01,a7ef3
       their fill of fighting.”
 
       So saying, with a loud cry he drove his horses to the front."
-homer-iliad-en-butler-pg2199,homer-iliad,20,20,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,705339,734790,11364,11829,1eb6104b27e08f72ae0fea7a54569f818a06b71219677dd0254557029ec02688,unicode-alphabetic-apostrophe-v1,5019,"Thus, then, did the Achaeans arm by their ships round you, O son
+homer-iliad-en-butler-pg2199,homer-iliad,20,20,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,705339,734790,11364,11829,retain_all,0,1eb6104b27e08f72ae0fea7a54569f818a06b71219677dd0254557029ec02688,unicode-alphabetic-apostrophe-v1,5019,"Thus, then, did the Achaeans arm by their ships round you, O son
       of Peleus, who were hungering for battle; while the Trojans over
       against them armed upon the rise of the plain.
 
@@ -11601,7 +11601,7 @@ homer-iliad-en-butler-pg2199,homer-iliad,20,20,en,Samuel Butler,2000-06-01,a7ef3
       blood thrown up by the horses’ hoofs, and from the tyres of the
       wheels; but the son of Peleus pressed on to win still further
       glory, and his hands were bedrabbled with gore."
-homer-iliad-en-butler-pg2199,homer-iliad,21,21,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,734968,770955,11840,12404,77c57342d8d821e0200395ac79bce84ad5d25f8d40a1b9be721bddd0463517fb,unicode-alphabetic-apostrophe-v1,6202,"Now when they came to the ford of the full-flowing river Xanthus,
+homer-iliad-en-butler-pg2199,homer-iliad,21,21,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,734968,770955,11840,12404,retain_all,0,77c57342d8d821e0200395ac79bce84ad5d25f8d40a1b9be721bddd0463517fb,unicode-alphabetic-apostrophe-v1,6202,"Now when they came to the ford of the full-flowing river Xanthus,
       begotten of immortal Jove, Achilles cut their forces in two: one
       half he chased over the plain towards the city by the same way
       that the Achaeans had taken when flying panic-stricken on the
@@ -12166,7 +12166,7 @@ homer-iliad-en-butler-pg2199,homer-iliad,21,21,en,Samuel Butler,2000-06-01,a7ef3
       they dare wait for one another outside the city walls, to learn
       who had escaped and who were fallen in fight, but all whose feet
       and knees could still carry them poured pell-mell into the town."
-homer-iliad-en-butler-pg2199,homer-iliad,22,22,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,771017,802449,12414,12905,10b3ad643d38461850df8f3fbeb8ff83a56e690e4da5dca5c73fd1c5ff862815,unicode-alphabetic-apostrophe-v1,5488,"Thus the Trojans in the city, scared like fawns, wiped the sweat
+homer-iliad-en-butler-pg2199,homer-iliad,22,22,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,771017,802449,12414,12905,retain_all,0,10b3ad643d38461850df8f3fbeb8ff83a56e690e4da5dca5c73fd1c5ff862815,unicode-alphabetic-apostrophe-v1,5488,"Thus the Trojans in the city, scared like fawns, wiped the sweat
       from off them and drank to quench their thirst, leaning against
       the goodly battlements, while the Achaeans with their shields
       laid upon their shoulders drew close up to the walls. But stern
@@ -12658,7 +12658,7 @@ homer-iliad-en-butler-pg2199,homer-iliad,22,22,en,Samuel Butler,2000-06-01,a7ef3
 
       In such wise did she cry aloud amid her tears, and the women
       joined in her lament."
-homer-iliad-en-butler-pg2199,homer-iliad,23,23,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,802540,855137,12915,13749,67adeb8651f3492ff327849a6e4e35ccc14c6c9effec94363f5d138d5773d422,unicode-alphabetic-apostrophe-v1,8993,"Thus did they make their moan throughout the city, while the
+homer-iliad-en-butler-pg2199,homer-iliad,23,23,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,802540,855137,12915,13749,retain_all,0,67adeb8651f3492ff327849a6e4e35ccc14c6c9effec94363f5d138d5773d422,unicode-alphabetic-apostrophe-v1,8993,"Thus did they make their moan throughout the city, while the
       Achaeans when they reached the Hellespont went back every man to
       his own ship. But Achilles would not let the Myrmidons go, and
       spoke to his brave comrades saying, “Myrmidons, famed horsemen
@@ -13493,7 +13493,7 @@ homer-iliad-en-butler-pg2199,homer-iliad,23,23,en,Samuel Butler,2000-06-01,a7ef3
 
       King Agamemnon assented. So he gave the bronze spear to Meriones,
       and handed the goodly cauldron to Talthybius his esquire."
-homer-iliad-en-butler-pg2199,homer-iliad,24,24,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,855229,903031,13759,14515,d4ffd547b1171d0bc1d18ad46eb837f8710ea9170ab656797fc0e119ad45fd0b,unicode-alphabetic-apostrophe-v1,8367,"The assembly now broke up and the people went their ways each to
+homer-iliad-en-butler-pg2199,homer-iliad,24,24,en,Samuel Butler,2000-06-01,a7ef38f74d3c43a294249f901921449f8c3366d0de0a846f5cd305ebd66f5854,855229,903031,13759,14515,retain_all,0,d4ffd547b1171d0bc1d18ad46eb837f8710ea9170ab656797fc0e119ad45fd0b,unicode-alphabetic-apostrophe-v1,8367,"The assembly now broke up and the people went their ways each to
       his own ship. There they made ready their supper, and then
       bethought them of the blessed boon of sleep; but Achilles still
       wept for thinking of his dear comrade, and sleep, before whom all

@@ -1,6 +1,6 @@
 # Status
 
-Last updated: 2026-07-29
+Last updated: 2026-08-05
 
 ## Current state
 
@@ -124,6 +124,21 @@ paper-facing translation provenance.
   count, target checksum and token count, rights and human/editorial statuses,
   and an explicit restriction to book-length analysis.
 
+## 2026-08-05 progress
+
+- Extended translation-book rules with an explicit internal-paratext policy
+  and carried that policy plus excluded-paragraph counts into the generated
+  book and alignment manifests.
+- Added Pope's reviewed rule: skip the argument label, argument title, and
+  prose synopsis at the start of each book, then remove internal Gutenberg
+  illustration paragraphs together with wrapped caption lines.
+- Prepared all 24 Pope book bodies with 146,800 translation tokens, removing
+  71 illustration/caption paragraphs, and recorded 24 checksum-linked
+  structural alignments to the Monro and Allen Greek source books.
+- Verified that the generated Pope bodies contain no argument headings or
+  Gutenberg illustration markers. The alignments remain explicitly limited to
+  book-length use and do not support lexical residual claims.
+
 ## Paper-facing readiness
 
 There are two metadata-complete, paper-facing-eligible translation rows for the
@@ -131,8 +146,8 @@ same work. Their raw provider texts have been fetched and checksum-recorded,
 and prepared translation-body texts with front/back matter stripped are
 available behind local validation and selection gates. A provenance-complete,
 open-licensed, human-edited Ancient Greek source edition is prepared as a
-checksum-linked line table. Butler is now structurally aligned to that edition
-at book level after its per-book editorial summaries are removed. No
+checksum-linked line table. Both translations are now structurally aligned to
+that edition at book level under explicit paratext rules. No
 source-line-to-translation alignment or lexical residual analysis is
 paper-ready.
 
@@ -140,8 +155,8 @@ paper-ready.
 
 - Lexical comparative claims still need an explicit, reviewable finer alignment
   between the prepared Greek `book.line` rows and Butler translation tokens.
-- Pope's per-book arguments, illustrations, and captions still need an explicit
-  removal policy before that translation can enter structural alignment.
+- Pope likewise needs a finer reviewed Greek-line-to-translation-token
+  alignment before lexical comparative claims.
 - The English translation rights status is recorded for the United States; use
   outside the United States needs jurisdiction-specific review. The Perseus
   source edition is recorded under CC BY-SA 4.0 and must retain attribution and

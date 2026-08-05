@@ -25,6 +25,7 @@ RULE_COLUMNS = [
     "segmentation_method",
     "expected_book_count",
     "leading_paragraphs_to_skip",
+    "internal_paratext_policy",
     "alignment_level",
     "paper_facing_eligible",
 ]
@@ -42,6 +43,8 @@ BOOK_COLUMNS = [
     "prepared_end_char",
     "prepared_start_line",
     "prepared_end_line",
+    "internal_paratext_policy",
+    "excluded_paragraph_count",
     "book_text_sha256",
     "tokenizer_id",
     "token_count",
@@ -60,6 +63,8 @@ SUMMARY_COLUMNS = [
     "book_sha256",
     "book_count",
     "token_count",
+    "internal_paratext_policy",
+    "excluded_paragraph_count",
     "text_stage",
     "alignment_level",
     "rights_status",
@@ -82,6 +87,8 @@ ALIGNMENT_COLUMNS = [
     "target_book_path",
     "target_book_text_sha256",
     "target_token_count",
+    "target_internal_paratext_policy",
+    "target_excluded_paragraph_count",
     "translation_prepared_sha256",
     "source_rights_status",
     "translation_rights_status",
@@ -142,6 +149,11 @@ def validate_rule(rule: dict[str, str], label: str) -> list[str]:
         errors.append(f"{label}: unsupported segmentation_method")
     if (rule.get("alignment_level") or "").strip() != "book":
         errors.append(f"{label}: alignment_level must be book")
+    if (rule.get("internal_paratext_policy") or "").strip() not in {
+        "retain_all",
+        "strip_gutenberg_illustration_paragraphs_v1",
+    }:
+        errors.append(f"{label}: unsupported internal_paratext_policy")
     if (rule.get("paper_facing_eligible") or "").strip().lower() != "yes":
         errors.append(f"{label}: only paper-facing eligible rules may be prepared")
     for column in ("expected_book_count", "leading_paragraphs_to_skip"):
@@ -239,6 +251,7 @@ def main() -> int:
                 translation["target_language_code"],
                 expected_book_count=int(rule["expected_book_count"]),
                 leading_paragraphs_to_skip=int(rule["leading_paragraphs_to_skip"]),
+                internal_paratext_policy=rule["internal_paratext_policy"],
             )
         except ValueError as error:
             print(f"{rule['rule_id']}: {error}", file=sys.stderr)
@@ -258,6 +271,8 @@ def main() -> int:
                 "prepared_end_char": book.end_char,
                 "prepared_start_line": book.start_line,
                 "prepared_end_line": book.end_line,
+                "internal_paratext_policy": rule["internal_paratext_policy"],
+                "excluded_paragraph_count": book.excluded_paragraph_count,
                 "book_text_sha256": book.text_sha256,
                 "tokenizer_id": tokenizer_id_for_language(translation["target_language_code"]),
                 "token_count": book.token_count,
@@ -319,6 +334,8 @@ def main() -> int:
                     "target_book_path": display_path(book_path, root),
                     "target_book_text_sha256": book.text_sha256,
                     "target_token_count": book.token_count,
+                    "target_internal_paratext_policy": rule["internal_paratext_policy"],
+                    "target_excluded_paragraph_count": book.excluded_paragraph_count,
                     "translation_prepared_sha256": translation["prepared_sha256"],
                     "source_rights_status": source_edition["rights_status"],
                     "translation_rights_status": translation["rights_status"],
@@ -343,6 +360,10 @@ def main() -> int:
                 "book_sha256": book_sha256,
                 "book_count": len(books),
                 "token_count": sum(book.token_count for book in books),
+                "internal_paratext_policy": rule["internal_paratext_policy"],
+                "excluded_paragraph_count": sum(
+                    book.excluded_paragraph_count for book in books
+                ),
                 "text_stage": "prepared_translation_books",
                 "alignment_level": rule["alignment_level"],
                 "rights_status": translation["rights_status"],

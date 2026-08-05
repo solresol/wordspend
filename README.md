@@ -226,9 +226,10 @@ that builds and validates that registry:
   subset with an explicit language profile and records token-file checksums and
   offsets for downstream alignment.
 - `scripts/prepare_book_alignments.py` applies explicit translation-structure
-  rules, removes declared per-book paratext, and records checksum-linked
-  source-target book alignments. The current rule prepares the Butler
-  *Iliad* only; book alignment is not fine enough for lexical residual claims.
+  rules, removes declared leading and internal paratext, and records
+  checksum-linked source-target book alignments. The current rules prepare the
+  Butler and Pope *Iliad* translations; book alignment is not fine enough for
+  lexical residual claims.
 
 ### Source edition pipeline
 

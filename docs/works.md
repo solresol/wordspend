@@ -14,9 +14,9 @@
   retain prepared-text and token-file checksum provenance.
 - Source edition status: Monro and Allen's Ancient Greek third edition is
   prepared as 15,687 checksum-linked `book.line` records.
-- Alignment status: Butler has 24 checksum-linked translation book bodies and
-  24 structural alignments to the Greek source books. Finer alignment remains
-  pending; Pope is not yet structurally aligned.
+- Alignment status: Butler and Pope each have 24 checksum-linked translation
+  book bodies and 24 structural alignments to the Greek source books. Finer
+  alignment remains pending for both.
 
 ### Prepared source edition
 
@@ -56,5 +56,8 @@
   translation-body text is written to
   `data/prepared/translations/homer-iliad-en-pope-pg6130.txt`, with checksum
   and line-boundary provenance in `data/prepared/translation_texts.csv`. It is
-  not yet prepared by book because its internal arguments, illustrations, and
-  captions need a separate reviewed paratext-removal rule.
+  prepared as 24 book bodies containing 146,800 tokens under a reviewed rule
+  that skips each argument label, title, and synopsis and removes 71 internal
+  illustration/caption paragraphs. The rule, excluded-paragraph counts,
+  per-book checksums, and 24 structural Greek-book alignments are recorded
+  under `data/prepared/`. These alignments are restricted to book-length use.

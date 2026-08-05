@@ -35,13 +35,16 @@
   heading, and record 24 structural alignments to the corresponding Monro and
   Allen source-book ranges. These rows support book-length review only, not
   lexical residual claims.
+- [x] Define and apply a separate paratext-removal policy for Pope's
+  translation: skip each book's argument label, title, and synopsis, remove 71
+  illustration/caption paragraphs, and record 24 checksum-linked book bodies
+  and structural alignments. These rows remain restricted to book-length use.
 
 ## Next
 
 - [ ] Produce a finer, reviewable alignment between the prepared Ancient Greek
   source lines and Butler translation tokens before lexical residual analysis.
-- [ ] Define and review a separate paratext-removal policy for Pope's
-  translation arguments, illustrations, and captions before preparing its book
-  alignments.
+- [ ] Produce a finer, reviewable alignment between the prepared Ancient Greek
+  source lines and Pope translation tokens before lexical residual analysis.
 - [ ] Keep machine-generated translations, if any are added for bootstrap tests,
   explicitly labelled `machine_bootstrap` and excluded from paper-facing claims.
