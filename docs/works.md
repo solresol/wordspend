@@ -16,7 +16,9 @@
   prepared as 15,687 checksum-linked `book.line` records.
 - Alignment status: Butler and Pope each have 24 checksum-linked translation
   book bodies and 24 structural alignments to the Greek source books. Finer
-  alignment remains pending for both.
+  alignment remains pending for both. Butler Book 1 has a 54-row candidate
+  review queue covering 611 Greek lines and 5,835 translation tokens, but all
+  rows are machine-proposed, pending human review, and excluded from analysis.
 
 ### Prepared source edition
 
@@ -46,6 +48,10 @@
   24 book bodies exclude the declared editorial summary after each `BOOK`
   heading and contain 153,268 tokens. Their source offsets, checksums, and
   structural Greek-book alignments are recorded under `data/prepared/`.
+  A pilot finer-alignment queue for Book 1 is recorded under
+  `data/prepared/fine_alignment_candidates/`; it retains the Greek and English
+  text for each candidate range plus checksums and target token/character
+  spans. The proposals are not paper-facing evidence until reviewed.
 - `homer-iliad-en-pope-pg6130`: English (`en`), translated by Alexander Pope,
   Project Gutenberg eBook #6130 plain-text edition, released 2004-07-01 and
   most recently updated 2026-02-07. Rights status is recorded as

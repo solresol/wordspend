@@ -39,11 +39,17 @@
   translation: skip each book's argument label, title, and synopsis, remove 71
   illustration/caption paragraphs, and record 24 checksum-linked book bodies
   and structural alignments. These rows remain restricted to book-length use.
+- [x] Prepare a deterministic Butler Book 1 fine-alignment review queue: 54
+  translation paragraphs with token spans provisionally paired to all 611
+  Greek lines. Mark every proportional proposal `machine_proposed_unreviewed`,
+  `paper_facing_eligible=no`, and excluded from analysis pending human review.
 
 ## Next
 
 - [ ] Produce a finer, reviewable alignment between the prepared Ancient Greek
   source lines and Butler translation tokens before lexical residual analysis.
+  The Book 1 candidate queue is prepared; review/adjudication tooling, human
+  review, and Books 2-24 remain pending.
 - [ ] Produce a finer, reviewable alignment between the prepared Ancient Greek
   source lines and Pope translation tokens before lexical residual analysis.
 - [ ] Keep machine-generated translations, if any are added for bootstrap tests,

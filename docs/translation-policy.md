@@ -112,6 +112,27 @@ The Pope rule skips its three leading argument paragraphs per book and removes
 each Gutenberg paragraph beginning `[Illustration: ]`, including continuation
 lines in wrapped captions.
 
+## Fine-alignment review staging
+
+Run the current pilot with:
+
+```bash
+uv run python scripts/prepare_fine_alignment_candidates.py
+```
+
+The pilot divides Butler Book 1 into published translation paragraphs with
+whole-book token and character spans, then provisionally allocates contiguous
+Greek line ranges in proportion to target paragraph token counts. This method
+exists to create bounded review units; it is not a semantic alignment method.
+
+Automatically proposed rows must use
+`proposal_status=machine_proposed_unreviewed`,
+`review_status=pending_human_review`, `paper_facing_eligible=no`, and
+`analysis_status=excluded_until_human_review`. Their source and target texts,
+references, offsets, and upstream checksums must remain visible to reviewers.
+No proposed row may enter residual analysis until a separate review stage
+records a human decision and validates complete, non-overlapping coverage.
+
 ## Source edition staging
 
 Paper-facing alignment must use a source-language edition recorded in

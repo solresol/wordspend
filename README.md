@@ -230,6 +230,11 @@ that builds and validates that registry:
   checksum-linked source-target book alignments. The current rules prepare the
   Butler and Pope *Iliad* translations; book alignment is not fine enough for
   lexical residual claims.
+- `scripts/prepare_fine_alignment_candidates.py` creates an auditable pilot
+  review queue for Butler Book 1 by pairing contiguous Greek line ranges with
+  Butler paragraph/token spans. These proportional candidates are explicitly
+  machine-proposed, ineligible for paper-facing analysis, and excluded until
+  human review.
 
 ### Source edition pipeline
 
