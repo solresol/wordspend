@@ -19,6 +19,8 @@
   alignment remains pending for both. Butler Book 1 has a 54-row candidate
   review queue covering 611 Greek lines and 5,835 translation tokens, but all
   rows are machine-proposed, pending human review, and excluded from analysis.
+  A checksum-linked 54-row human-review worklist is prepared with blank review
+  fields and zero completed decisions.
 
 ### Prepared source edition
 
@@ -52,6 +54,9 @@
   `data/prepared/fine_alignment_candidates/`; it retains the Greek and English
   text for each candidate range plus checksums and target token/character
   spans. The proposals are not paper-facing evidence until reviewed.
+  The corresponding worklist under `data/review/fine_alignment/` verifies the
+  candidate checksum and exposes blank decision, reviewed-range, reviewer,
+  date, and notes fields. It is a review aid, not reviewed evidence.
 - `homer-iliad-en-pope-pg6130`: English (`en`), translated by Alexander Pope,
   Project Gutenberg eBook #6130 plain-text edition, released 2004-07-01 and
   most recently updated 2026-02-07. Rights status is recorded as

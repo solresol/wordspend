@@ -235,6 +235,11 @@ that builds and validates that registry:
   Butler paragraph/token spans. These proportional candidates are explicitly
   machine-proposed, ineligible for paper-facing analysis, and excluded until
   human review.
+- `scripts/prepare_fine_alignment_review_worklist.py` verifies that candidate
+  queue against its summary checksum and emits a human-review worksheet with
+  blank decision, reviewed-range, reviewer, date, and notes fields. The
+  worksheet remains analysis-excluded and paper-facing ineligible until a
+  later validated review/import stage is complete.
 
 ### Source edition pipeline
 

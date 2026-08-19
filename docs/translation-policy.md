@@ -133,6 +133,22 @@ references, offsets, and upstream checksums must remain visible to reviewers.
 No proposed row may enter residual analysis until a separate review stage
 records a human decision and validates complete, non-overlapping coverage.
 
+Prepare the Butler Book 1 human-review worklist with:
+
+```bash
+uv run python scripts/prepare_fine_alignment_review_worklist.py
+```
+
+The generator verifies the candidate file checksum and row count against its
+summary before copying the proposed ranges and source/target text into a review
+worksheet. It deliberately leaves `review_decision`, reviewed range, reviewer,
+review date, and notes blank. Generated worklist rows must remain
+`paper_facing_eligible=no` and excluded from analysis. Filling a worksheet does
+not by itself make an alignment paper-facing, and the generator refuses to
+overwrite a worksheet containing human input. A later import gate must validate
+reviewer provenance, allowed decisions, and complete non-overlapping source
+coverage before promotion.
+
 ## Source edition staging
 
 Paper-facing alignment must use a source-language edition recorded in

@@ -43,13 +43,18 @@
   translation paragraphs with token spans provisionally paired to all 611
   Greek lines. Mark every proportional proposal `machine_proposed_unreviewed`,
   `paper_facing_eligible=no`, and excluded from analysis pending human review.
+- [x] Prepare a checksum-linked Butler Book 1 human-review worklist with the 54
+  proposals and both source and target text visible. Leave every decision,
+  reviewed range, reviewer, date, and note field blank, and keep all rows
+  paper-facing ineligible and excluded from analysis.
 
 ## Next
 
 - [ ] Produce a finer, reviewable alignment between the prepared Ancient Greek
   source lines and Butler translation tokens before lexical residual analysis.
-  The Book 1 candidate queue is prepared; review/adjudication tooling, human
-  review, and Books 2-24 remain pending.
+  The Book 1 candidate queue and human-review worklist are prepared;
+  completed-decision validation/import, adjudication, human review, and Books
+  2-24 remain pending.
 - [ ] Produce a finer, reviewable alignment between the prepared Ancient Greek
   source lines and Pope translation tokens before lexical residual analysis.
 - [ ] Keep machine-generated translations, if any are added for bootstrap tests,

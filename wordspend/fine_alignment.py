@@ -4,13 +4,21 @@ from __future__ import annotations
 
 import re
 from dataclasses import dataclass
-from typing import Sequence
+from typing import Mapping, Sequence
 
 from .tokenization import tokenize_with_offsets
 
 
 PROPOSAL_METHOD = "proportional_translation_paragraph_tokens_v1"
 PARAGRAPH_RE = re.compile(r"\S(?:.*?\S)?(?=\n[ \t]*\n|\Z)", re.DOTALL)
+HUMAN_REVIEW_COLUMNS = (
+    "review_decision",
+    "reviewed_source_start_ref",
+    "reviewed_source_end_ref",
+    "reviewer",
+    "reviewed_at",
+    "review_notes",
+)
 
 
 @dataclass(frozen=True)
@@ -34,6 +42,93 @@ class AlignmentCandidate:
     source_start_index: int
     source_end_index: int
     target: TargetParagraph
+
+
+def prepare_review_worklist_rows(
+    candidate_rows: Sequence[Mapping[str, object]], candidate_sha256: str
+) -> list[dict[str, object]]:
+    """Create pending human-review rows without promoting candidate evidence."""
+    if not re.fullmatch(r"[0-9a-f]{64}", candidate_sha256):
+        raise ValueError("Candidate SHA-256 must be 64 lowercase hexadecimal characters")
+    if not candidate_rows:
+        raise ValueError("Candidate file has no rows")
+
+    required = {
+        "candidate_id",
+        "work_id",
+        "source_edition_id",
+        "translation_source_id",
+        "book",
+        "segment_index",
+        "source_start_ref",
+        "source_end_ref",
+        "source_line_count",
+        "target_paragraph",
+        "source_text",
+        "target_text",
+        "proposal_status",
+        "review_status",
+        "paper_facing_eligible",
+        "analysis_status",
+    }
+    rows: list[dict[str, object]] = []
+    seen_ids: set[str] = set()
+    for expected_segment, candidate in enumerate(candidate_rows, start=1):
+        missing = sorted(required - candidate.keys())
+        if missing:
+            raise ValueError(f"Candidate row is missing fields: {', '.join(missing)}")
+        candidate_id = str(candidate["candidate_id"])
+        if not candidate_id or candidate_id in seen_ids:
+            raise ValueError(f"Candidate IDs must be non-empty and unique: {candidate_id!r}")
+        seen_ids.add(candidate_id)
+        if int(candidate["segment_index"]) != expected_segment:
+            raise ValueError("Candidate segment indexes must be consecutive from 1")
+        if (
+            candidate["proposal_status"] != "machine_proposed_unreviewed"
+            or candidate["review_status"] != "pending_human_review"
+            or candidate["paper_facing_eligible"] != "no"
+            or candidate["analysis_status"] != "excluded_until_human_review"
+        ):
+            raise ValueError(
+                f"{candidate_id}: candidate must remain unreviewed and analysis-excluded"
+            )
+
+        rows.append(
+            {
+                "candidate_id": candidate_id,
+                "candidate_file_sha256": candidate_sha256,
+                "work_id": candidate["work_id"],
+                "source_edition_id": candidate["source_edition_id"],
+                "translation_source_id": candidate["translation_source_id"],
+                "book": candidate["book"],
+                "segment_index": candidate["segment_index"],
+                "target_paragraph": candidate["target_paragraph"],
+                "proposed_source_start_ref": candidate["source_start_ref"],
+                "proposed_source_end_ref": candidate["source_end_ref"],
+                "proposed_source_line_count": candidate["source_line_count"],
+                "review_decision": "",
+                "reviewed_source_start_ref": "",
+                "reviewed_source_end_ref": "",
+                "reviewer": "",
+                "reviewed_at": "",
+                "review_notes": "",
+                "source_text": candidate["source_text"],
+                "target_text": candidate["target_text"],
+                "review_status": "pending_human_review",
+                "paper_facing_eligible": "no",
+                "analysis_status": "excluded_until_completed_review",
+            }
+        )
+    return rows
+
+
+def review_worklist_has_human_input(rows: Sequence[Mapping[str, object]]) -> bool:
+    """Return whether regenerating a worklist would erase entered review data."""
+    return any(
+        str(row.get(column, "")).strip()
+        for row in rows
+        for column in HUMAN_REVIEW_COLUMNS
+    )
 
 
 def extract_target_paragraphs(text: str, language_code: str) -> list[TargetParagraph]:
