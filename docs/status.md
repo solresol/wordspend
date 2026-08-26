@@ -1,6 +1,6 @@
 # Status
 
-Last updated: 2026-08-19
+Last updated: 2026-08-26
 
 ## Current state
 
@@ -167,6 +167,20 @@ paper-facing translation provenance.
   `analysis_status=excluded_until_completed_review`; this run made no human
   alignment decisions and promoted no candidate evidence.
 
+## 2026-08-26 progress
+
+- Added a completed-review import gate for the Butler Book 1 worklist. It checks
+  the candidate and source-edition checksums, reconstructs the known blank
+  worklist baseline, and rejects changes to immutable candidate material.
+- The gate accepts only explicit `accept_proposed_range` or
+  `adjust_source_range` decisions with identified reviewers and timezone-aware
+  timestamps. Adjusted ranges require notes, and all imported ranges must cover
+  the complete source book in order with no gaps or overlaps.
+- Successful imports reconstruct Greek text from the checksum-verified source
+  edition and remain `paper_facing_eligible=no` with
+  `analysis_status=excluded_until_adjudication`. The current 54-row worklist is
+  still blank and is rejected by the gate; no reviewed evidence was created.
+
 ## Paper-facing readiness
 
 There are two metadata-complete, paper-facing-eligible translation rows for the
@@ -179,14 +193,17 @@ that edition at book level under explicit paratext rules. Butler Book 1 also
 has an unreviewed, explicitly analysis-excluded candidate queue for finer
 alignment and a checksum-linked pending human-review worklist. No reviewed
 source-line-to-translation alignment or lexical residual analysis is
-paper-ready.
+paper-ready. A fail-closed import gate is ready for completed Book 1 review
+decisions, but it cannot create an imported artifact until the human worksheet
+is complete.
 
 ## Blocked or pending
 
 - Lexical comparative claims still need an explicit, reviewable finer alignment
   between the prepared Greek `book.line` rows and Butler translation tokens.
-  The Butler Book 1 worklist still needs human decisions, validated import, and
-  adjudication; Books 2-24 still need candidate queues and review.
+  The Butler Book 1 worklist still needs human decisions and adjudication; the
+  validated import gate is prepared but has no completed decisions to import.
+  Books 2-24 still need candidate queues and review.
 - Pope likewise needs a finer reviewed Greek-line-to-translation-token
   alignment before lexical comparative claims.
 - The English translation rights status is recorded for the United States; use

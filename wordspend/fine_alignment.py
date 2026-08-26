@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import re
 from dataclasses import dataclass
+from datetime import datetime
 from typing import Mapping, Sequence
 
 from .tokenization import tokenize_with_offsets
@@ -19,6 +20,7 @@ HUMAN_REVIEW_COLUMNS = (
     "reviewed_at",
     "review_notes",
 )
+REVIEW_DECISIONS = frozenset({"accept_proposed_range", "adjust_source_range"})
 
 
 @dataclass(frozen=True)
@@ -129,6 +131,167 @@ def review_worklist_has_human_input(rows: Sequence[Mapping[str, object]]) -> boo
         for row in rows
         for column in HUMAN_REVIEW_COLUMNS
     )
+
+
+def import_completed_review_rows(
+    worklist_rows: Sequence[Mapping[str, object]],
+    candidate_rows: Sequence[Mapping[str, object]],
+    source_lines: Sequence[Mapping[str, object]],
+    candidate_sha256: str,
+) -> list[dict[str, object]]:
+    """Validate completed review decisions and normalize them for adjudication.
+
+    A completed review is not promoted to paper-facing evidence here. The returned
+    rows remain excluded until a separate adjudication stage approves them.
+    """
+    if not re.fullmatch(r"[0-9a-f]{64}", candidate_sha256):
+        raise ValueError("Candidate SHA-256 must be 64 lowercase hexadecimal characters")
+    if not worklist_rows or len(worklist_rows) != len(candidate_rows):
+        raise ValueError("Worklist and candidate rows must have the same non-zero length")
+    if not source_lines:
+        raise ValueError("Source edition book has no lines")
+
+    source_by_ref: dict[str, tuple[int, Mapping[str, object]]] = {}
+    for position, line in enumerate(source_lines):
+        reference = str(line.get("reference", "")).strip()
+        if not reference or reference in source_by_ref:
+            raise ValueError(f"Source references must be non-empty and unique: {reference!r}")
+        source_by_ref[reference] = (position, line)
+
+    immutable_pairs = {
+        "candidate_id": "candidate_id",
+        "work_id": "work_id",
+        "source_edition_id": "source_edition_id",
+        "translation_source_id": "translation_source_id",
+        "book": "book",
+        "segment_index": "segment_index",
+        "target_paragraph": "target_paragraph",
+        "proposed_source_start_ref": "source_start_ref",
+        "proposed_source_end_ref": "source_end_ref",
+        "proposed_source_line_count": "source_line_count",
+        "source_text": "source_text",
+        "target_text": "target_text",
+    }
+    imported: list[dict[str, object]] = []
+    previous_end = -1
+
+    for expected_segment, (worklist, candidate) in enumerate(
+        zip(worklist_rows, candidate_rows), start=1
+    ):
+        candidate_id = str(candidate.get("candidate_id", "")).strip()
+        if int(candidate.get("segment_index", 0)) != expected_segment:
+            raise ValueError("Candidate segment indexes must be consecutive from 1")
+        if str(worklist.get("candidate_file_sha256", "")) != candidate_sha256:
+            raise ValueError(f"{candidate_id}: worklist candidate checksum does not match")
+        for worklist_field, candidate_field in immutable_pairs.items():
+            if str(worklist.get(worklist_field, "")) != str(
+                candidate.get(candidate_field, "")
+            ):
+                raise ValueError(f"{candidate_id}: worklist field {worklist_field} changed")
+        if (
+            candidate.get("proposal_status") != "machine_proposed_unreviewed"
+            or candidate.get("review_status") != "pending_human_review"
+            or candidate.get("paper_facing_eligible") != "no"
+            or candidate.get("analysis_status") != "excluded_until_human_review"
+        ):
+            raise ValueError(f"{candidate_id}: candidate is not pending and excluded")
+        if (
+            worklist.get("review_status") != "pending_human_review"
+            or worklist.get("paper_facing_eligible") != "no"
+            or worklist.get("analysis_status") != "excluded_until_completed_review"
+        ):
+            raise ValueError(f"{candidate_id}: worklist eligibility fields changed")
+
+        decision = str(worklist.get("review_decision", "")).strip()
+        if decision not in REVIEW_DECISIONS:
+            allowed = ", ".join(sorted(REVIEW_DECISIONS))
+            raise ValueError(f"{candidate_id}: review_decision must be one of {allowed}")
+        reviewer = str(worklist.get("reviewer", "")).strip()
+        if not reviewer:
+            raise ValueError(f"{candidate_id}: reviewer is required")
+        reviewed_at = str(worklist.get("reviewed_at", "")).strip()
+        try:
+            parsed_reviewed_at = datetime.fromisoformat(reviewed_at.replace("Z", "+00:00"))
+        except ValueError as error:
+            raise ValueError(f"{candidate_id}: reviewed_at must be ISO 8601") from error
+        if parsed_reviewed_at.tzinfo is None:
+            raise ValueError(f"{candidate_id}: reviewed_at must include a timezone")
+
+        proposed_start = str(candidate["source_start_ref"])
+        proposed_end = str(candidate["source_end_ref"])
+        entered_start = str(worklist.get("reviewed_source_start_ref", "")).strip()
+        entered_end = str(worklist.get("reviewed_source_end_ref", "")).strip()
+        if decision == "accept_proposed_range":
+            if (entered_start or entered_end) and (
+                entered_start != proposed_start or entered_end != proposed_end
+            ):
+                raise ValueError(
+                    f"{candidate_id}: accepted range must be blank or match the proposal"
+                )
+            reviewed_start, reviewed_end = proposed_start, proposed_end
+        else:
+            if not entered_start or not entered_end:
+                raise ValueError(f"{candidate_id}: adjusted range requires both references")
+            if not str(worklist.get("review_notes", "")).strip():
+                raise ValueError(f"{candidate_id}: adjusted range requires review_notes")
+            reviewed_start, reviewed_end = entered_start, entered_end
+
+        if reviewed_start not in source_by_ref or reviewed_end not in source_by_ref:
+            raise ValueError(f"{candidate_id}: reviewed range is outside the source book")
+        start_position = source_by_ref[reviewed_start][0]
+        end_position = source_by_ref[reviewed_end][0]
+        if start_position > end_position:
+            raise ValueError(f"{candidate_id}: reviewed source range is reversed")
+        if start_position != previous_end + 1:
+            raise ValueError(
+                f"{candidate_id}: reviewed ranges must be ordered with no gaps or overlaps"
+            )
+        previous_end = end_position
+        selected_lines = source_lines[start_position : end_position + 1]
+
+        imported.append(
+            {
+                "alignment_id": candidate_id,
+                "work_id": candidate["work_id"],
+                "source_edition_id": candidate["source_edition_id"],
+                "translation_source_id": candidate["translation_source_id"],
+                "book": candidate["book"],
+                "segment_index": candidate["segment_index"],
+                "alignment_level": "reviewed_source_line_range_to_translation_paragraph",
+                "source_start_ref": reviewed_start,
+                "source_end_ref": reviewed_end,
+                "source_line_count": len(selected_lines),
+                "source_editorially_deleted_line_count": sum(
+                    line.get("line_status") == "editorially_deleted"
+                    for line in selected_lines
+                ),
+                "target_paragraph": candidate["target_paragraph"],
+                "target_start_token": candidate["target_start_token"],
+                "target_end_token": candidate["target_end_token"],
+                "target_token_count": candidate["target_token_count"],
+                "target_start_char": candidate["target_start_char"],
+                "target_end_char": candidate["target_end_char"],
+                "source_text": "\n".join(str(line["text"]) for line in selected_lines),
+                "target_text": candidate["target_text"],
+                "source_prepared_sha256": candidate["source_prepared_sha256"],
+                "target_book_text_sha256": candidate["target_book_text_sha256"],
+                "translation_prepared_sha256": candidate[
+                    "translation_prepared_sha256"
+                ],
+                "candidate_file_sha256": candidate_sha256,
+                "review_decision": decision,
+                "reviewer": reviewer,
+                "reviewed_at": reviewed_at,
+                "review_notes": str(worklist.get("review_notes", "")).strip(),
+                "review_status": "completed_human_review_pending_adjudication",
+                "paper_facing_eligible": "no",
+                "analysis_status": "excluded_until_adjudication",
+            }
+        )
+
+    if previous_end != len(source_lines) - 1:
+        raise ValueError("Reviewed ranges do not cover the end of the source book")
+    return imported
 
 
 def extract_target_paragraphs(text: str, language_code: str) -> list[TargetParagraph]:

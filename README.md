@@ -240,6 +240,10 @@ that builds and validates that registry:
   blank decision, reviewed-range, reviewer, date, and notes fields. The
   worksheet remains analysis-excluded and paper-facing ineligible until a
   later validated review/import stage is complete.
+- `scripts/import_completed_fine_alignment_reviews.py` validates fully entered
+  decisions against the checksum-linked candidates and source edition, requires
+  complete gap-free source coverage, and stages normalized reviewed rows. Those
+  rows remain paper-facing ineligible and analysis-excluded until adjudication.
 
 ### Source edition pipeline
 

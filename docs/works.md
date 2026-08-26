@@ -20,7 +20,9 @@
   review queue covering 611 Greek lines and 5,835 translation tokens, but all
   rows are machine-proposed, pending human review, and excluded from analysis.
   A checksum-linked 54-row human-review worklist is prepared with blank review
-  fields and zero completed decisions.
+  fields and zero completed decisions. A completed-review import gate is ready,
+  but no reviewed alignment exists until the worksheet is filled and passes
+  validation; imported rows will remain excluded pending adjudication.
 
 ### Prepared source edition
 
@@ -57,6 +59,10 @@
   The corresponding worklist under `data/review/fine_alignment/` verifies the
   candidate checksum and exposes blank decision, reviewed-range, reviewer,
   date, and notes fields. It is a review aid, not reviewed evidence.
+  `scripts/import_completed_fine_alignment_reviews.py` will validate a fully
+  completed worksheet against the candidates and source edition, require
+  complete gap-free coverage, and stage reviewed rows for adjudication without
+  making them paper-facing eligible.
 - `homer-iliad-en-pope-pg6130`: English (`en`), translated by Alexander Pope,
   Project Gutenberg eBook #6130 plain-text edition, released 2004-07-01 and
   most recently updated 2026-02-07. Rights status is recorded as

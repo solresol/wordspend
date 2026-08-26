@@ -47,14 +47,19 @@
   proposals and both source and target text visible. Leave every decision,
   reviewed range, reviewer, date, and note field blank, and keep all rows
   paper-facing ineligible and excluded from analysis.
+- [x] Add a fail-closed import gate for completed Butler Book 1 review
+  decisions. Validate immutable candidate fields, reviewer and timestamp
+  provenance, allowed accept/adjust decisions, checksum-linked source text, and
+  complete gap-free source coverage; keep imported rows excluded pending
+  adjudication.
 
 ## Next
 
 - [ ] Produce a finer, reviewable alignment between the prepared Ancient Greek
   source lines and Butler translation tokens before lexical residual analysis.
   The Book 1 candidate queue and human-review worklist are prepared;
-  completed-decision validation/import, adjudication, human review, and Books
-  2-24 remain pending.
+  completed-decision validation/import tooling is prepared, while human review,
+  adjudication, and Books 2-24 remain pending.
 - [ ] Produce a finer, reviewable alignment between the prepared Ancient Greek
   source lines and Pope translation tokens before lexical residual analysis.
 - [ ] Keep machine-generated translations, if any are added for bootstrap tests,

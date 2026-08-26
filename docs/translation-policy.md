@@ -149,6 +149,22 @@ overwrite a worksheet containing human input. A later import gate must validate
 reviewer provenance, allowed decisions, and complete non-overlapping source
 coverage before promotion.
 
+Import a fully completed worksheet with:
+
+```bash
+uv run python scripts/import_completed_fine_alignment_reviews.py
+```
+
+The importer verifies the candidate and source-edition checksums and the known
+blank worklist baseline. It accepts only `accept_proposed_range` and
+`adjust_source_range`; every decision requires an identified reviewer and a
+timezone-aware ISO 8601 timestamp, and adjusted ranges also require notes. The
+reviewed ranges must cover the whole source book in order with no gaps or
+overlaps. Imported source text is reconstructed from the verified source
+edition, not trusted from worksheet cells. Imported rows remain
+`paper_facing_eligible=no` and `excluded_until_adjudication`; import is not
+adjudication or promotion into paper-facing evidence.
+
 ## Source edition staging
 
 Paper-facing alignment must use a source-language edition recorded in
