@@ -114,16 +114,17 @@ lines in wrapped captions.
 
 ## Fine-alignment review staging
 
-Run the current pilot with:
+Prepare one Butler book at a time, for example:
 
 ```bash
-uv run python scripts/prepare_fine_alignment_candidates.py
+uv run python scripts/prepare_fine_alignment_candidates.py --book 2
 ```
 
-The pilot divides Butler Book 1 into published translation paragraphs with
-whole-book token and character spans, then provisionally allocates contiguous
-Greek line ranges in proportion to target paragraph token counts. This method
-exists to create bounded review units; it is not a semantic alignment method.
+The current prepared queues divide Butler Books 1 and 2 into published
+translation paragraphs with whole-book token and character spans, then
+provisionally allocate contiguous Greek line ranges in proportion to target
+paragraph token counts. This method exists to create bounded review units; it
+is not a semantic alignment method.
 
 Automatically proposed rows must use
 `proposal_status=machine_proposed_unreviewed`,
@@ -133,10 +134,10 @@ references, offsets, and upstream checksums must remain visible to reviewers.
 No proposed row may enter residual analysis until a separate review stage
 records a human decision and validates complete, non-overlapping coverage.
 
-Prepare the Butler Book 1 human-review worklist with:
+Prepare a Butler book human-review worklist with, for example:
 
 ```bash
-uv run python scripts/prepare_fine_alignment_review_worklist.py
+uv run python scripts/prepare_fine_alignment_review_worklist.py --book 2
 ```
 
 The generator verifies the candidate file checksum and row count against its

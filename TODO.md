@@ -52,14 +52,18 @@
   provenance, allowed accept/adjust decisions, checksum-linked source text, and
   complete gap-free source coverage; keep imported rows excluded pending
   adjudication.
+- [x] Extend the Butler review queue to Book 2: prepare 83 checksum-linked
+  machine-proposed segments covering all 877 Greek lines and 7,945 published
+  translation tokens, plus a blank human-review worklist. Keep every row
+  paper-facing ineligible and excluded from analysis pending review.
 
 ## Next
 
 - [ ] Produce a finer, reviewable alignment between the prepared Ancient Greek
   source lines and Butler translation tokens before lexical residual analysis.
-  The Book 1 candidate queue and human-review worklist are prepared;
+  Book 1 and Book 2 candidate queues and human-review worklists are prepared;
   completed-decision validation/import tooling is prepared, while human review,
-  adjudication, and Books 2-24 remain pending.
+  adjudication, and Books 3-24 remain pending.
 - [ ] Produce a finer, reviewable alignment between the prepared Ancient Greek
   source lines and Pope translation tokens before lexical residual analysis.
 - [ ] Keep machine-generated translations, if any are added for bootstrap tests,
