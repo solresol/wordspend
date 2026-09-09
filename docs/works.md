@@ -16,8 +16,8 @@
   prepared as 15,687 checksum-linked `book.line` records.
 - Alignment status: Butler and Pope each have 24 checksum-linked translation
   book bodies and 24 structural alignments to the Greek source books. Finer
-  alignment remains pending for both. Butler Books 1 and 2 have 137 candidate
-  rows covering 1,488 Greek lines and 13,780 translation tokens, but all rows
+  alignment remains pending for both. Butler Books 1–3 have 178 candidate
+  rows covering 1,949 Greek lines and 17,820 translation tokens, but all rows
   are machine-proposed, pending human review, and excluded from analysis.
   Checksum-linked worklists are prepared with blank review fields and zero
   completed decisions. A completed-review import gate is ready, but no reviewed
@@ -52,7 +52,7 @@
   24 book bodies exclude the declared editorial summary after each `BOOK`
   heading and contain 153,268 tokens. Their source offsets, checksums, and
   structural Greek-book alignments are recorded under `data/prepared/`.
-  Finer-alignment queues for Books 1 and 2 are recorded under
+  Finer-alignment queues for Books 1–3 are recorded under
   `data/prepared/fine_alignment_candidates/`; they retain the Greek and English
   text for each candidate range plus checksums and target token/character
   spans. The proposals are not paper-facing evidence until reviewed.

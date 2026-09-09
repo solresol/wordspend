@@ -120,7 +120,7 @@ Prepare one Butler book at a time, for example:
 uv run python scripts/prepare_fine_alignment_candidates.py --book 2
 ```
 
-The current prepared queues divide Butler Books 1 and 2 into published
+The current prepared queues divide Butler Books 1–3 into published
 translation paragraphs with whole-book token and character spans, then
 provisionally allocate contiguous Greek line ranges in proportion to target
 paragraph token counts. This method exists to create bounded review units; it

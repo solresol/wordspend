@@ -1,0 +1,775 @@
+candidate_id,candidate_file_sha256,work_id,source_edition_id,translation_source_id,book,segment_index,target_paragraph,proposed_source_start_ref,proposed_source_end_ref,proposed_source_line_count,review_decision,reviewed_source_start_ref,reviewed_source_end_ref,reviewer,reviewed_at,review_notes,source_text,target_text,review_status,paper_facing_eligible,analysis_status
+homer-iliad-grc-monro-allen-perseus--homer-iliad-en-butler-pg2199--book-03--segment-001,be16a807d5d4704c3e8bd1fc9e04a5fa71e014a7ebf71890b3cbd661d6434ec8,homer-iliad,homer-iliad-grc-monro-allen-perseus,homer-iliad-en-butler-pg2199,3,1,1,3.1,3.8,8,,,,,,,"αὐτὰρ ἐπεὶ κόσμηθεν ἅμʼ ἡγεμόνεσσιν ἕκαστοι,
+Τρῶες μὲν κλαγγῇ τʼ ἐνοπῇ τʼ ἴσαν ὄρνιθες ὣς
+ἠΰτε περ κλαγγὴ γεράνων πέλει οὐρανόθι πρό·
+αἵ τʼ ἐπεὶ οὖν χειμῶνα φύγον καὶ ἀθέσφατον ὄμβρον
+κλαγγῇ ταί γε πέτονται ἐπʼ ὠκεανοῖο ῥοάων
+ἀνδράσι Πυγμαίοισι φόνον καὶ κῆρα φέρουσαι·
+ἠέριαι δʼ ἄρα ταί γε κακὴν ἔριδα προφέρονται.
+οἳ δʼ ἄρʼ ἴσαν σιγῇ μένεα πνείοντες Ἀχαιοὶ","When the companies were thus arrayed, each under its own captain,
+      the Trojans advanced as a flight of wild-fowl or cranes that
+      scream overhead when rain and winter drive them over the flowing
+      waters of Oceanus to bring death and destruction on the Pygmies,
+      and they wrangle in the air as they fly; but the Achaeans marched
+      silently, in high heart, and minded to stand by one another.",pending_human_review,no,excluded_until_completed_review
+homer-iliad-grc-monro-allen-perseus--homer-iliad-en-butler-pg2199--book-03--segment-002,be16a807d5d4704c3e8bd1fc9e04a5fa71e014a7ebf71890b3cbd661d6434ec8,homer-iliad,homer-iliad-grc-monro-allen-perseus,homer-iliad-en-butler-pg2199,3,2,2,3.9,3.14,6,,,,,,,"ἐν θυμῷ μεμαῶτες ἀλεξέμεν ἀλλήλοισιν.
+εὖτʼ ὄρεος κορυφῇσι Νότος κατέχευεν ὀμίχλην
+ποιμέσιν οὔ τι φίλην, κλέπτῃ δέ τε νυκτὸς ἀμείνω,
+τόσσόν τίς τʼ ἐπιλεύσσει ὅσον τʼ ἐπὶ λᾶαν ἵησιν·
+ὣς ἄρα τῶν ὑπὸ ποσσὶ κονίσαλος ὄρνυτʼ ἀελλὴς
+ἐρχομένων· μάλα δʼ ὦκα διέπρησσον πεδίοιο.","As when the south wind spreads a curtain of mist upon the
+      mountain tops, bad for shepherds but better than night for
+      thieves, and a man can see no further than he can throw a stone,
+      even so rose the dust from under their feet as they made all
+      speed over the plain.",pending_human_review,no,excluded_until_completed_review
+homer-iliad-grc-monro-allen-perseus--homer-iliad-en-butler-pg2199--book-03--segment-003,be16a807d5d4704c3e8bd1fc9e04a5fa71e014a7ebf71890b3cbd661d6434ec8,homer-iliad,homer-iliad-grc-monro-allen-perseus,homer-iliad-en-butler-pg2199,3,3,3,3.15,3.29,15,,,,,,,"οἳ δʼ ὅτε δὴ σχεδὸν ἦσαν ἐπʼ ἀλλήλοισιν ἰόντες,
+Τρωσὶν μὲν προμάχιζεν Ἀλέξανδρος θεοειδὴς
+παρδαλέην ὤμοισιν ἔχων καὶ καμπύλα τόξα
+καὶ ξίφος· αὐτὰρ δοῦρε δύω κεκορυθμένα χαλκῷ
+πάλλων Ἀργείων προκαλίζετο πάντας ἀρίστους
+ἀντίβιον μαχέσασθαι ἐν αἰνῇ δηϊοτῆτι.
+τὸν δʼ ὡς οὖν ἐνόησεν ἀρηΐφιλος Μενέλαος
+ἐρχόμενον προπάροιθεν ὁμίλου μακρὰ βιβάντα,
+ὥς τε λέων ἐχάρη μεγάλῳ ἐπὶ σώματι κύρσας
+εὑρὼν ἢ ἔλαφον κεραὸν ἢ ἄγριον αἶγα
+πεινάων· μάλα γάρ τε κατεσθίει, εἴ περ ἂν αὐτὸν
+σεύωνται ταχέες τε κύνες θαλεροί τʼ αἰζηοί·
+ὣς ἐχάρη Μενέλαος Ἀλέξανδρον θεοειδέα
+ὀφθαλμοῖσιν ἰδών· φάτο γὰρ τίσεσθαι ἀλείτην·
+αὐτίκα δʼ ἐξ ὀχέων σὺν τεύχεσιν ἆλτο χαμᾶζε.","When they were close up with one another, Alexandrus came forward
+      as champion on the Trojan side. On his shoulders he bore the skin
+      of a panther, his bow, and his sword, and he brandished two
+      spears shod with bronze as a challenge to the bravest of the
+      Achaeans to meet him in single fight. Menelaus saw him thus
+      stride out before the ranks, and was glad as a hungry lion that
+      lights on the carcase of some goat or horned stag, and devours it
+      there and then, though dogs and youths set upon him. Even thus
+      was Menelaus glad when his eyes caught sight of Alexandrus, for
+      he deemed that now he should be revenged. He sprang, therefore,
+      from his chariot, clad in his suit of armour.",pending_human_review,no,excluded_until_completed_review
+homer-iliad-grc-monro-allen-perseus--homer-iliad-en-butler-pg2199--book-03--segment-004,be16a807d5d4704c3e8bd1fc9e04a5fa71e014a7ebf71890b3cbd661d6434ec8,homer-iliad,homer-iliad-grc-monro-allen-perseus,homer-iliad-en-butler-pg2199,3,4,4,3.30,3.35,6,,,,,,,"τὸν δʼ ὡς οὖν ἐνόησεν Ἀλέξανδρος θεοειδὴς
+ἐν προμάχοισι φανέντα, κατεπλήγη φίλον ἦτορ,
+ἂψ δʼ ἑτάρων εἰς ἔθνος ἐχάζετο κῆρʼ ἀλεείνων.
+ὡς δʼ ὅτε τίς τε δράκοντα ἰδὼν παλίνορσος ἀπέστη
+οὔρεος ἐν βήσσῃς, ὑπό τε τρόμος ἔλλαβε γυῖα,
+ἂψ δʼ ἀνεχώρησεν, ὦχρός τέ μιν εἷλε παρειάς,","Alexandrus quailed as he saw Menelaus come forward, and shrank in
+      fear of his life under cover of his men. As one who starts back
+      affrighted, trembling and pale, when he comes suddenly upon a
+      serpent in some mountain glade, even so did Alexandrus plunge
+      into the throng of Trojan warriors, terror-stricken at the sight
+      of the son of Atreus.",pending_human_review,no,excluded_until_completed_review
+homer-iliad-grc-monro-allen-perseus--homer-iliad-en-butler-pg2199--book-03--segment-005,be16a807d5d4704c3e8bd1fc9e04a5fa71e014a7ebf71890b3cbd661d6434ec8,homer-iliad,homer-iliad-grc-monro-allen-perseus,homer-iliad-en-butler-pg2199,3,5,5,3.36,3.59,24,,,,,,,"ὣς αὖτις καθʼ ὅμιλον ἔδυ Τρώων ἀγερώχων
+δείσας Ἀτρέος υἱὸν Ἀλέξανδρος θεοειδής.
+τὸν δʼ Ἕκτωρ νείκεσσεν ἰδὼν αἰσχροῖς ἐπέεσσιν·
+Δύσπαρι εἶδος ἄριστε γυναιμανὲς ἠπεροπευτὰ
+αἴθʼ ὄφελες ἄγονός τʼ ἔμεναι ἄγαμός τʼ ἀπολέσθαι·
+καί κε τὸ βουλοίμην, καί κεν πολὺ κέρδιον ἦεν
+ἢ οὕτω λώβην τʼ ἔμεναι καὶ ὑπόψιον ἄλλων.
+ἦ που καγχαλόωσι κάρη κομόωντες Ἀχαιοὶ
+φάντες ἀριστῆα πρόμον ἔμμεναι, οὕνεκα καλὸν
+εἶδος ἔπʼ, ἀλλʼ οὐκ ἔστι βίη φρεσὶν οὐδέ τις ἀλκή.
+ἦ τοιόσδε ἐὼν ἐν ποντοπόροισι νέεσσι
+πόντον ἐπιπλώσας, ἑτάρους ἐρίηρας ἀγείρας,
+μιχθεὶς ἀλλοδαποῖσι γυναῖκʼ εὐειδέʼ ἀνῆγες
+ἐξ ἀπίης γαίης νυὸν ἀνδρῶν αἰχμητάων
+πατρί τε σῷ μέγα πῆμα πόληΐ τε παντί τε δήμῳ,
+δυσμενέσιν μὲν χάρμα, κατηφείην δὲ σοὶ αὐτῷ;
+οὐκ ἂν δὴ μείνειας ἀρηΐφιλον Μενέλαον;
+γνοίης χʼ οἵου φωτὸς ἔχεις θαλερὴν παράκοιτιν·
+οὐκ ἄν τοι χραίσμῃ κίθαρις τά τε δῶρʼ Ἀφροδίτης
+ἥ τε κόμη τό τε εἶδος ὅτʼ ἐν κονίῃσι μιγείης.
+ἀλλὰ μάλα Τρῶες δειδήμονες· ἦ τέ κεν ἤδη
+λάϊνον ἕσσο χιτῶνα κακῶν ἕνεχʼ ὅσσα ἔοργας.
+τὸν δʼ αὖτε προσέειπεν Ἀλέξανδρος θεοειδής·
+Ἕκτορ ἐπεί με κατʼ αἶσαν ἐνείκεσας οὐδʼ ὑπὲρ αἶσαν·","Then Hector upbraided him. “Paris,” said he, “evil-hearted Paris,
+      fair to see, but woman-mad, and false of tongue, would that you
+      had never been born, or that you had died unwed. Better so, than
+      live to be disgraced and looked askance at. Will not the Achaeans
+      mock at us and say that we have sent one to champion us who is
+      fair to see but who has neither wit nor courage? Did you not,
+      such as you are, get your following together and sail beyond the
+      seas? Did you not from your a far country carry off a lovely
+      woman wedded among a people of warriors—to bring sorrow upon your
+      father, your city, and your whole country, but joy to your
+      enemies, and hang-dog shamefacedness to yourself? And now can you
+      not dare face Menelaus and learn what manner of man he is whose
+      wife you have stolen? Where indeed would be your lyre and your
+      love-tricks, your comely locks and your fair favour, when you
+      were lying in the dust before him? The Trojans are a weak-kneed
+      people, or ere this you would have had a shirt of stones for the
+      wrongs you have done them.”",pending_human_review,no,excluded_until_completed_review
+homer-iliad-grc-monro-allen-perseus--homer-iliad-en-butler-pg2199--book-03--segment-006,be16a807d5d4704c3e8bd1fc9e04a5fa71e014a7ebf71890b3cbd661d6434ec8,homer-iliad,homer-iliad-grc-monro-allen-perseus,homer-iliad-en-butler-pg2199,3,6,6,3.60,3.78,19,,,,,,,"αἰεί τοι κραδίη πέλεκυς ὥς ἐστιν ἀτειρὴς
+ὅς τʼ εἶσιν διὰ δουρὸς ὑπʼ ἀνέρος ὅς ῥά τε τέχνῃ
+νήϊον ἐκτάμνῃσιν, ὀφέλλει δʼ ἀνδρὸς ἐρωήν·
+ὣς σοὶ ἐνὶ στήθεσσιν ἀτάρβητος νόος ἐστί·
+μή μοι δῶρʼ ἐρατὰ πρόφερε χρυσέης Ἀφροδίτης·
+οὔ τοι ἀπόβλητʼ ἐστὶ θεῶν ἐρικυδέα δῶρα
+ὅσσά κεν αὐτοὶ δῶσιν, ἑκὼν δʼ οὐκ ἄν τις ἕλοιτο·
+νῦν αὖτʼ εἴ μʼ ἐθέλεις πολεμίζειν ἠδὲ μάχεσθαι,
+ἄλλους μὲν κάθισον Τρῶας καὶ πάντας Ἀχαιούς,
+αὐτὰρ ἔμʼ ἐν μέσσῳ καὶ ἀρηΐφιλον Μενέλαον
+συμβάλετʼ ἀμφʼ Ἑλένῃ καὶ κτήμασι πᾶσι μάχεσθαι·
+ὁππότερος δέ κε νικήσῃ κρείσσων τε γένηται,
+κτήμαθʼ ἑλὼν εὖ πάντα γυναῖκά τε οἴκαδʼ ἀγέσθω·
+οἳ δʼ ἄλλοι φιλότητα καὶ ὅρκια πιστὰ ταμόντες
+ναίοιτε Τροίην ἐριβώλακα, τοὶ δὲ νεέσθων
+Ἄργος ἐς ἱππόβοτον καὶ Ἀχαιΐδα καλλιγύναικα.
+ὣς ἔφαθʼ, Ἕκτωρ δʼ αὖτʼ ἐχάρη μέγα μῦθον ἀκούσας,
+καί ῥʼ ἐς μέσσον ἰὼν Τρώων ἀνέεργε φάλαγγας
+μέσσου δουρὸς ἑλών· τοὶ δʼ ἱδρύνθησαν ἅπαντες.","And Alexandrus answered, “Hector, your rebuke is just. You are
+      hard as the axe which a shipwright wields at his work, and
+      cleaves the timber to his liking. As the axe in his hand, so keen
+      is the edge of your scorn. Still, taunt me not with the gifts
+      that golden Venus has given me; they are precious; let not a man
+      disdain them, for the gods give them where they are minded, and
+      none can have them for the asking. If you would have me do battle
+      with Menelaus, bid the Trojans and Achaeans take their seats,
+      while he and I fight in their midst for Helen and all her wealth.
+      Let him who shall be victorious and prove to be the better man
+      take the woman and all she has, to bear them to his home, but let
+      the rest swear to a solemn covenant of peace whereby you Trojans
+      shall stay here in Troy, while the others go home to Argos and
+      the land of the Achaeans.”",pending_human_review,no,excluded_until_completed_review
+homer-iliad-grc-monro-allen-perseus--homer-iliad-en-butler-pg2199--book-03--segment-007,be16a807d5d4704c3e8bd1fc9e04a5fa71e014a7ebf71890b3cbd661d6434ec8,homer-iliad,homer-iliad-grc-monro-allen-perseus,homer-iliad-en-butler-pg2199,3,7,7,3.79,3.85,7,,,,,,,"τῷ δʼ ἐπετοξάζοντο κάρη κομόωντες Ἀχαιοὶ
+ἰοῖσίν τε τιτυσκόμενοι λάεσσί τʼ ἔβαλλον·
+αὐτὰρ ὃ μακρὸν ἄϋσεν ἄναξ ἀνδρῶν Ἀγαμέμνων·
+ἴσχεσθʼ Ἀργεῖοι, μὴ βάλλετε κοῦροι Ἀχαιῶν·
+στεῦται γάρ τι ἔπος ἐρέειν κορυθαίολος Ἕκτωρ.
+ὣς ἔφαθʼ, οἳ δʼ ἔσχοντο μάχης ἄνεῴ τʼ ἐγένοντο
+ἐσσυμένως· Ἕκτωρ δὲ μετʼ ἀμφοτέροισιν ἔειπε·","When Hector heard this he was glad, and went about among the
+      Trojan ranks holding his spear by the middle to keep them back,
+      and they all sat down at his bidding: but the Achaeans still
+      aimed at him with stones and arrows, till Agamemnon shouted to
+      them saying, “Hold, Argives, shoot not, sons of the Achaeans;
+      Hector desires to speak.”",pending_human_review,no,excluded_until_completed_review
+homer-iliad-grc-monro-allen-perseus--homer-iliad-en-butler-pg2199--book-03--segment-008,be16a807d5d4704c3e8bd1fc9e04a5fa71e014a7ebf71890b3cbd661d6434ec8,homer-iliad,homer-iliad-grc-monro-allen-perseus,homer-iliad-en-butler-pg2199,3,8,8,3.86,3.96,11,,,,,,,"κέκλυτέ μευ Τρῶες καὶ ἐϋκνήμιδες Ἀχαιοὶ
+μῦθον Ἀλεξάνδροιο, τοῦ εἵνεκα νεῖκος ὄρωρεν.
+ἄλλους μὲν κέλεται Τρῶας καὶ πάντας Ἀχαιοὺς
+τεύχεα κάλʼ ἀποθέσθαι ἐπὶ χθονὶ πουλυβοτείρῃ,
+αὐτὸν δʼ ἐν μέσσῳ καὶ ἀρηΐφιλον Μενέλαον
+οἴους ἀμφʼ Ἑλένῃ καὶ κτήμασι πᾶσι μάχεσθαι.
+ὁππότερος δέ κε νικήσῃ κρείσσων τε γένηται
+κτήμαθʼ ἑλὼν εὖ πάντα γυναῖκά τε οἴκαδʼ ἀγέσθω·
+οἳ δʼ ἄλλοι φιλότητα καὶ ὅρκια πιστὰ τάμωμεν.
+ὣς ἔφαθʼ, οἳ δʼ ἄρα πάντες ἀκὴν ἐγένοντο σιωπῇ·
+τοῖσι δὲ καὶ μετέειπε βοὴν ἀγαθὸς Μενέλαος·","They ceased taking aim and were still, whereon Hector spoke.
+      “Hear from my mouth,” said he, “Trojans and Achaeans, the saying
+      of Alexandrus, through whom this quarrel has come about. He bids
+      the Trojans and Achaeans lay their armour upon the ground, while
+      he and Menelaus fight in the midst of you for Helen and all her
+      wealth. Let him who shall be victorious and prove to be the
+      better man take the woman and all she has, to bear them to his
+      own home, but let the rest swear to a solemn covenant of peace.”",pending_human_review,no,excluded_until_completed_review
+homer-iliad-grc-monro-allen-perseus--homer-iliad-en-butler-pg2199--book-03--segment-009,be16a807d5d4704c3e8bd1fc9e04a5fa71e014a7ebf71890b3cbd661d6434ec8,homer-iliad,homer-iliad-grc-monro-allen-perseus,homer-iliad-en-butler-pg2199,3,9,9,3.97,3.115,19,,,,,,,"κέκλυτε νῦν καὶ ἐμεῖο· μάλιστα γὰρ ἄλγος ἱκάνει
+θυμὸν ἐμόν, φρονέω δὲ διακρινθήμεναι ἤδη
+Ἀργείους καὶ Τρῶας, ἐπεὶ κακὰ πολλὰ πέπασθε
+εἵνεκʼ ἐμῆς ἔριδος καὶ Ἀλεξάνδρου ἕνεκʼ ἀρχῆς·
+ἡμέων δʼ ὁπποτέρῳ θάνατος καὶ μοῖρα τέτυκται
+τεθναίη· ἄλλοι δὲ διακρινθεῖτε τάχιστα.
+οἴσετε ἄρνʼ, ἕτερον λευκόν, ἑτέρην δὲ μέλαιναν,
+Γῇ τε καὶ Ἠελίῳ· Διὶ δʼ ἡμεῖς οἴσομεν ἄλλον·
+ἄξετε δὲ Πριάμοιο βίην, ὄφρʼ ὅρκια τάμνῃ
+αὐτός, ἐπεί οἱ παῖδες ὑπερφίαλοι καὶ ἄπιστοι,
+μή τις ὑπερβασίῃ Διὸς ὅρκια δηλήσηται.
+αἰεὶ δʼ ὁπλοτέρων ἀνδρῶν φρένες ἠερέθονται·
+οἷς δʼ ὁ γέρων μετέῃσιν ἅμα πρόσσω καὶ ὀπίσσω
+λεύσσει, ὅπως ὄχʼ ἄριστα μετʼ ἀμφοτέροισι γένηται.
+ὣς ἔφαθʼ, οἳ δʼ ἐχάρησαν Ἀχαιοί τε Τρῶές τε
+ἐλπόμενοι παύσασθαι ὀϊζυροῦ πολέμοιο.
+καί ῥʼ ἵππους μὲν ἔρυξαν ἐπὶ στίχας, ἐκ δʼ ἔβαν αὐτοί,
+τεύχεά τʼ ἐξεδύοντο· τὰ μὲν κατέθεντʼ ἐπὶ γαίῃ
+πλησίον ἀλλήλων, ὀλίγη δʼ ἦν ἀμφὶς ἄρουρα·","Thus he spoke, and they all held their peace, till Menelaus of
+      the loud battle-cry addressed them. “And now,” he said, “hear me
+      too, for it is I who am the most aggrieved. I deem that the
+      parting of Achaeans and Trojans is at hand, as well it may be,
+      seeing how much have suffered for my quarrel with Alexandrus and
+      the wrong he did me. Let him who shall die, die, and let the
+      others fight no more. Bring, then, two lambs, a white ram and a
+      black ewe, for Earth and Sun, and we will bring a third for Jove.
+      Moreover, you shall bid Priam come, that he may swear to the
+      covenant himself; for his sons are high-handed and ill to trust,
+      and the oaths of Jove must not be transgressed or taken in vain.
+      Young men’s minds are light as air, but when an old man comes he
+      looks before and after, deeming that which shall be fairest upon
+      both sides.”",pending_human_review,no,excluded_until_completed_review
+homer-iliad-grc-monro-allen-perseus--homer-iliad-en-butler-pg2199--book-03--segment-010,be16a807d5d4704c3e8bd1fc9e04a5fa71e014a7ebf71890b3cbd661d6434ec8,homer-iliad,homer-iliad-grc-monro-allen-perseus,homer-iliad-en-butler-pg2199,3,10,10,3.116,3.125,10,,,,,,,"Ἕκτωρ δὲ προτὶ ἄστυ δύω κήρυκας ἔπεμπε
+καρπαλίμως ἄρνάς τε φέρειν Πρίαμόν τε καλέσσαι·
+αὐτὰρ ὃ Ταλθύβιον προΐει κρείων Ἀγαμέμνων
+νῆας ἔπι γλαφυρὰς ἰέναι, ἠδʼ ἄρνʼ ἐκέλευεν
+οἰσέμεναι· ὃ δʼ ἄρʼ οὐκ ἀπίθησʼ Ἀγαμέμνονι δίῳ.
+Ἶρις δʼ αὖθʼ Ἑλένῃ λευκωλένῳ ἄγγελος ἦλθεν
+εἰδομένη γαλόῳ Ἀντηνορίδαο δάμαρτι,
+τὴν Ἀντηνορίδης εἶχε κρείων Ἑλικάων
+Λαοδίκην Πριάμοιο θυγατρῶν εἶδος ἀρίστην.
+τὴν δʼ εὗρʼ ἐν μεγάρῳ· ἣ δὲ μέγαν ἱστὸν ὕφαινε","The Trojans and Achaeans were glad when they heard this, for they
+      thought that they should now have rest. They backed their
+      chariots toward the ranks, got out of them, and put off their
+      armour, laying it down upon the ground; and the hosts were near
+      to one another with a little space between them. Hector sent two
+      messengers to the city to bring the lambs and to bid Priam come,
+      while Agamemnon told Talthybius to fetch the other lamb from the
+      ships, and he did as Agamemnon had said.",pending_human_review,no,excluded_until_completed_review
+homer-iliad-grc-monro-allen-perseus--homer-iliad-en-butler-pg2199--book-03--segment-011,be16a807d5d4704c3e8bd1fc9e04a5fa71e014a7ebf71890b3cbd661d6434ec8,homer-iliad,homer-iliad-grc-monro-allen-perseus,homer-iliad-en-butler-pg2199,3,11,11,3.126,3.142,17,,,,,,,"δίπλακα πορφυρέην, πολέας δʼ ἐνέπασσεν ἀέθλους
+Τρώων θʼ ἱπποδάμων καὶ Ἀχαιῶν χαλκοχιτώνων,
+οὕς ἑθεν εἵνεκʼ ἔπασχον ὑπʼ Ἄρηος παλαμάων·
+ἀγχοῦ δʼ ἱσταμένη προσέφη πόδας ὠκέα Ἶρις·
+δεῦρʼ ἴθι νύμφα φίλη, ἵνα θέσκελα ἔργα ἴδηαι
+Τρώων θʼ ἱπποδάμων καὶ Ἀχαιῶν χαλκοχιτώνων,
+οἳ πρὶν ἐπʼ ἀλλήλοισι φέρον πολύδακρυν Ἄρηα
+ἐν πεδίῳ ὀλοοῖο λιλαιόμενοι πολέμοιο·
+οἳ δὴ νῦν ἕαται σιγῇ, πόλεμος δὲ πέπαυται,
+ἀσπίσι κεκλιμένοι, παρὰ δʼ ἔγχεα μακρὰ πέπηγεν.
+αὐτὰρ Ἀλέξανδρος καὶ ἀρηΐφιλος Μενέλαος
+μακρῇς ἐγχείῃσι μαχήσονται περὶ σεῖο·
+τῷ δέ κε νικήσαντι φίλη κεκλήσῃ ἄκοιτις.
+ὣς εἰποῦσα θεὰ γλυκὺν ἵμερον ἔμβαλε θυμῷ
+ἀνδρός τε προτέρου καὶ ἄστεος ἠδὲ τοκήων·
+αὐτίκα δʼ ἀργεννῇσι καλυψαμένη ὀθόνῃσιν
+ὁρμᾶτʼ ἐκ θαλάμοιο τέρεν κατὰ δάκρυ χέουσα","Meanwhile Iris went to Helen in the form of her sister-in-law,
+      wife of the son of Antenor, for Helicaon, son of Antenor, had
+      married Laodice, the fairest of Priam’s daughters. She found her
+      in her own room, working at a great web of purple linen, on which
+      she was embroidering the battles between Trojans and Achaeans,
+      that Mars had made them fight for her sake. Iris then came close
+      up to her and said, “Come hither, child, and see the strange
+      doings of the Trojans and Achaeans. Till now they have been
+      warring upon the plain, mad with lust of battle, but now they
+      have left off fighting, and are leaning upon their shields,
+      sitting still with their spears planted beside them. Alexandrus
+      and Menelaus are going to fight about yourself, and you are to be
+      the wife of him who is the victor.”",pending_human_review,no,excluded_until_completed_review
+homer-iliad-grc-monro-allen-perseus--homer-iliad-en-butler-pg2199--book-03--segment-012,be16a807d5d4704c3e8bd1fc9e04a5fa71e014a7ebf71890b3cbd661d6434ec8,homer-iliad,homer-iliad-grc-monro-allen-perseus,homer-iliad-en-butler-pg2199,3,12,12,3.143,3.148,6,,,,,,,"οὐκ οἴη, ἅμα τῇ γε καὶ ἀμφίπολοι δύʼ ἕποντο,
+Αἴθρη Πιτθῆος θυγάτηρ, Κλυμένη τε βοῶπις·
+αἶψα δʼ ἔπειθʼ ἵκανον ὅθι Σκαιαὶ πύλαι ἦσαν.
+οἳ δʼ ἀμφὶ Πρίαμον καὶ Πάνθοον ἠδὲ Θυμοίτην
+Λάμπόν τε Κλυτίον θʼ Ἱκετάονά τʼ ὄζον Ἄρηος
+Οὐκαλέγων τε καὶ Ἀντήνωρ πεπνυμένω ἄμφω","Thus spoke the goddess, and Helen’s heart yearned after her
+      former husband, her city, and her parents. She threw a white
+      mantle over her head, and hurried from her room, weeping as she
+      went, not alone, but attended by two of her handmaids, Aethrae,
+      daughter of Pittheus, and Clymene. And straightway they were at
+      the Scaean gates.",pending_human_review,no,excluded_until_completed_review
+homer-iliad-grc-monro-allen-perseus--homer-iliad-en-butler-pg2199--book-03--segment-013,be16a807d5d4704c3e8bd1fc9e04a5fa71e014a7ebf71890b3cbd661d6434ec8,homer-iliad,homer-iliad-grc-monro-allen-perseus,homer-iliad-en-butler-pg2199,3,13,13,3.149,3.162,14,,,,,,,"ἥατο δημογέροντες ἐπὶ Σκαιῇσι πύλῃσι,
+γήραϊ δὴ πολέμοιο πεπαυμένοι, ἀλλʼ ἀγορηταὶ
+ἐσθλοί, τεττίγεσσιν ἐοικότες οἵ τε καθʼ ὕλην
+δενδρέῳ ἐφεζόμενοι ὄπα λειριόεσσαν ἱεῖσι·
+τοῖοι ἄρα Τρώων ἡγήτορες ἧντʼ ἐπὶ πύργῳ.
+οἳ δʼ ὡς οὖν εἴδονθʼ Ἑλένην ἐπὶ πύργον ἰοῦσαν,
+ἦκα πρὸς ἀλλήλους ἔπεα πτερόεντʼ ἀγόρευον·
+οὐ νέμεσις Τρῶας καὶ ἐϋκνήμιδας Ἀχαιοὺς
+τοιῇδʼ ἀμφὶ γυναικὶ πολὺν χρόνον ἄλγεα πάσχειν·
+αἰνῶς ἀθανάτῃσι θεῇς εἰς ὦπα ἔοικεν·
+ἀλλὰ καὶ ὧς τοίη περ ἐοῦσʼ ἐν νηυσὶ νεέσθω,
+μηδʼ ἡμῖν τεκέεσσί τʼ ὀπίσσω πῆμα λίποιτο.
+ὣς ἄρʼ ἔφαν, Πρίαμος δʼ Ἑλένην ἐκαλέσσατο φωνῇ·
+δεῦρο πάροιθʼ ἐλθοῦσα φίλον τέκος ἵζευ ἐμεῖο,","The two sages, Ucalegon and Antenor, elders of the people, were
+      seated by the Scaean gates, with Priam, Panthous, Thymoetes,
+      Lampus, Clytius, and Hiketaon of the race of Mars. These were too
+      old to fight, but they were fluent orators, and sat on the tower
+      like cicales that chirrup delicately from the boughs of some high
+      tree in a wood. When they saw Helen coming towards the tower,
+      they said softly to one another, “Small wonder that Trojans and
+      Achaeans should endure so much and so long, for the sake of a
+      woman so marvellously and divinely lovely. Still, fair though she
+      be, let them take her and go, or she will breed sorrow for us and
+      for our children after us.”",pending_human_review,no,excluded_until_completed_review
+homer-iliad-grc-monro-allen-perseus--homer-iliad-en-butler-pg2199--book-03--segment-014,be16a807d5d4704c3e8bd1fc9e04a5fa71e014a7ebf71890b3cbd661d6434ec8,homer-iliad,homer-iliad-grc-monro-allen-perseus,homer-iliad-en-butler-pg2199,3,14,14,3.163,3.173,11,,,,,,,"ὄφρα ἴδῃ πρότερόν τε πόσιν πηούς τε φίλους τε·
+οὔ τί μοι αἰτίη ἐσσί, θεοί νύ μοι αἴτιοί εἰσιν
+οἵ μοι ἐφώρμησαν πόλεμον πολύδακρυν Ἀχαιῶν·
+ὥς μοι καὶ τόνδʼ ἄνδρα πελώριον ἐξονομήνῃς
+ὅς τις ὅδʼ ἐστὶν Ἀχαιὸς ἀνὴρ ἠΰς τε μέγας τε.
+ἤτοι μὲν κεφαλῇ καὶ μείζονες ἄλλοι ἔασι,
+καλὸν δʼ οὕτω ἐγὼν οὔ πω ἴδον ὀφθαλμοῖσιν,
+οὐδʼ οὕτω γεραρόν· βασιλῆϊ γὰρ ἀνδρὶ ἔοικε.
+τὸν δʼ Ἑλένη μύθοισιν ἀμείβετο δῖα γυναικῶν·
+αἰδοῖός τέ μοί ἐσσι φίλε ἑκυρὲ δεινός τε·
+ὡς ὄφελεν θάνατός μοι ἁδεῖν κακὸς ὁππότε δεῦρο","But Priam bade her draw nigh. “My child,” said he, “take your
+      seat in front of me that you may see your former husband, your
+      kinsmen and your friends. I lay no blame upon you, it is the
+      gods, not you who are to blame. It is they that have brought
+      about this terrible war with the Achaeans. Tell me, then, who is
+      yonder huge hero so great and goodly? I have seen men taller by a
+      head, but none so comely and so royal. Surely he must be a king.”",pending_human_review,no,excluded_until_completed_review
+homer-iliad-grc-monro-allen-perseus--homer-iliad-en-butler-pg2199--book-03--segment-015,be16a807d5d4704c3e8bd1fc9e04a5fa71e014a7ebf71890b3cbd661d6434ec8,homer-iliad,homer-iliad-grc-monro-allen-perseus,homer-iliad-en-butler-pg2199,3,15,15,3.174,3.184,11,,,,,,,"υἱέϊ σῷ ἑπόμην θάλαμον γνωτούς τε λιποῦσα
+παῖδά τε τηλυγέτην καὶ ὁμηλικίην ἐρατεινήν.
+ἀλλὰ τά γʼ οὐκ ἐγένοντο· τὸ καὶ κλαίουσα τέτηκα.
+τοῦτο δέ τοι ἐρέω ὅ μʼ ἀνείρεαι ἠδὲ μεταλλᾷς·
+οὗτός γʼ Ἀτρεΐδης εὐρὺ κρείων Ἀγαμέμνων,
+ἀμφότερον βασιλεύς τʼ ἀγαθὸς κρατερός τʼ αἰχμητής·
+δαὴρ αὖτʼ ἐμὸς ἔσκε κυνώπιδος, εἴ ποτʼ ἔην γε.
+ὣς φάτο, τὸν δʼ ὁ γέρων ἠγάσσατο φώνησέν τε·
+ὦ μάκαρ Ἀτρεΐδη μοιρηγενὲς ὀλβιόδαιμον,
+ἦ ῥά νύ τοι πολλοὶ δεδμήατο κοῦροι Ἀχαιῶν.
+ἤδη καὶ Φρυγίην εἰσήλυθον ἀμπελόεσσαν,","“Sir,” answered Helen, “father of my husband, dear and reverend
+      in my eyes, would that I had chosen death rather than to have
+      come here with your son, far from my bridal chamber, my friends,
+      my darling daughter, and all the companions of my girlhood. But
+      it was not to be, and my lot is one of tears and sorrow. As for
+      your question, the hero of whom you ask is Agamemnon, son of
+      Atreus, a good king and a brave soldier, brother-in-law as surely
+      as that he lives, to my abhorred and miserable self.”",pending_human_review,no,excluded_until_completed_review
+homer-iliad-grc-monro-allen-perseus--homer-iliad-en-butler-pg2199--book-03--segment-016,be16a807d5d4704c3e8bd1fc9e04a5fa71e014a7ebf71890b3cbd661d6434ec8,homer-iliad,homer-iliad-grc-monro-allen-perseus,homer-iliad-en-butler-pg2199,3,16,16,3.185,3.193,9,,,,,,,"ἔνθα ἴδον πλείστους Φρύγας ἀνέρας αἰολοπώλους
+λαοὺς Ὀτρῆος καὶ Μυγδόνος ἀντιθέοιο,
+οἵ ῥα τότʼ ἐστρατόωντο παρʼ ὄχθας Σαγγαρίοιο·
+καὶ γὰρ ἐγὼν ἐπίκουρος ἐὼν μετὰ τοῖσιν ἐλέχθην
+ἤματι τῷ ὅτε τʼ ἦλθον Ἀμαζόνες ἀντιάνειραι·
+ἀλλʼ οὐδʼ οἳ τόσοι ἦσαν ὅσοι ἑλίκωπες Ἀχαιοί.
+δεύτερον αὖτʼ Ὀδυσῆα ἰδὼν ἐρέεινʼ ὁ γεραιός·
+εἴπʼ ἄγε μοι καὶ τόνδε φίλον τέκος ὅς τις ὅδʼ ἐστί·
+μείων μὲν κεφαλῇ Ἀγαμέμνονος Ἀτρεΐδαο,","The old man marvelled at him and said, “Happy son of Atreus,
+      child of good fortune. I see that the Achaeans are subject to you
+      in great multitudes. When I was in Phrygia I saw much horsemen,
+      the people of Otreus and of Mygdon, who were camping upon the
+      banks of the river Sangarius; I was their ally, and with them
+      when the Amazons, peers of men, came up against them, but even
+      they were not so many as the Achaeans.”",pending_human_review,no,excluded_until_completed_review
+homer-iliad-grc-monro-allen-perseus--homer-iliad-en-butler-pg2199--book-03--segment-017,be16a807d5d4704c3e8bd1fc9e04a5fa71e014a7ebf71890b3cbd661d6434ec8,homer-iliad,homer-iliad-grc-monro-allen-perseus,homer-iliad-en-butler-pg2199,3,17,17,3.194,3.199,6,,,,,,,"εὐρύτερος δʼ ὤμοισιν ἰδὲ στέρνοισιν ἰδέσθαι.
+τεύχεα μέν οἱ κεῖται ἐπὶ χθονὶ πουλυβοτείρῃ,
+αὐτὸς δὲ κτίλος ὣς ἐπιπωλεῖται στίχας ἀνδρῶν·
+ἀρνειῷ μιν ἔγωγε ἐΐσκω πηγεσιμάλλῳ,
+ὅς τʼ οἰῶν μέγα πῶϋ διέρχεται ἀργεννάων.
+τὸν δʼ ἠμείβετʼ ἔπειθʼ Ἑλένη Διὸς ἐκγεγαυῖα·","The old man next looked upon Ulysses; “Tell me,” he said, “who is
+      that other, shorter by a head than Agamemnon, but broader across
+      the chest and shoulders? His armour is laid upon the ground, and
+      he stalks in front of the ranks as it were some great woolly ram
+      ordering his ewes.”",pending_human_review,no,excluded_until_completed_review
+homer-iliad-grc-monro-allen-perseus--homer-iliad-en-butler-pg2199--book-03--segment-018,be16a807d5d4704c3e8bd1fc9e04a5fa71e014a7ebf71890b3cbd661d6434ec8,homer-iliad,homer-iliad-grc-monro-allen-perseus,homer-iliad-en-butler-pg2199,3,18,18,3.200,3.203,4,,,,,,,"οὗτος δʼ αὖ Λαερτιάδης πολύμητις Ὀδυσσεύς,
+ὃς τράφη ἐν δήμῳ Ἰθάκης κραναῆς περ ἐούσης
+εἰδὼς παντοίους τε δόλους καὶ μήδεα πυκνά.
+τὴν δʼ αὖτʼ Ἀντήνωρ πεπνυμένος ἀντίον ηὔδα·","And Helen answered, “He is Ulysses, a man of great craft, son of
+      Laertes. He was born in rugged Ithaca, and excels in all manner
+      of stratagems and subtle cunning.”",pending_human_review,no,excluded_until_completed_review
+homer-iliad-grc-monro-allen-perseus--homer-iliad-en-butler-pg2199--book-03--segment-019,be16a807d5d4704c3e8bd1fc9e04a5fa71e014a7ebf71890b3cbd661d6434ec8,homer-iliad,homer-iliad-grc-monro-allen-perseus,homer-iliad-en-butler-pg2199,3,19,19,3.204,3.226,23,,,,,,,"ὦ γύναι ἦ μάλα τοῦτο ἔπος νημερτὲς ἔειπες·
+ἤδη γὰρ καὶ δεῦρό ποτʼ ἤλυθε δῖος Ὀδυσσεὺς
+σεῦ ἕνεκʼ ἀγγελίης σὺν ἀρηϊφίλῳ Μενελάῳ·
+τοὺς δʼ ἐγὼ ἐξείνισσα καὶ ἐν μεγάροισι φίλησα,
+ἀμφοτέρων δὲ φυὴν ἐδάην καὶ μήδεα πυκνά.
+ἀλλʼ ὅτε δὴ Τρώεσσιν ἐν ἀγρομένοισιν ἔμιχθεν
+στάντων μὲν Μενέλαος ὑπείρεχεν εὐρέας ὤμους,
+ἄμφω δʼ ἑζομένω γεραρώτερος ἦεν Ὀδυσσεύς·
+ἀλλʼ ὅτε δὴ μύθους καὶ μήδεα πᾶσιν ὕφαινον
+ἤτοι μὲν Μενέλαος ἐπιτροχάδην ἀγόρευε,
+παῦρα μὲν ἀλλὰ μάλα λιγέως, ἐπεὶ οὐ πολύμυθος
+οὐδʼ ἀφαμαρτοεπής· ἦ καὶ γένει ὕστερος ἦεν.
+ἀλλʼ ὅτε δὴ πολύμητις ἀναΐξειεν Ὀδυσσεὺς
+στάσκεν, ὑπαὶ δὲ ἴδεσκε κατὰ χθονὸς ὄμματα πήξας,
+σκῆπτρον δʼ οὔτʼ ὀπίσω οὔτε προπρηνὲς ἐνώμα,
+ἀλλʼ ἀστεμφὲς ἔχεσκεν ἀΐδρεϊ φωτὶ ἐοικώς·
+φαίης κε ζάκοτόν τέ τινʼ ἔμμεναι ἄφρονά τʼ αὔτως.
+ἀλλʼ ὅτε δὴ ὄπα τε μεγάλην ἐκ στήθεος εἵη
+καὶ ἔπεα νιφάδεσσιν ἐοικότα χειμερίῃσιν,
+οὐκ ἂν ἔπειτʼ Ὀδυσῆΐ γʼ ἐρίσσειε βροτὸς ἄλλος·
+οὐ τότε γʼ ὧδʼ Ὀδυσῆος ἀγασσάμεθʼ εἶδος ἰδόντες.
+τὸ τρίτον αὖτʼ Αἴαντα ἰδὼν ἐρέεινʼ ὃ γεραιός·
+τίς τὰρ ὅδʼ ἄλλος Ἀχαιὸς ἀνὴρ ἠΰς τε μέγας τε","On this Antenor said, “Madam, you have spoken truly. Ulysses once
+      came here as envoy about yourself, and Menelaus with him. I
+      received them in my own house, and therefore know both of them by
+      sight and conversation. When they stood up in presence of the
+      assembled Trojans, Menelaus was the broader shouldered, but when
+      both were seated Ulysses had the more royal presence. After a
+      time they delivered their message, and the speech of Menelaus ran
+      trippingly on the tongue; he did not say much, for he was a man
+      of few words, but he spoke very clearly and to the point, though
+      he was the younger man of the two; Ulysses, on the other hand,
+      when he rose to speak, was at first silent and kept his eyes
+      fixed upon the ground. There was no play nor graceful movement of
+      his sceptre; he kept it straight and stiff like a man unpractised
+      in oratory—one might have taken him for a mere churl or
+      simpleton; but when he raised his voice, and the words came
+      driving from his deep chest like winter snow before the wind,
+      then there was none to touch him, and no man thought further of
+      what he looked like.”",pending_human_review,no,excluded_until_completed_review
+homer-iliad-grc-monro-allen-perseus--homer-iliad-en-butler-pg2199--book-03--segment-020,be16a807d5d4704c3e8bd1fc9e04a5fa71e014a7ebf71890b3cbd661d6434ec8,homer-iliad,homer-iliad-grc-monro-allen-perseus,homer-iliad-en-butler-pg2199,3,20,20,3.227,3.229,3,,,,,,,"ἔξοχος Ἀργείων κεφαλήν τε καὶ εὐρέας ὤμους;
+τὸν δʼ Ἑλένη τανύπεπλος ἀμείβετο δῖα γυναικῶν·
+οὗτος δʼ Αἴας ἐστὶ πελώριος ἕρκος Ἀχαιῶν·","Priam then caught sight of Ajax and asked, “Who is that great and
+      goodly warrior whose head and broad shoulders tower above the
+      rest of the Argives?”",pending_human_review,no,excluded_until_completed_review
+homer-iliad-grc-monro-allen-perseus--homer-iliad-en-butler-pg2199--book-03--segment-021,be16a807d5d4704c3e8bd1fc9e04a5fa71e014a7ebf71890b3cbd661d6434ec8,homer-iliad,homer-iliad-grc-monro-allen-perseus,homer-iliad-en-butler-pg2199,3,21,21,3.230,3.243,14,,,,,,,"Ἰδομενεὺς δʼ ἑτέρωθεν ἐνὶ Κρήτεσσι θεὸς ὣς
+ἕστηκʼ, ἀμφὶ δέ μιν Κρητῶν ἀγοὶ ἠγερέθονται.
+πολλάκι μιν ξείνισσεν ἀρηΐφιλος Μενέλαος
+οἴκῳ ἐν ἡμετέρῳ ὁπότε Κρήτηθεν ἵκοιτο.
+νῦν δʼ ἄλλους μὲν πάντας ὁρῶ ἑλίκωπας Ἀχαιούς,
+οὕς κεν ἐῢ γνοίην καί τʼ οὔνομα μυθησαίμην·
+δοιὼ δʼ οὐ δύναμαι ἰδέειν κοσμήτορε λαῶν
+Κάστορά θʼ ἱππόδαμον καὶ πὺξ ἀγαθὸν Πολυδεύκεα
+αὐτοκασιγνήτω, τώ μοι μία γείνατο μήτηρ.
+ἢ οὐχ ἑσπέσθην Λακεδαίμονος ἐξ ἐρατεινῆς,
+ἢ δεύρω μὲν ἕποντο νέεσσʼ ἔνι ποντοπόροισι,
+νῦν αὖτʼ οὐκ ἐθέλουσι μάχην καταδύμεναι ἀνδρῶν
+αἴσχεα δειδιότες καὶ ὀνείδεα πόλλʼ ἅ μοί ἐστιν.
+ὣς φάτο, τοὺς δʼ ἤδη κάτεχεν φυσίζοος αἶα","“That,” answered Helen, “is huge Ajax, bulwark of the Achaeans,
+      and on the other side of him, among the Cretans, stands Idomeneus
+      looking like a god, and with the captains of the Cretans round
+      him. Often did Menelaus receive him as a guest in our house when
+      he came visiting us from Crete. I see, moreover, many other
+      Achaeans whose names I could tell you, but there are two whom I
+      can nowhere find, Castor, breaker of horses, and Pollux the
+      mighty boxer; they are children of my mother, and own brothers to
+      myself. Either they have not left Lacedaemon, or else, though
+      they have brought their ships, they will not show themselves in
+      battle for the shame and disgrace that I have brought upon them.”",pending_human_review,no,excluded_until_completed_review
+homer-iliad-grc-monro-allen-perseus--homer-iliad-en-butler-pg2199--book-03--segment-022,be16a807d5d4704c3e8bd1fc9e04a5fa71e014a7ebf71890b3cbd661d6434ec8,homer-iliad,homer-iliad-grc-monro-allen-perseus,homer-iliad-en-butler-pg2199,3,22,22,3.244,3.246,3,,,,,,,"ἐν Λακεδαίμονι αὖθι φίλῃ ἐν πατρίδι γαίῃ.
+κήρυκες δʼ ἀνὰ ἄστυ θεῶν φέρον ὅρκια πιστὰ
+ἄρνε δύω καὶ οἶνον ἐΰφρονα καρπὸν ἀρούρης","She knew not that both these heroes were already lying under the
+      earth in their own land of Lacedaemon.",pending_human_review,no,excluded_until_completed_review
+homer-iliad-grc-monro-allen-perseus--homer-iliad-en-butler-pg2199--book-03--segment-023,be16a807d5d4704c3e8bd1fc9e04a5fa71e014a7ebf71890b3cbd661d6434ec8,homer-iliad,homer-iliad-grc-monro-allen-perseus,homer-iliad-en-butler-pg2199,3,23,23,3.247,3.259,13,,,,,,,"ἀσκῷ ἐν αἰγείῳ· φέρε δὲ κρητῆρα φαεινὸν
+κῆρυξ Ἰδαῖος ἠδὲ χρύσεια κύπελλα·
+ὄτρυνεν δὲ γέροντα παριστάμενος ἐπέεσσιν·
+ὄρσεο Λαομεδοντιάδη, καλέουσιν ἄριστοι
+Τρώων θʼ ἱπποδάμων καὶ Ἀχαιῶν χαλκοχιτώνων
+ἐς πεδίον καταβῆναι ἵνʼ ὅρκια πιστὰ τάμητε·
+αὐτὰρ Ἀλέξανδρος καὶ ἀρηΐφιλος Μενέλαος
+μακρῇς ἐγχείῃσι μαχήσοντʼ ἀμφὶ γυναικί·
+τῷ δέ κε νικήσαντι γυνὴ καὶ κτήμαθʼ ἕποιτο·
+οἳ δʼ ἄλλοι φιλότητα καὶ ὅρκια πιστὰ ταμόντες
+ναίοιμεν Τροίην ἐριβώλακα, τοὶ δὲ νέονται
+Ἄργος ἐς ἱππόβοτον καὶ Ἀχαιΐδα καλλιγύναικα.
+ὣς φάτο ῥίγησεν δʼ ὃ γέρων, ἐκέλευσε δʼ ἑταίρους","Meanwhile the heralds were bringing the holy oath-offerings
+      through the city—two lambs and a goatskin of wine, the gift of
+      earth; and Idaeus brought the mixing-bowl and the cups of gold.
+      He went up to Priam and said, “Son of Laomedon, the princes of
+      the Trojans and Achaeans bid you come down on to the plain and
+      swear to a solemn covenant. Alexandrus and Menelaus are to fight
+      for Helen in single combat, that she and all her wealth may go
+      with him who is the victor. We are to swear to a solemn covenant
+      of peace whereby we others shall dwell here in Troy, while the
+      Achaeans return to Argos and the land of the Achaeans.”",pending_human_review,no,excluded_until_completed_review
+homer-iliad-grc-monro-allen-perseus--homer-iliad-en-butler-pg2199--book-03--segment-024,be16a807d5d4704c3e8bd1fc9e04a5fa71e014a7ebf71890b3cbd661d6434ec8,homer-iliad,homer-iliad-grc-monro-allen-perseus,homer-iliad-en-butler-pg2199,3,24,24,3.260,3.268,9,,,,,,,"ἵππους ζευγνύμεναι· τοὶ δʼ ὀτραλέως ἐπίθοντο.
+ἂν δʼ ἄρʼ ἔβη Πρίαμος, κατὰ δʼ ἡνία τεῖνεν ὀπίσσω·
+πὰρ δέ οἱ Ἀντήνωρ περικαλλέα βήσετο δίφρον·
+τὼ δὲ διὰ Σκαιῶν πεδίον δʼ ἔχον ὠκέας ἵππους.
+ἀλλʼ ὅτε δή ῥʼ ἵκοντο μετὰ Τρῶας καὶ Ἀχαιούς,
+ἐξ ἵππων ἀποβάντες ἐπὶ χθόνα πουλυβότειραν
+ἐς μέσσον Τρώων καὶ Ἀχαιῶν ἐστιχόωντο.
+ὄρνυτο δʼ αὐτίκʼ ἔπειτα ἄναξ ἀνδρῶν Ἀγαμέμνων,
+ἂν δʼ Ὀδυσεὺς πολύμητις· ἀτὰρ κήρυκες ἀγαυοὶ","The old man trembled as he heard, but bade his followers yoke the
+      horses, and they made all haste to do so. He mounted the chariot,
+      gathered the reins in his hand, and Antenor took his seat beside
+      him; they then drove through the Scaean gates on to the plain.
+      When they reached the ranks of the Trojans and Achaeans they left
+      the chariot, and with measured pace advanced into the space
+      between the hosts.",pending_human_review,no,excluded_until_completed_review
+homer-iliad-grc-monro-allen-perseus--homer-iliad-en-butler-pg2199--book-03--segment-025,be16a807d5d4704c3e8bd1fc9e04a5fa71e014a7ebf71890b3cbd661d6434ec8,homer-iliad,homer-iliad-grc-monro-allen-perseus,homer-iliad-en-butler-pg2199,3,25,25,3.269,3.292,24,,,,,,,"ὅρκια πιστὰ θεῶν σύναγον, κρητῆρι δὲ οἶνον
+μίσγον, ἀτὰρ βασιλεῦσιν ὕδωρ ἐπὶ χεῖρας ἔχευαν.
+Ἀτρεΐδης δὲ ἐρυσσάμενος χείρεσσι μάχαιραν,
+ἥ οἱ πὰρ ξίφεος μέγα κουλεόν αἰὲν ἄωρτο,
+ἀρνῶν ἐκ κεφαλέων τάμνε τρίχας· αὐτὰρ ἔπειτα
+κήρυκες Τρώων καὶ Ἀχαιῶν νεῖμαν ἀρίστοις.
+τοῖσιν δʼ Ἀτρεΐδης μεγάλʼ εὔχετο χεῖρας ἀνασχών·
+Ζεῦ πάτερ Ἴδηθεν μεδέων κύδιστε μέγιστε,
+Ἠέλιός θʼ, ὃς πάντʼ ἐφορᾷς καὶ πάντʼ ἐπακούεις,
+καὶ ποταμοὶ καὶ γαῖα, καὶ οἳ ὑπένερθε καμόντας
+ἀνθρώπους τίνυσθον ὅτις κʼ ἐπίορκον ὀμόσσῃ,
+ὑμεῖς μάρτυροι ἔστε, φυλάσσετε δʼ ὅρκια πιστά·
+εἰ μέν κεν Μενέλαον Ἀλέξανδρος καταπέφνῃ
+αὐτὸς ἔπειθʼ Ἑλένην ἐχέτω καὶ κτήματα πάντα,
+ἡμεῖς δʼ ἐν νήεσσι νεώμεθα ποντοπόροισιν·
+εἰ δέ κʼ Ἀλέξανδρον κτείνῃ ξανθὸς Μενέλαος,
+Τρῶας ἔπειθʼ Ἑλένην καὶ κτήματα πάντʼ ἀποδοῦναι,
+τιμὴν δʼ Ἀργείοις ἀποτινέμεν ἥν τινʼ ἔοικεν,
+ἥ τε καὶ ἐσσομένοισι μετʼ ἀνθρώποισι πέληται.
+εἰ δʼ ἂν ἐμοὶ τιμὴν Πρίαμος Πριάμοιό τε παῖδες
+τίνειν οὐκ ἐθέλωσιν Ἀλεξάνδροιο πεσόντος,
+αὐτὰρ ἐγὼ καὶ ἔπειτα μαχήσομαι εἵνεκα ποινῆς
+αὖθι μένων, ἧός κε τέλος πολέμοιο κιχείω.
+ἦ, καὶ ἀπὸ στομάχους ἀρνῶν τάμε νηλέϊ χαλκῷ·","Agamemnon and Ulysses both rose to meet them. The attendants
+      brought on the oath-offerings and mixed the wine in the
+      mixing-bowls; they poured water over the hands of the chieftains,
+      and the son of Atreus drew the dagger that hung by his sword, and
+      cut wool from the lambs’ heads; this the men-servants gave about
+      among the Trojan and Achaean princes, and the son of Atreus
+      lifted up his hands in prayer. “Father Jove,” he cried, “that
+      rulest in Ida, most glorious in power, and thou oh Sun, that
+      seest and givest ear to all things, Earth and Rivers, and ye who
+      in the realms below chastise the soul of him that has broken his
+      oath, witness these rites and guard them, that they be not vain.
+      If Alexandrus kills Menelaus, let him keep Helen and all her
+      wealth, while we sail home with our ships; but if Menelaus kills
+      Alexandrus, let the Trojans give back Helen and all that she has;
+      let them moreover pay such fine to the Achaeans as shall be
+      agreed upon, in testimony among those that shall be born
+      hereafter. And if Priam and his sons refuse such fine when
+      Alexandrus has fallen, then will I stay here and fight on till I
+      have got satisfaction.”",pending_human_review,no,excluded_until_completed_review
+homer-iliad-grc-monro-allen-perseus--homer-iliad-en-butler-pg2199--book-03--segment-026,be16a807d5d4704c3e8bd1fc9e04a5fa71e014a7ebf71890b3cbd661d6434ec8,homer-iliad,homer-iliad-grc-monro-allen-perseus,homer-iliad-en-butler-pg2199,3,26,26,3.293,3.304,12,,,,,,,"καὶ τοὺς μὲν κατέθηκεν ἐπὶ χθονὸς ἀσπαίροντας
+θυμοῦ δευομένους· ἀπὸ γὰρ μένος εἵλετο χαλκός.
+οἶνον δʼ ἐκ κρητῆρος ἀφυσσόμενοι δεπάεσσιν
+ἔκχεον, ἠδʼ εὔχοντο θεοῖς αἰειγενέτῃσιν.
+ὧδε δέ τις εἴπεσκεν Ἀχαιῶν τε Τρώων τε·
+Ζεῦ κύδιστε μέγιστε καὶ ἀθάνατοι θεοὶ ἄλλοι
+ὁππότεροι πρότεροι ὑπὲρ ὅρκια πημήνειαν
+ὧδέ σφʼ ἐγκέφαλος χαμάδις ῥέοι ὡς ὅδε οἶνος
+αὐτῶν καὶ τεκέων, ἄλοχοι δʼ ἄλλοισι δαμεῖεν.
+ὣς ἔφαν, οὐδʼ ἄρα πώ σφιν ἐπεκραίαινε Κρονίων.
+τοῖσι δὲ Δαρδανίδης Πρίαμος μετὰ μῦθον ἔειπε·
+κέκλυτέ μευ Τρῶες καὶ ἐϋκνήμιδες Ἀχαιοί·","As he spoke he drew his knife across the throats of the victims,
+      and laid them down gasping and dying upon the ground, for the
+      knife had reft them of their strength. Then they poured wine from
+      the mixing-bowl into the cups, and prayed to the everlasting
+      gods, saying, Trojans and Achaeans among one another, “Jove, most
+      great and glorious, and ye other everlasting gods, grant that the
+      brains of them who shall first sin against their oaths—of them
+      and their children—may be shed upon the ground even as this wine,
+      and let their wives become the slaves of strangers.”",pending_human_review,no,excluded_until_completed_review
+homer-iliad-grc-monro-allen-perseus--homer-iliad-en-butler-pg2199--book-03--segment-027,be16a807d5d4704c3e8bd1fc9e04a5fa71e014a7ebf71890b3cbd661d6434ec8,homer-iliad,homer-iliad-grc-monro-allen-perseus,homer-iliad-en-butler-pg2199,3,27,27,3.305,3.311,7,,,,,,,"ἤτοι ἐγὼν εἶμι προτὶ Ἴλιον ἠνεμόεσσαν
+ἄψ, ἐπεὶ οὔ πω τλήσομʼ ἐν ὀφθαλμοῖσιν ὁρᾶσθαι
+μαρνάμενον φίλον υἱὸν ἀρηϊφίλῳ Μενελάῳ·
+Ζεὺς μέν που τό γε οἶδε καὶ ἀθάνατοι θεοὶ ἄλλοι
+ὁπποτέρῳ θανάτοιο τέλος πεπρωμένον ἐστίν.
+ἦ ῥα καὶ ἐς δίφρον ἄρνας θέτο ἰσόθεος φώς,
+ἂν δʼ ἄρʼ ἔβαινʼ αὐτός, κατὰ δʼ ἡνία τεῖνεν ὀπίσσω·","Thus they prayed, but not as yet would Jove grant them their
+      prayer. Then Priam, descendant of Dardanus, spoke, saying, “Hear
+      me, Trojans and Achaeans, I will now go back to the wind-beaten
+      city of Ilius: I dare not with my own eyes witness this fight
+      between my son and Menelaus, for Jove and the other immortals
+      alone know which shall fall.”",pending_human_review,no,excluded_until_completed_review
+homer-iliad-grc-monro-allen-perseus--homer-iliad-en-butler-pg2199--book-03--segment-028,be16a807d5d4704c3e8bd1fc9e04a5fa71e014a7ebf71890b3cbd661d6434ec8,homer-iliad,homer-iliad-grc-monro-allen-perseus,homer-iliad-en-butler-pg2199,3,28,28,3.312,3.323,12,,,,,,,"πὰρ δέ οἱ Ἀντήνωρ περικαλλέα βήσετο δίφρον.
+τὼ μὲν ἄρʼ ἄψορροι προτὶ Ἴλιον ἀπονέοντο·
+Ἕκτωρ δὲ Πριάμοιο πάϊς καὶ δῖος Ὀδυσσεὺς
+χῶρον μὲν πρῶτον διεμέτρεον, αὐτὰρ ἔπειτα
+κλήρους ἐν κυνέῃ χαλκήρεϊ πάλλον ἑλόντες,
+ὁππότερος δὴ πρόσθεν ἀφείη χάλκεον ἔγχος.
+λαοὶ δʼ ἠρήσαντο, θεοῖσι δὲ χεῖρας ἀνέσχον,
+ὧδε δέ τις εἴπεσκεν Ἀχαιῶν τε Τρώων τε·
+Ζεῦ πάτερ Ἴδηθεν μεδέων κύδιστε μέγιστε
+ὁππότερος τάδε ἔργα μετʼ ἀμφοτέροισιν ἔθηκε,
+τὸν δὸς ἀποφθίμενον δῦναι δόμον Ἄϊδος εἴσω,
+ἡμῖν δʼ αὖ φιλότητα καὶ ὅρκια πιστὰ γενέσθαι.","On this he laid the two lambs on his chariot and took his seat.
+      He gathered the reins in his hand, and Antenor sat beside him;
+      the two then went back to Ilius. Hector and Ulysses measured the
+      ground, and cast lots from a helmet of bronze to see which should
+      take aim first. Meanwhile the two hosts lifted up their hands and
+      prayed saying, “Father Jove, that rulest from Ida, most glorious
+      in power, grant that he who first brought about this war between
+      us may die, and enter the house of Hades, while we others remain
+      at peace and abide by our oaths.”",pending_human_review,no,excluded_until_completed_review
+homer-iliad-grc-monro-allen-perseus--homer-iliad-en-butler-pg2199--book-03--segment-029,be16a807d5d4704c3e8bd1fc9e04a5fa71e014a7ebf71890b3cbd661d6434ec8,homer-iliad,homer-iliad-grc-monro-allen-perseus,homer-iliad-en-butler-pg2199,3,29,29,3.324,3.339,16,,,,,,,"ὣς ἄρʼ ἔφαν, πάλλεν δὲ μέγας κορυθαίολος Ἕκτωρ
+ἂψ ὁρόων· Πάριος δὲ θοῶς ἐκ κλῆρος ὄρουσεν.
+οἳ μὲν ἔπειθʼ ἵζοντο κατὰ στίχας, ἧχι ἑκάστῳ
+ἵπποι ἀερσίποδες καὶ ποικίλα τεύχεʼ ἔκειτο·
+αὐτὰρ ὅ γʼ ἀμφʼ ὤμοισιν ἐδύσετο τεύχεα καλὰ
+δῖος Ἀλέξανδρος Ἑλένης πόσις ἠϋκόμοιο.
+κνημῖδας μὲν πρῶτα περὶ κνήμῃσιν ἔθηκε
+καλάς, ἀργυρέοισιν ἐπισφυρίοις ἀραρυίας·
+δεύτερον αὖ θώρηκα περὶ στήθεσσιν ἔδυνεν
+οἷο κασιγνήτοιο Λυκάονος· ἥρμοσε δʼ αὐτῷ.
+ἀμφὶ δʼ ἄρʼ ὤμοισιν βάλετο ξίφος ἀργυρόηλον
+χάλκεον, αὐτὰρ ἔπειτα σάκος μέγα τε στιβαρόν τε·
+κρατὶ δʼ ἐπʼ ἰφθίμῳ κυνέην εὔτυκτον ἔθηκεν
+ἵππουριν· δεινὸν δὲ λόφος καθύπερθεν ἔνευεν·
+εἵλετο δʼ ἄλκιμον ἔγχος, ὅ οἱ παλάμηφιν ἀρήρει.
+ὣς δʼ αὔτως Μενέλαος ἀρήϊος ἔντεʼ ἔδυνεν.","Great Hector now turned his head aside while he shook the helmet,
+      and the lot of Paris flew out first. The others took their
+      several stations, each by his horses and the place where his arms
+      were lying, while Alexandrus, husband of lovely Helen, put on his
+      goodly armour. First he greaved his legs with greaves of good
+      make and fitted with ancle-clasps of silver; after this he donned
+      the cuirass of his brother Lycaon, and fitted it to his own body;
+      he hung his silver-studded sword of bronze about his shoulders,
+      and then his mighty shield. On his comely head he set his helmet,
+      well wrought, with a crest of horse-hair that nodded menacingly
+      above it, and he grasped a redoubtable spear that suited his
+      hands. In like fashion Menelaus also put on his armour.",pending_human_review,no,excluded_until_completed_review
+homer-iliad-grc-monro-allen-perseus--homer-iliad-en-butler-pg2199--book-03--segment-030,be16a807d5d4704c3e8bd1fc9e04a5fa71e014a7ebf71890b3cbd661d6434ec8,homer-iliad,homer-iliad-grc-monro-allen-perseus,homer-iliad-en-butler-pg2199,3,30,30,3.340,3.353,14,,,,,,,"οἳ δʼ ἐπεὶ οὖν ἑκάτερθεν ὁμίλου θωρήχθησαν,
+ἐς μέσσον Τρώων καὶ Ἀχαιῶν ἐστιχόωντο
+δεινὸν δερκόμενοι· θάμβος δʼ ἔχεν εἰσορόωντας
+Τρῶάς θʼ ἱπποδάμους καὶ ἐϋκνήμιδας Ἀχαιούς.
+καί ῥʼ ἐγγὺς στήτην διαμετρητῷ ἐνὶ χώρῳ
+σείοντʼ ἐγχείας ἀλλήλοισιν κοτέοντε.
+πρόσθε δʼ Ἀλέξανδρος προΐει δολιχόσκιον ἔγχος,
+καὶ βάλεν Ἀτρεΐδαο κατʼ ἀσπίδα πάντοσε ἴσην,
+οὐδʼ ἔρρηξεν χαλκός, ἀνεγνάμφθη δέ οἱ αἰχμὴ
+ἀσπίδʼ ἐνὶ κρατερῇ· ὃ δὲ δεύτερον ὄρνυτο χαλκῷ
+Ἀτρεΐδης Μενέλαος ἐπευξάμενος Διὶ πατρί·
+Ζεῦ ἄνα δὸς τίσασθαι ὅ με πρότερος κάκʼ ἔοργε
+δῖον Ἀλέξανδρον, καὶ ἐμῇς ὑπὸ χερσὶ δάμασσον,
+ὄφρα τις ἐρρίγῃσι καὶ ὀψιγόνων ἀνθρώπων","When they had thus armed, each amid his own people, they strode
+      fierce of aspect into the open space, and both Trojans and
+      Achaeans were struck with awe as they beheld them. They stood
+      near one another on the measured ground, brandishing their
+      spears, and each furious against the other. Alexandrus aimed
+      first, and struck the round shield of the son of Atreus, but the
+      spear did not pierce it, for the shield turned its point.
+      Menelaus next took aim, praying to Father Jove as he did so.
+      “King Jove,” he said, “grant me revenge on Alexandrus who has
+      wronged me; subdue him under my hand that in ages yet to come a
+      man may shrink from doing ill deeds in the house of his host.”",pending_human_review,no,excluded_until_completed_review
+homer-iliad-grc-monro-allen-perseus--homer-iliad-en-butler-pg2199--book-03--segment-031,be16a807d5d4704c3e8bd1fc9e04a5fa71e014a7ebf71890b3cbd661d6434ec8,homer-iliad,homer-iliad-grc-monro-allen-perseus,homer-iliad-en-butler-pg2199,3,31,31,3.354,3.366,13,,,,,,,"ξεινοδόκον κακὰ ῥέξαι, ὅ κεν φιλότητα παράσχῃ.
+ἦ ῥα καὶ ἀμπεπαλὼν προΐει δολιχόσκιον ἔγχος,
+καὶ βάλε Πριαμίδαο κατʼ ἀσπίδα πάντοσε ἴσην·
+διὰ μὲν ἀσπίδος ἦλθε φαεινῆς ὄβριμον ἔγχος,
+καὶ διὰ θώρηκος πολυδαιδάλου ἠρήρειστο·
+ἀντικρὺ δὲ παραὶ λαπάρην διάμησε χιτῶνα
+ἔγχος· ὃ δʼ ἐκλίνθη καὶ ἀλεύατο κῆρα μέλαιναν.
+Ἀτρεΐδης δὲ ἐρυσσάμενος ξίφος ἀργυρόηλον
+πλῆξεν ἀνασχόμενος κόρυθος φάλον· ἀμφὶ δʼ ἄρʼ αὐτῷ
+τριχθά τε καὶ τετραχθὰ διατρυφὲν ἔκπεσε χειρός.
+Ἀτρεΐδης δʼ ᾤμωξεν ἰδὼν εἰς οὐρανὸν εὐρύν·
+Ζεῦ πάτερ οὔ τις σεῖο θεῶν ὀλοώτερος ἄλλος·
+ἦ τʼ ἐφάμην τίσασθαι Ἀλέξανδρον κακότητος·","He poised his spear as he spoke, and hurled it at the shield of
+      Alexandrus. Through shield and cuirass it went, and tore the
+      shirt by his flank, but Alexandrus swerved aside, and thus saved
+      his life. Then the son of Atreus drew his sword, and drove at the
+      projecting part of his helmet, but the sword fell shivered in
+      three or four pieces from his hand, and he cried, looking towards
+      Heaven, “Father Jove, of all gods thou art the most despiteful; I
+      made sure of my revenge, but the sword has broken in my hand, my
+      spear has been hurled in vain, and I have not killed him.”",pending_human_review,no,excluded_until_completed_review
+homer-iliad-grc-monro-allen-perseus--homer-iliad-en-butler-pg2199--book-03--segment-032,be16a807d5d4704c3e8bd1fc9e04a5fa71e014a7ebf71890b3cbd661d6434ec8,homer-iliad,homer-iliad-grc-monro-allen-perseus,homer-iliad-en-butler-pg2199,3,32,32,3.367,3.380,14,,,,,,,"νῦν δέ μοι ἐν χείρεσσιν ἄγη ξίφος, ἐκ δέ μοι ἔγχος
+ἠΐχθη παλάμηφιν ἐτώσιον, οὐδʼ ἔβαλόν μιν.
+ἦ καὶ ἐπαΐξας κόρυθος λάβεν ἱπποδασείης,
+ἕλκε δʼ ἐπιστρέψας μετʼ ἐϋκνήμιδας Ἀχαιούς·
+ἄγχε δέ μιν πολύκεστος ἱμὰς ἁπαλὴν ὑπὸ δειρήν,
+ὅς οἱ ὑπʼ ἀνθερεῶνος ὀχεὺς τέτατο τρυφαλείης.
+καί νύ κεν εἴρυσσέν τε καὶ ἄσπετον ἤρατο κῦδος,
+εἰ μὴ ἄρʼ ὀξὺ νόησε Διὸς θυγάτηρ Ἀφροδίτη,
+ἥ οἱ ῥῆξεν ἱμάντα βοὸς ἶφι κταμένοιο·
+κεινὴ δὲ τρυφάλεια ἅμʼ ἕσπετο χειρὶ παχείῃ.
+τὴν μὲν ἔπειθʼ ἥρως μετʼ ἐϋκνήμιδας Ἀχαιοὺς
+ῥῖψʼ ἐπιδινήσας, κόμισαν δʼ ἐρίηρες ἑταῖροι·
+αὐτὰρ ὃ ἂψ ἐπόρουσε κατακτάμεναι μενεαίνων
+ἔγχεϊ χαλκείῳ· τὸν δʼ ἐξήρπαξʼ Ἀφροδίτη","With this he flew at Alexandrus, caught him by the horse-hair
+      plume of his helmet, and began dragging him towards the Achaeans.
+      The strap of the helmet that went under his chin was choking him,
+      and Menelaus would have dragged him off to his own great glory
+      had not Jove’s daughter Venus been quick to mark and to break the
+      strap of ox-hide, so that the empty helmet came away in his hand.
+      This he flung to his comrades among the Achaeans, and was again
+      springing upon Alexandrus to run him through with a spear, but
+      Venus snatched him up in a moment (as a god can do), hid him
+      under a cloud of darkness, and conveyed him to his own
+      bedchamber.",pending_human_review,no,excluded_until_completed_review
+homer-iliad-grc-monro-allen-perseus--homer-iliad-en-butler-pg2199--book-03--segment-033,be16a807d5d4704c3e8bd1fc9e04a5fa71e014a7ebf71890b3cbd661d6434ec8,homer-iliad,homer-iliad-grc-monro-allen-perseus,homer-iliad-en-butler-pg2199,3,33,33,3.381,3.393,13,,,,,,,"ῥεῖα μάλʼ ὥς τε θεός, ἐκάλυψε δʼ ἄρʼ ἠέρι πολλῇ,
+κὰδ δʼ εἷσʼ ἐν θαλάμῳ εὐώδεϊ κηώεντι.
+αὐτὴ δʼ αὖ Ἑλένην καλέουσʼ ἴε· τὴν δὲ κίχανε
+πύργῳ ἐφʼ ὑψηλῷ, περὶ δὲ Τρῳαὶ ἅλις ἦσαν·
+χειρὶ δὲ νεκταρέου ἑανοῦ ἐτίναξε λαβοῦσα,
+γρηῒ δέ μιν ἐϊκυῖα παλαιγενέϊ προσέειπεν
+εἰροκόμῳ, ἥ οἱ Λακεδαίμονι ναιετοώσῃ
+ἤσκειν εἴρια καλά, μάλιστα δέ μιν φιλέεσκε·
+τῇ μιν ἐεισαμένη προσεφώνεε δῖʼ Ἀφροδίτη·
+δεῦρʼ ἴθʼ· Ἀλέξανδρός σε καλεῖ οἶκον δὲ νέεσθαι.
+κεῖνος ὅ γʼ ἐν θαλάμῳ καὶ δινωτοῖσι λέχεσσι
+κάλλεΐ τε στίλβων καὶ εἵμασιν· οὐδέ κε φαίης
+ἀνδρὶ μαχεσσάμενον τόν γʼ ἐλθεῖν, ἀλλὰ χορὸν δὲ","Then she went to call Helen, and found her on a high tower with
+      the Trojan women crowding round her. She took the form of an old
+      woman who used to dress wool for her when she was still in
+      Lacedaemon, and of whom she was very fond. Thus disguised she
+      plucked her by perfumed robe and said, “Come hither; Alexandrus
+      says you are to go to the house; he is on his bed in his own
+      room, radiant with beauty and dressed in gorgeous apparel. No one
+      would think he had just come from fighting, but rather that he
+      was going to a dance, or had done dancing and was sitting down.”",pending_human_review,no,excluded_until_completed_review
+homer-iliad-grc-monro-allen-perseus--homer-iliad-en-butler-pg2199--book-03--segment-034,be16a807d5d4704c3e8bd1fc9e04a5fa71e014a7ebf71890b3cbd661d6434ec8,homer-iliad,homer-iliad-grc-monro-allen-perseus,homer-iliad-en-butler-pg2199,3,34,34,3.394,3.411,18,,,,,,,"ἔρχεσθʼ, ἠὲ χοροῖο νέον λήγοντα καθίζειν.
+ὣς φάτο, τῇ δʼ ἄρα θυμὸν ἐνὶ στήθεσσιν ὄρινε·
+καί ῥʼ ὡς οὖν ἐνόησε θεᾶς περικαλλέα δειρὴν
+στήθεά θʼ ἱμερόεντα καὶ ὄμματα μαρμαίροντα,
+θάμβησέν τʼ ἄρʼ ἔπειτα ἔπος τʼ ἔφατʼ ἔκ τʼ ὀνόμαζε·
+δαιμονίη, τί με ταῦτα λιλαίεαι ἠπεροπεύειν;
+ἦ πῄ με προτέρω πολίων εὖ ναιομενάων
+ἄξεις, ἢ Φρυγίης ἢ Μῃονίης ἐρατεινῆς,
+εἴ τίς τοι καὶ κεῖθι φίλος μερόπων ἀνθρώπων·
+οὕνεκα δὴ νῦν δῖον Ἀλέξανδρον Μενέλαος
+νικήσας ἐθέλει στυγερὴν ἐμὲ οἴκαδʼ ἄγεσθαι,
+τοὔνεκα δὴ νῦν δεῦρο δολοφρονέουσα παρέστης;
+ἧσο παρʼ αὐτὸν ἰοῦσα, θεῶν δʼ ἀπόεικε κελεύθου,
+μηδʼ ἔτι σοῖσι πόδεσσιν ὑποστρέψειας Ὄλυμπον,
+ἀλλʼ αἰεὶ περὶ κεῖνον ὀΐζυε καί ἑ φύλασσε,
+εἰς ὅ κέ σʼ ἢ ἄλοχον ποιήσεται ἢ ὅ γε δούλην.
+κεῖσε δʼ ἐγὼν οὐκ εἶμι· νεμεσσητὸν δέ κεν εἴη·
+κείνου πορσανέουσα λέχος· Τρῳαὶ δέ μʼ ὀπίσσω","With these words she moved the heart of Helen to anger. When she
+      marked the beautiful neck of the goddess, her lovely bosom, and
+      sparkling eyes, she marvelled at her and said, “Goddess, why do
+      you thus beguile me? Are you going to send me afield still
+      further to some man whom you have taken up in Phrygia or fair
+      Meonia? Menelaus has just vanquished Alexandrus, and is to take
+      my hateful self back with him. You are come here to betray me. Go
+      sit with Alexandrus yourself; henceforth be goddess no longer;
+      never let your feet carry you back to Olympus; worry about him
+      and look after him till he make you his wife, or, for the matter
+      of that, his slave—but me? I shall not go; I can garnish his bed
+      no longer; I should be a by-word among all the women of Troy.
+      Besides, I have trouble on my mind.”",pending_human_review,no,excluded_until_completed_review
+homer-iliad-grc-monro-allen-perseus--homer-iliad-en-butler-pg2199--book-03--segment-035,be16a807d5d4704c3e8bd1fc9e04a5fa71e014a7ebf71890b3cbd661d6434ec8,homer-iliad,homer-iliad-grc-monro-allen-perseus,homer-iliad-en-butler-pg2199,3,35,35,3.412,3.416,5,,,,,,,"πᾶσαι μωμήσονται· ἔχω δʼ ἄχεʼ ἄκριτα θυμῷ.
+τὴν δὲ χολωσαμένη προσεφώνεε δῖʼ Ἀφροδίτη·
+μή μʼ ἔρεθε σχετλίη, μὴ χωσαμένη σε μεθείω,
+τὼς δέ σʼ ἀπεχθήρω ὡς νῦν ἔκπαγλʼ ἐφίλησα,
+μέσσῳ δʼ ἀμφοτέρων μητίσομαι ἔχθεα λυγρὰ","Venus was very angry, and said, “Bold hussy, do not provoke me;
+      if you do, I shall leave you to your fate and hate you as much as
+      I have loved you. I will stir up fierce hatred between Trojans
+      and Achaeans, and you shall come to a bad end.”",pending_human_review,no,excluded_until_completed_review
+homer-iliad-grc-monro-allen-perseus--homer-iliad-en-butler-pg2199--book-03--segment-036,be16a807d5d4704c3e8bd1fc9e04a5fa71e014a7ebf71890b3cbd661d6434ec8,homer-iliad,homer-iliad-grc-monro-allen-perseus,homer-iliad-en-butler-pg2199,3,36,36,3.417,3.419,3,,,,,,,"Τρώων καὶ Δαναῶν, σὺ δέ κεν κακὸν οἶτον ὄληαι.
+ὣς ἔφατʼ, ἔδεισεν δʼ Ἑλένη Διὸς ἐκγεγαυῖα,
+βῆ δὲ κατασχομένη ἑανῷ ἀργῆτι φαεινῷ","At this Helen was frightened. She wrapped her mantle about her
+      and went in silence, following the goddess and unnoticed by the
+      Trojan women.",pending_human_review,no,excluded_until_completed_review
+homer-iliad-grc-monro-allen-perseus--homer-iliad-en-butler-pg2199--book-03--segment-037,be16a807d5d4704c3e8bd1fc9e04a5fa71e014a7ebf71890b3cbd661d6434ec8,homer-iliad,homer-iliad-grc-monro-allen-perseus,homer-iliad-en-butler-pg2199,3,37,37,3.420,3.426,7,,,,,,,"σιγῇ, πάσας δὲ Τρῳὰς λάθεν· ἦρχε δὲ δαίμων.
+αἳ δʼ ὅτʼ Ἀλεξάνδροιο δόμον περικαλλέʼ ἵκοντο,
+ἀμφίπολοι μὲν ἔπειτα θοῶς ἐπὶ ἔργα τράποντο,
+ἣ δʼ εἰς ὑψόροφον θάλαμον κίε δῖα γυναικῶν.
+τῇ δʼ ἄρα δίφρον ἑλοῦσα φιλομειδὴς Ἀφροδίτη
+ἀντίʼ Ἀλεξάνδροιο θεὰ κατέθηκε φέρουσα·
+ἔνθα κάθιζʼ Ἑλένη κούρη Διὸς αἰγιόχοιο","When they came to the house of Alexandrus the maid-servants set
+      about their work, but Helen went into her own room, and the
+      laughter-loving goddess took a seat and set it for her facing
+      Alexandrus. On this Helen, daughter of aegis-bearing Jove, sat
+      down, and with eyes askance began to upbraid her husband.",pending_human_review,no,excluded_until_completed_review
+homer-iliad-grc-monro-allen-perseus--homer-iliad-en-butler-pg2199--book-03--segment-038,be16a807d5d4704c3e8bd1fc9e04a5fa71e014a7ebf71890b3cbd661d6434ec8,homer-iliad,homer-iliad-grc-monro-allen-perseus,homer-iliad-en-butler-pg2199,3,38,38,3.427,3.434,8,,,,,,,"ὄσσε πάλιν κλίνασα, πόσιν δʼ ἠνίπαπε μύθῳ·
+ἤλυθες ἐκ πολέμου· ὡς ὤφελες αὐτόθʼ ὀλέσθαι
+ἀνδρὶ δαμεὶς κρατερῷ, ὃς ἐμὸς πρότερος πόσις ἦεν.
+ἦ μὲν δὴ πρίν γʼ εὔχεʼ ἀρηϊφίλου Μενελάου
+σῇ τε βίῃ καὶ χερσὶ καὶ ἔγχεϊ φέρτερος εἶναι·
+ἀλλʼ ἴθι νῦν προκάλεσσαι ἀρηΐφιλον Μενέλαον
+ἐξαῦτις μαχέσασθαι ἐναντίον· ἀλλά σʼ ἔγωγε
+παύεσθαι κέλομαι, μηδὲ ξανθῷ Μενελάῳ","“So you are come from the fight,” said she; “would that you had
+      fallen rather by the hand of that brave man who was my husband.
+      You used to brag that you were a better man with hands and spear
+      than Menelaus. Go, then, and challenge him again—but I should
+      advise you not to do so, for if you are foolish enough to meet
+      him in single combat, you will soon fall by his spear.”",pending_human_review,no,excluded_until_completed_review
+homer-iliad-grc-monro-allen-perseus--homer-iliad-en-butler-pg2199--book-03--segment-039,be16a807d5d4704c3e8bd1fc9e04a5fa71e014a7ebf71890b3cbd661d6434ec8,homer-iliad,homer-iliad-grc-monro-allen-perseus,homer-iliad-en-butler-pg2199,3,39,39,3.435,3.448,14,,,,,,,"ἀντίβιον πόλεμον πολεμίζειν ἠδὲ μάχεσθαι
+ἀφραδέως, μή πως τάχʼ ὑπʼ αὐτοῦ δουρὶ δαμήῃς.
+τὴν δὲ Πάρις μύθοισιν ἀμειβόμενος προσέειπε·
+μή με γύναι χαλεποῖσιν ὀνείδεσι θυμὸν ἔνιπτε·
+νῦν μὲν γὰρ Μενέλαος ἐνίκησεν σὺν Ἀθήνῃ,
+κεῖνον δʼ αὖτις ἐγώ· πάρα γὰρ θεοί εἰσι καὶ ἡμῖν.
+ἀλλʼ ἄγε δὴ φιλότητι τραπείομεν εὐνηθέντε·
+οὐ γάρ πώ ποτέ μʼ ὧδέ γʼ ἔρως φρένας ἀμφεκάλυψεν,
+οὐδʼ ὅτε σε πρῶτον Λακεδαίμονος ἐξ ἐρατεινῆς
+ἔπλεον ἁρπάξας ἐν ποντοπόροισι νέεσσι,
+νήσῳ δʼ ἐν Κραναῇ ἐμίγην φιλότητι καὶ εὐνῇ,
+ὥς σεο νῦν ἔραμαι καί με γλυκὺς ἵμερος αἱρεῖ.
+ἦ ῥα, καὶ ἄρχε λέχος δὲ κιών· ἅμα δʼ εἵπετʼ ἄκοιτις.
+τὼ μὲν ἄρʼ ἐν τρητοῖσι κατεύνασθεν λεχέεσσιν,","And Paris answered, “Wife, do not vex me with your reproaches.
+      This time, with the help of Minerva, Menelaus has vanquished me;
+      another time I may myself be victor, for I too have gods that
+      will stand by me. Come, let us lie down together and make
+      friends. Never yet was I so passionately enamoured of you as at
+      this moment—not even when I first carried you off from Lacedaemon
+      and sailed away with you—not even when I had converse with you
+      upon the couch of love in the island of Cranae was I so
+      enthralled by desire of you as now.” On this he led her towards
+      the bed, and his wife went with him.",pending_human_review,no,excluded_until_completed_review
+homer-iliad-grc-monro-allen-perseus--homer-iliad-en-butler-pg2199--book-03--segment-040,be16a807d5d4704c3e8bd1fc9e04a5fa71e014a7ebf71890b3cbd661d6434ec8,homer-iliad,homer-iliad-grc-monro-allen-perseus,homer-iliad-en-butler-pg2199,3,40,40,3.449,3.460,12,,,,,,,"Ἀτρεΐδης δʼ ἀνʼ ὅμιλον ἐφοίτα θηρὶ ἐοικὼς
+εἴ που ἐσαθρήσειεν Ἀλέξανδρον θεοειδέα.
+ἀλλʼ οὔ τις δύνατο Τρώων κλειτῶν τʼ ἐπικούρων
+δεῖξαι Ἀλέξανδρον τότʼ ἀρηϊφίλῳ Μενελάῳ·
+οὐ μὲν γὰρ φιλότητί γʼ ἐκεύθανον εἴ τις ἴδοιτο·
+ἶσον γάρ σφιν πᾶσιν ἀπήχθετο κηρὶ μελαίνῃ.
+τοῖσι δὲ καὶ μετέειπεν ἄναξ ἀνδρῶν Ἀγαμέμνων·
+κέκλυτέ μευ Τρῶες καὶ Δάρδανοι ἠδʼ ἐπίκουροι·
+νίκη μὲν δὴ φαίνετʼ ἀρηϊφίλου Μενελάου,
+ὑμεῖς δʼ Ἀργείην Ἑλένην καὶ κτήμαθʼ ἅμʼ αὐτῇ
+ἔκδοτε, καὶ τιμὴν ἀποτινέμεν ἥν τινʼ ἔοικεν,
+ἥ τε καὶ ἐσσομένοισι μετʼ ἀνθρώποισι πέληται.","Thus they laid themselves on the bed together; but the son of
+      Atreus strode among the throng, looking everywhere for
+      Alexandrus, and no man, neither of the Trojans nor of the allies,
+      could find him. If they had seen him they were in no mind to hide
+      him, for they all of them hated him as they did death itself.
+      Then Agamemnon, king of men, spoke, saying, “Hear me, Trojans,
+      Dardanians, and allies. The victory has been with Menelaus;
+      therefore give back Helen with all her wealth, and pay such fine
+      as shall be agreed upon, in testimony among them that shall be
+      born hereafter.”",pending_human_review,no,excluded_until_completed_review
+homer-iliad-grc-monro-allen-perseus--homer-iliad-en-butler-pg2199--book-03--segment-041,be16a807d5d4704c3e8bd1fc9e04a5fa71e014a7ebf71890b3cbd661d6434ec8,homer-iliad,homer-iliad-grc-monro-allen-perseus,homer-iliad-en-butler-pg2199,3,41,41,3.461,3.461,1,,,,,,,"ὣς ἔφατʼ Ἀτρεΐδης, ἐπὶ δʼ ᾔνεον ἄλλοι Ἀχαιοί.","Thus spoke the son of Atreus, and the Achaeans shouted in
+      applause.",pending_human_review,no,excluded_until_completed_review
