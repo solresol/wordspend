@@ -60,14 +60,18 @@
   machine-proposed segments covering all 461 Greek lines and 4,040 published
   translation tokens, plus a blank human-review worklist. Keep every row
   paper-facing ineligible and excluded from analysis pending review.
+- [x] Extend the Butler review queue to Book 4: prepare 39 checksum-linked
+  machine-proposed segments covering all 544 Greek lines and 5,048 published
+  translation tokens, plus a blank human-review worklist. Keep every row
+  paper-facing ineligible and excluded from analysis pending review.
 
 ## Next
 
 - [ ] Produce a finer, reviewable alignment between the prepared Ancient Greek
   source lines and Butler translation tokens before lexical residual analysis.
-  Books 1–3 candidate queues and human-review worklists are prepared;
+  Books 1–4 candidate queues and human-review worklists are prepared;
   completed-decision validation/import tooling is prepared, while human review,
-  adjudication, and Books 4-24 remain pending.
+  adjudication, and Books 5-24 remain pending.
 - [ ] Produce a finer, reviewable alignment between the prepared Ancient Greek
   source lines and Pope translation tokens before lexical residual analysis.
 - [ ] Keep machine-generated translations, if any are added for bootstrap tests,
