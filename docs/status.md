@@ -1,6 +1,6 @@
 # Status
 
-Last updated: 2026-09-16
+Last updated: 2026-09-23
 
 ## Current state
 
@@ -229,6 +229,25 @@ paper-facing translation provenance.
   lines and 22,868 published translation tokens. No translation or human review
   decision was generated.
 
+## 2026-09-23 progress
+
+- Extended the existing Butler fine-alignment preparation to Book 5, using the
+  published Project Gutenberg translation and checksum-verified Monro and Allen
+  source edition already in the corpus.
+- Prepared 67 machine-proposed segments covering all 909 Greek Book 5 lines and
+  all 8,590 Butler Book 5 tokens. Each row retains source and target text,
+  offsets, references, and upstream checksums.
+- Prepared a checksum-linked 67-row human-review worklist with every decision,
+  reviewed range, reviewer, timestamp, and note field blank. All candidate and
+  worklist rows remain paper-facing ineligible and excluded from analysis.
+- Verified exact ordered source-line and target-token coverage, text spans and
+  checksum links, byte-identical regeneration, blank-worklist rejection without
+  a reviewed output, both translation provenance validators, the two-source
+  paper-facing selector, and all 30 local unit tests.
+- Books 1–5 now have 284 candidate and pending-review rows covering 3,402 Greek
+  lines and 31,458 published translation tokens. No translation or human review
+  decision was generated.
+
 ## Paper-facing readiness
 
 There are two metadata-complete, paper-facing-eligible translation rows for the
@@ -237,7 +256,7 @@ and prepared translation-body texts with front/back matter stripped are
 available behind local validation and selection gates. A provenance-complete,
 open-licensed, human-edited Ancient Greek source edition is prepared as a
 checksum-linked line table. Both translations are now structurally aligned to
-that edition at book level under explicit paratext rules. Butler Books 1–4
+that edition at book level under explicit paratext rules. Butler Books 1–5
 also have unreviewed, explicitly analysis-excluded candidate queues for finer
 alignment and checksum-linked pending human-review worklists. No reviewed
 source-line-to-translation alignment or lexical residual analysis is
@@ -248,9 +267,9 @@ but it cannot create an imported artifact until a human worksheet is complete.
 
 - Lexical comparative claims still need an explicit, reviewable finer alignment
   between the prepared Greek `book.line` rows and Butler translation tokens.
-  The Butler Books 1–4 worklists still need human decisions and
+  The Butler Books 1–5 worklists still need human decisions and
   adjudication; the validated import gate is prepared but has no completed
-  decisions to import. Books 5-24 still need candidate queues and review.
+  decisions to import. Books 6-24 still need candidate queues and review.
 - Pope likewise needs a finer reviewed Greek-line-to-translation-token
   alignment before lexical comparative claims.
 - The English translation rights status is recorded for the United States; use
