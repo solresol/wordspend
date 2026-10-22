@@ -437,10 +437,11 @@ Bootstrap Pausanias metrics:
 - source features modelled: 2,000;
 - target features modelled: 2,000.
 
-The generated files are deployed on `merah`, but the public URL still needs the
-`httpd.conf` server stanza in `docs/operations.md` to be added and `httpd`
-reloaded before `https://wordspend.symmachus.org/` serves the new site instead
-of the fallback autoindex.
+As verified on October 22, 2026, the public URL serves the generated site.
+The nightly worker still uses a May-era copy without Git metadata, and the
+database still contains only the Pausanias bootstrap. The newer Iliad
+preparation pipeline produces files but has no PostgreSQL ingestion path yet.
+See `docs/database-audit-2026-10-22.md` for the reconciliation and next steps.
 
 The first results should be treated as bootstrap diagnostics until multiple
 corpora and translator controls are imported.

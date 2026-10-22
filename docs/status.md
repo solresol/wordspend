@@ -374,3 +374,23 @@ but it cannot create an imported artifact until a human worksheet is complete.
 - Human review/adjudication, Butler Books 11–24, and Pope fine alignment remain
   pending. This trial executed the workflow manually; the next scheduled app
   invocation has not yet occurred.
+
+## 2026-10-22 database and pipeline audit
+
+- Confirmed that this machine is raksasa and that both `gregb` and the
+  `wordspend` service account can connect locally without database passwords.
+- Verified a read-only analysis/site build against the live database and the
+  complete pipeline against a disposable corpus snapshot, including analysis
+  persistence and rsync into a local test directory. Production was unchanged.
+- Reconciled repository preparation with PostgreSQL: two published Iliad
+  translations, 15,687 Greek lines, 48 book pairs, and 477 unreviewed candidates
+  remain file-only; PostgreSQL contains only 3,170 Pausanias bootstrap passages.
+- Verified 23 manifest checksums, all ten candidate queues' coverage/text spans,
+  30 unit tests, and both translation provenance validators. No human review
+  decisions have been entered.
+- Found no database ingestion for the new corpus and no paper-facing gate in
+  database analysis. The nightly worker has no `.git` directory and uses a
+  May-era copied application tree. Updated TODO priorities to address these
+  integration gaps before extending blank review queues.
+- Recorded the complete findings, maintenance warnings, and reproducible
+  evidence in `docs/database-audit-2026-10-22.md` and its companion notebook.

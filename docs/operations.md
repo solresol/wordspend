@@ -64,9 +64,9 @@ test -f site/index.html
 curl -fsS https://wordspend.symmachus.org/ | head
 ```
 
-As of May 23, 2026, the files are deployed but the public URL still hits the
-fallback autoindex. The `httpd.conf` stanza above still needs to be installed
-and `httpd` reloaded.
+As of October 22, 2026, the public URL serves the generated Word Spend site;
+its footer reports the October 22 04:35 Sydney-time build. The earlier note
+about a fallback autoindex is no longer current.
 
 ## Failure Rules
 
@@ -89,5 +89,19 @@ the Git root `/home/gregb/devel/wordspend` before running scripts or reading
 project documentation. Use `/home/gregb/.local/bin/uv` if needed. Run `uv sync`
 to install the locked dependencies. The provenance/alignment workflow uses
 CSV and text files and does not require PostgreSQL credentials from udara.
-The PostgreSQL analysis and publication service described above remains a
-separate pipeline on raksasa; moving this TODO automation does not move it.
+This local machine is raksasa. The automation runs as `gregb`; the nightly
+service runs separately as the `wordspend` system account. Both can connect to
+the local `wordspend` database over its Unix socket without a password. No
+database credentials need to be copied from udara. `gregb` currently has a
+PostgreSQL superuser role; scheduled production work should continue using
+the existing `wordspend` service role.
+
+The October 22 audit verified a read-only database analysis/site build from
+this checkout, then exercised the complete pipeline on a disposable database
+snapshot with rsync directed to a local test directory. See
+`docs/database-audit-2026-10-22.md` and its companion notebook for evidence.
+
+The service directory `/home/wordspend/wordspend` currently has no `.git`
+directory and still contains May-era application files. Its nightly job is
+active, but the script's conditional Git pull is skipped. Updating this
+development checkout therefore does not update the service deployment.

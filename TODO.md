@@ -95,6 +95,34 @@
 
 ## Next
 
+Prioritize the database integration and analysis gates below before extending
+the blank alignment queue. See `docs/database-audit-2026-10-22.md` for the live
+database reconciliation and verified build checks.
+
+- [ ] Add explicit analysis eligibility and corpus selection to the database
+  path. Paper-facing lexical runs must reject machine bootstrap, unreviewed,
+  pending-adjudication, and book-only rows; keep an explicitly labelled
+  bootstrap mode for the existing Pausanias diagnostics. Test both CSV and
+  PostgreSQL inputs so importing preparation data cannot bypass the gates.
+- [ ] Add an idempotent PostgreSQL import for the two published translation
+  records and Greek source edition, preserving stable registry IDs, provenance,
+  checksums, rights, and preparation/review status. Add separate staging for
+  source lines, translation books, book-level pairs, and review candidates as
+  needed; do not insert unreviewed candidates into the analysis corpus.
+- [ ] Connect completed human review, adjudication, and database promotion.
+  The existing completed-review importer writes CSV staging only; all 477
+  current review decisions are blank. Make reviewed progress visible in the
+  corpus inventory without treating preparation as reviewed evidence.
+- [ ] Make the nightly service deployment track a known repository revision.
+  `/home/wordspend/wordspend` is a May-era copy without `.git`, so the current
+  pull step never runs there. Connect the new ingestion stages after their
+  exclusion gates are tested, and record source revision and build status.
+- [ ] Separate historical translation/edition publication dates from digital
+  provider release dates before using publication period as an analysis control.
+- [ ] Plan PostgreSQL collation/index maintenance for the observed 2.39 versus
+  2.43 mismatch, and avoid accumulating identical nightly analysis runs without
+  a changed corpus, parameters, or code revision.
+
 - [ ] Produce a finer, reviewable alignment between the prepared Ancient Greek
   source lines and Butler translation tokens before lexical residual analysis.
   Books 1–10 candidate queues and human-review worklists are prepared;
