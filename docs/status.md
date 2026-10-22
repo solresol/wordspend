@@ -1,6 +1,6 @@
 # Status
 
-Last updated: 2026-10-21
+Last updated: 2026-10-22
 
 ## Current state
 
@@ -352,3 +352,25 @@ but it cannot create an imported artifact until a human worksheet is complete.
   outside the United States needs jurisdiction-specific review. The Perseus
   source edition is recorded under CC BY-SA 4.0 and must retain attribution and
   share-alike terms when redistributed.
+
+## 2026-10-22 local automation migration and trial
+
+- Paused `wordspend-todo-progress` on udara and enabled the same weekly
+  Wednesday 10:00 schedule in the local Codex app, retaining GPT-6 Astra
+  with high reasoning effort. The prompt enters the repository root because
+  the registered local project path points inside the Python package.
+- Pulled `origin/main` through `60a87b8` and installed locked dependencies
+  with `uv sync`. The TODO/provenance workflow requires no database credentials;
+  its inputs and prepared source tables are already available locally.
+  The separate nightly PostgreSQL/site pipeline remains on raksasa.
+- Manually exercised the automation's next coherent TODO increment: Butler
+  Book 10 now has 48 checksum-linked machine proposals covering all 579 Greek
+  lines and 5,518 published translation tokens, plus a blank review worklist.
+  Books 1–10 total 477 candidates, 6,266 Greek lines, and 58,544 target tokens.
+- Verified 30 unit tests, both provenance validators, paper-facing selection,
+  byte-identical regeneration, checksum links, source coverage and text, target
+  spans, blank review fields, and rejection of the incomplete review worksheet.
+  All new rows remain paper-facing ineligible and excluded from analysis.
+- Human review/adjudication, Butler Books 11–24, and Pope fine alignment remain
+  pending. This trial executed the workflow manually; the next scheduled app
+  invocation has not yet occurred.

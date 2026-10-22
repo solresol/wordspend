@@ -76,3 +76,18 @@ and `httpd` reloaded.
 - If deployment fails, keep the generated `site/` for inspection and let cron
   mail report the error.
 - Do not publish private source files, raw logs, `.env`, or database dumps.
+
+## TODO progress automation
+
+As of 2026-10-22, `wordspend-todo-progress` is paused on udara and active in
+the local Codex app each Wednesday at 10:00 (Australia/Sydney), using GPT-6
+Astra with high reasoning effort. It completes one bounded TODO increment,
+validates it, updates project status, and commits and pushes the result.
+
+The registered local project is `/home/gregb/devel/wordspend/wordspend`; enter
+the Git root `/home/gregb/devel/wordspend` before running scripts or reading
+project documentation. Use `/home/gregb/.local/bin/uv` if needed. Run `uv sync`
+to install the locked dependencies. The provenance/alignment workflow uses
+CSV and text files and does not require PostgreSQL credentials from udara.
+The PostgreSQL analysis and publication service described above remains a
+separate pipeline on raksasa; moving this TODO automation does not move it.
