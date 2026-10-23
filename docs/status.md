@@ -1,6 +1,6 @@
 # Status
 
-Last updated: 2026-10-22
+Last updated: 2026-10-24
 
 ## Current state
 
@@ -394,3 +394,36 @@ but it cannot create an imported artifact until a human worksheet is complete.
   integration gaps before extending blank review queues.
 - Recorded the complete findings, maintenance warnings, and reproducible
   evidence in `docs/database-audit-2026-10-22.md` and its companion notebook.
+
+## 2026-10-24 database integration and production repair
+
+- Implemented and imported the published corpus into PostgreSQL staging:
+  two translation records, one Greek source edition, 15,687 source lines,
+  48 translation books, 48 structural book pairs, 477 candidates, and 477
+  pending review records. Repeated imports reuse the existing snapshot.
+- Added default paper-facing eligibility checks shared by CSV and database
+  analysis. Database selection additionally requires current reviewed artifacts
+  and adjudication receipts. Bootstrap analysis is explicitly selected and
+  labelled; CSV row numbers cannot be saved as database segment identities.
+- Connected completed worksheets to normalized reviewed staging and added
+  export/import of checksum-linked human adjudication decisions. Partial books,
+  stale hashes, invalid timestamps, and older adjudication replays are rejected.
+  A whole approved book can be promoted; rejection withdraws it. No real human
+  decisions were generated or promoted. Paper-facing eligible segments remain 0.
+- Added tracked migrations, analysis run keys to prevent repeated identical
+  persistence, and source-revision/build/deployment status records.
+- First activated the replacement Git checkout at `192466a`, retaining
+  `/home/wordspend/wordspend.pre-integration-20261024`. The 04:35 cron explicitly
+  selects bootstrap mode. Git pull now happens before Python/dependency loading
+  and failures stop the job. The site reports preparation and review progress.
+- Took a restricted PostgreSQL backup, rebuilt indexes concurrently, then
+  refreshed the database collation version. Recorded/actual versions both read
+  2.43; no invalid indexes were found.
+- Passed 34 tests including a guarded disposable-PostgreSQL integration test,
+  complete shell-pipeline runs, idempotency checks, deployment failure tracking,
+  synthetic review/adjudication/rejection, and stale-provenance exclusion.
+  Both provenance validators and the explicit bootstrap CSV example passed.
+- Historical publication dates are now distinct from provider release dates.
+  Unknown historical dates remain blank rather than treating Gutenberg's 2000
+  and 2004 releases as historical translation dates. See
+  `docs/database-pipeline.md` for operating and review commands.

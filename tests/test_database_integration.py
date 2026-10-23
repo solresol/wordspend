@@ -77,6 +77,12 @@ class DatabaseIntegrationTests(unittest.TestCase):
             with connect(DSN) as conn:
                 self.assertEqual(conn.execute("SELECT count(*) AS n FROM site_builds WHERE status='failed'").fetchone()['n'], 1)
         # Synthetic human decisions are confined to this guarded disposable DB.
+        partial = copy.deepcopy(snapshot)
+        first_review = next(a for a in partial['artifacts'] if a['kind']=='review')
+        first_review['payload']['reviewer'] = 'Synthetic Test Fixture'
+        first_review['sha256'] = digest(first_review['payload'])
+        with connect(DSN) as conn:
+            sync_snapshot(conn, partial, 'test')
         staged = copy.deepcopy(snapshot)
         candidates = [a['payload'] for a in staged['artifacts'] if a['kind']=='candidate' and a['book']==1]
         reviews = [a['payload'] for a in staged['artifacts'] if a['kind']=='review' and a['book']==1]

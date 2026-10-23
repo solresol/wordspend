@@ -443,11 +443,12 @@ Bootstrap Pausanias metrics:
 - source features modelled: 2,000;
 - target features modelled: 2,000.
 
-As verified on October 22, 2026, the public URL serves the generated site.
-The nightly worker still uses a May-era copy without Git metadata, and the
-database still contains only the Pausanias bootstrap. The newer Iliad
-preparation pipeline produces files but has no PostgreSQL ingestion path yet.
-See `docs/database-audit-2026-10-22.md` for the reconciliation and next steps.
+As of October 24, 2026, the service runs from a Git checkout and syncs the
+published Iliad corpus into PostgreSQL staging. The source lines, translation
+books, structural pairs, candidates, and review state are visible in the corpus
+inventory. All 477 candidate reviews are still blank, so the public analysis
+explicitly remains a machine-bootstrap diagnostic. Paper analysis requires
+validated human review and adjudication. See `docs/database-pipeline.md`.
 
 The first results should be treated as bootstrap diagnostics until multiple
 corpora and translator controls are imported.

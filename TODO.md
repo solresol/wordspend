@@ -93,36 +93,31 @@
   translation tokens, plus a blank human-review worklist. Keep every row
   paper-facing ineligible and excluded from analysis pending review.
 
+- [x] Enforce explicit paper/bootstrap analysis scopes for CSV and PostgreSQL,
+  including current review/adjudication receipts for database paper selection.
+- [x] Mirror published translation/source provenance and prepared corpus into
+  idempotent PostgreSQL staging, separate from the analysis corpus.
+- [x] Connect completed human worksheets to validated review staging and
+  checksum-linked adjudication export/import with whole-book promotion/rejection.
+- [x] Replace the copied nightly worker with a Git checkout, update it before
+  loading code, and record source revision and build/deployment status.
+- [x] Separate historical publication dates from digital provider release dates.
+- [x] Back up and reindex the database, refresh the collation version to 2.43,
+  and prevent repeated identical analysis/residual persistence.
+- [x] Enforce machine-bootstrap exclusion from paper-facing claims while
+  retaining an explicitly labelled diagnostic build.
+
 ## Next
 
-The database integration and analysis gates identified in the October 22 audit
-are implemented. See `docs/database-pipeline.md` for the staging, adjudication,
-and production workflow. Human alignment review remains the evidence bottleneck.
+The October 22 database integration findings are addressed. See
+`docs/database-pipeline.md` for current operations. Human alignment review is
+still the evidence bottleneck. A run should not consist solely of extending
+another blank book queue; prioritize usable evidence or tooling and report
+when human input is required.
 
-- [x] Add explicit analysis eligibility and corpus selection to the database
-  path. Paper-facing lexical runs must reject machine bootstrap, unreviewed,
-  pending-adjudication, and book-only rows; keep an explicitly labelled
-  bootstrap mode for the existing Pausanias diagnostics. Test both CSV and
-  PostgreSQL inputs so importing preparation data cannot bypass the gates.
-- [x] Add an idempotent PostgreSQL import for the two published translation
-  records and Greek source edition, preserving stable registry IDs, provenance,
-  checksums, rights, and preparation/review status. Add separate staging for
-  source lines, translation books, book-level pairs, and review candidates as
-  needed; do not insert unreviewed candidates into the analysis corpus.
-- [x] Connect completed human review, adjudication, and database promotion.
-  The existing completed-review importer writes CSV staging only; all 477
-  current review decisions are blank. Make reviewed progress visible in the
-  corpus inventory without treating preparation as reviewed evidence.
-- [x] Make the nightly service deployment track a known repository revision.
-  `/home/wordspend/wordspend` is a May-era copy without `.git`, so the current
-  pull step never runs there. Connect the new ingestion stages after their
-  exclusion gates are tested, and record source revision and build status.
-- [x] Separate historical translation/edition publication dates from digital
-  provider release dates before using publication period as an analysis control.
-- [x] Plan PostgreSQL collation/index maintenance for the observed 2.39 versus
-  2.43 mismatch, and avoid accumulating identical nightly analysis runs without
-  a changed corpus, parameters, or code revision.
-
+- [ ] Verify historical translation/edition dates against primary bibliographic
+  sources and record their citations. These remain unknown rather than using
+  Gutenberg release dates as historical publication periods.
 - [ ] Produce a finer, reviewable alignment between the prepared Ancient Greek
   source lines and Butler translation tokens before lexical residual analysis.
   Books 1–10 candidate queues and human-review worklists are prepared;
@@ -130,5 +125,3 @@ and production workflow. Human alignment review remains the evidence bottleneck.
   adjudication, and Books 11-24 remain pending.
 - [ ] Produce a finer, reviewable alignment between the prepared Ancient Greek
   source lines and Pope translation tokens before lexical residual analysis.
-- [x] Keep machine-generated translations, if any are added for bootstrap tests,
-  explicitly labelled `machine_bootstrap` and excluded from paper-facing claims.

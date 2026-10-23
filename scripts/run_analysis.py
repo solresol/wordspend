@@ -12,6 +12,7 @@ import pandas as pd
 
 from wordspend.analysis import analyze_translation_spend, write_analysis_outputs
 from wordspend.db import connect, fetch_segments, save_analysis_result, stable_hash
+from wordspend.eligibility import select_analysis_segments
 
 
 def main() -> None:
@@ -65,7 +66,7 @@ def main() -> None:
     for key in ['output_dir', 'save_db']:
         parameters.pop(key)
     result['metrics']['run_key'] = stable_hash(
-        result['segments'].to_json(orient='records', force_ascii=False),
+        select_analysis_segments(frame, args.mode).to_json(orient='records', force_ascii=False),
         json.dumps(parameters, sort_keys=True), revision)
 
     if args.save_db:

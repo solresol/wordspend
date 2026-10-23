@@ -196,7 +196,12 @@ def sync_snapshot(conn, snapshot: dict, revision: str) -> dict:
         if artifact['kind'] == 'review':
             existing = conn.execute("SELECT payload FROM corpus_artifacts WHERE kind='review' AND registry_id=%s", (artifact['key'],)).fetchone()
             if existing and any(existing['payload'].get(k, '').strip() for k in REVIEW_FIELDS):
-                require(existing['payload'] == artifact['payload'], 'Stored human review differs; reconcile explicitly before syncing')
+                old, new = existing['payload'], artifact['payload']
+                # Filling previously blank fields is normal review progress.
+                # Changing or erasing an entered value requires reconciliation.
+                require(all(not old.get(k, '').strip() or old[k] == new.get(k, '') for k in REVIEW_FIELDS)
+                        and all(new.get(k) == v for k, v in old.items() if k not in REVIEW_FIELDS),
+                        'Stored human review differs; reconcile explicitly before syncing')
     conn.execute('UPDATE corpus_artifacts SET is_current=false WHERE is_current')
     with conn.cursor() as cur:
         cur.executemany('''INSERT INTO corpus_artifacts

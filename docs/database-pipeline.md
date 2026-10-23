@@ -28,8 +28,8 @@ pairs, candidates, entered reviews, and fully validated reviews as separate
 artifact kinds, retaining their complete payload and checksum. They do not
 automatically enter `aligned_segments`. A snapshot signature makes unchanged
 imports a no-op, and artifacts absent from a newer snapshot become noncurrent.
-Previously entered human review data cannot silently be overwritten by a
-different file snapshot; such a conflict stops the sync for reconciliation.
+Previously blank review fields can be filled incrementally. Entered values
+cannot silently be erased or changed by a different file snapshot; such a conflict stops the sync for reconciliation.
 
 ```sql
 SELECT * FROM corpus_preparation_inventory WHERE slug='homer-iliad';
