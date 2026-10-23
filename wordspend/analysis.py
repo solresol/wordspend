@@ -14,6 +14,7 @@ from sklearn.linear_model import LinearRegression, Ridge
 from sklearn.metrics import mean_squared_error, r2_score
 
 from .textstats import count_characters, count_tokens, estimate_syllables, normalize_text
+from .eligibility import select_analysis_segments
 
 TOKEN_PATTERN = r"(?u)\b\w+\b"
 
@@ -204,8 +205,12 @@ def analyze_translation_spend(
     top_n: int = 40,
     max_features: int = 2000,
     corpus_label: str = "all",
+    analysis_mode: str = "paper",
 ) -> dict[str, Any]:
     """Run the full baseline and lexical residual analysis."""
+    frame = select_analysis_segments(frame, analysis_mode)
+    if frame.empty:
+        return _empty_result(f'No eligible segments for {analysis_mode} analysis.')
     df = prepare_segments(frame, metric=metric)
     if len(df) < min_segments:
         return _empty_result(f"At least {min_segments} aligned segments are required.")
@@ -238,6 +243,7 @@ def analyze_translation_spend(
     r2 = float(r2_score(target_model_values, predicted_model_values))
 
     metrics = {
+        "analysis_mode": analysis_mode,
         "corpus_label": corpus_label,
         "metric": metric,
         "baseline_model": baseline,

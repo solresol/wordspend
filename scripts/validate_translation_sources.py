@@ -121,6 +121,15 @@ def validate_registry(path: Path) -> tuple[int, int, list[str]]:
 
             validate_iso_date((row.get("publication_date") or "").strip(), "publication_date", row_label, errors)
             validate_iso_date((row.get("last_updated") or "").strip(), "last_updated", row_label, errors)
+            if row.get('provider_release_date'):
+                validate_iso_date(row['provider_release_date'], 'provider_release_date', row_label, errors)
+                if row.get('publication_date_kind') != 'provider_release' or row['publication_date'] != row['provider_release_date']:
+                    errors.append(f'{row_label}: legacy publication_date must be labelled as provider_release')
+            historical = row.get('historical_publication_date') or ''
+            if historical:
+                validate_iso_date(historical, 'historical_publication_date', row_label, errors)
+                if not row.get('historical_publication_source_url'):
+                    errors.append(f'{row_label}: historical date requires a bibliographic source URL')
             validate_url((row.get("catalog_url") or "").strip(), "catalog_url", row_label, errors)
             validate_url((row.get("download_url") or "").strip(), "download_url", row_label, errors)
 

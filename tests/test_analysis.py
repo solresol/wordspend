@@ -61,7 +61,9 @@ class AnalysisTests(unittest.TestCase):
             ]
         )
 
-        result = analyze_translation_spend(frame, min_df=1, top_n=100)
+        frame['is_machine_generated'] = True
+        frame['translation_source_type'] = 'machine_bootstrap'
+        result = analyze_translation_spend(frame, min_df=1, top_n=100, analysis_mode='bootstrap')
 
         self.assertTrue(result["available"])
         self.assertEqual(result["metrics"]["segment_count"], 6)

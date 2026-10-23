@@ -339,6 +339,7 @@ Run analysis from a CSV file:
 ```bash
 uv run python scripts/run_analysis.py \
   --input data/example_segments.csv \
+  --mode bootstrap \
   --output-dir build/analysis
 ```
 
@@ -358,7 +359,8 @@ export WORDSPEND_DATABASE_URL=dbname=wordspend
 uv run python scripts/init_db.py
 uv run python scripts/load_work_catalog.py
 uv run python scripts/import_pausanias.py --limit 0
-uv run python scripts/run_analysis.py --from-db --save-db --output-dir build/analysis
+uv run python scripts/sync_prepared_corpus.py
+uv run python scripts/run_analysis.py --from-db --save-db --mode bootstrap --output-dir build/analysis
 uv run python scripts/generate_site.py --analysis-dir build/analysis --output-dir site
 ```
 
@@ -379,20 +381,24 @@ The intended service account and database are:
 The intended nightly cron shape is:
 
 ```cron
-35 4 * * * /home/wordspend/wordspend/scripts/run_daily_pipeline.sh >> /home/wordspend/wordspend/logs/cron.log 2>&1
+35 4 * * * WORDSPEND_ANALYSIS_MODE=bootstrap /home/wordspend/wordspend/scripts/run_daily_pipeline.sh >> /home/wordspend/wordspend/logs/cron.log 2>&1
 ```
 
 The pipeline:
 
-1. enters the repo;
-2. pulls from git only when the checkout is clean;
-3. applies schema;
-4. loads the work catalog;
-5. optionally refreshes imported corpora;
-6. runs analysis from PostgreSQL;
-7. generates the static site;
-8. deploys to `merah:/var/www/vhosts/wordspend.symmachus.org/htdocs/`;
-9. leaves logs and generated analysis files in `logs/` and `build/`.
+1. locks the job and requires a clean, successfully updated Git checkout;
+2. applies tracked schema migrations and loads the work catalog;
+3. validates and syncs published corpus preparation into PostgreSQL staging;
+4. optionally refreshes Pausanias;
+5. runs an explicitly selected paper or bootstrap analysis, reusing identical runs;
+6. generates the site with corpus preparation/review inventory;
+7. deploys to `merah:/var/www/vhosts/wordspend.symmachus.org/htdocs/`;
+8. records build/deployment status and source revision in PostgreSQL.
+
+Paper analysis is the default and requires adjudicated, eligible fine alignments.
+The current public build explicitly selects bootstrap mode because the Iliad
+worksheets still await human review. See `docs/database-pipeline.md` for staging,
+review/adjudication, eligibility, and integration-test commands.
 
 ## Publication Plan
 

@@ -74,7 +74,7 @@ def _layout(title: str, active: str, body: str) -> str:
 {body}
   </main>
   <footer>
-    Generated {generated}. Bootstrap results are diagnostic until multi-corpus and translator controls are complete.
+    Generated {generated}. Analysis scope and corpus preparation status are described on the Results and Corpus pages.
   </footer>
 </body>
 </html>
@@ -411,9 +411,18 @@ def generate_site(
     target_predictors = analysis.get("target_predictors", pd.DataFrame())
     catalog = _read_catalog(catalog_path)
 
+    if metrics.get('analysis_mode') == 'bootstrap':
+        scope = '<p><strong>Bootstrap diagnostics — machine-generated translations.</strong> These results use the Pausanias project’s machine-generated English. They are excluded from paper evidence.</p>'
+    elif metrics.get('analysis_mode') == 'paper':
+        scope = '<p><strong>Reviewed corpus.</strong> These results use published translations with validated human review and adjudication.</p>'
+    else:
+        scope = '<p><strong>Unclassified diagnostic output.</strong> Evidence eligibility has not been established.</p>'
+    scope += '<p>Source revision: <code>' + html.escape(str(metrics.get('source_revision', 'unrecorded'))) + '</code></p>'
+
     index_body = f"""
 <section class="narrow">
   <h2>Current Results</h2>
+  {scope}
   <p>The live analysis fits a source-to-target length baseline and then looks for source and target terms associated with unexpectedly long or short translations. Positive residuals mean the translation spends more words than expected after controlling for source length.</p>
 </section>
 {_metrics_panel(metrics)}
@@ -444,6 +453,13 @@ def generate_site(
   {_corpus_table(catalog, segments)}
 </section>
 """
+    prep_columns = ['published_translations', 'source_lines', 'translation_books', 'book_pairs',
+                    'candidates', 'entered_reviews', 'validated_reviews', 'paper_facing_segments']
+    if all(column in catalog.columns for column in prep_columns):
+        prepared = catalog.loc[catalog[prep_columns].fillna(0).sum(axis=1) > 0, ['title', *prep_columns]].copy()
+        prepared.columns = ['Work', 'Published translations', 'Source lines', 'Translation books',
+                            'Book pairs', 'Candidates', 'Entered reviews', 'Validated reviews', 'Paper-facing segments']
+        corpus_body += '<section><h2>Preparation and review progress</h2><p>Prepared books and unreviewed candidates are stored separately from analysis. Published provenance does not by itself make an alignment paper-facing.</p><div class="table-wrap">' + prepared.to_html(index=False, escape=True) + '</div></section>'
     (output / "corpus.html").write_text(_layout("Word Spend Corpus", "corpus", corpus_body), encoding="utf-8")
 
     methods_body = """

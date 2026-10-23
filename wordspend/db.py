@@ -235,6 +235,7 @@ def upsert_aligned_segments(
     source_language: str,
     target_language: str = "English",
     alignment_level: str = "passage",
+    commit: bool = True,
 ) -> int:
     """Insert or update aligned segments."""
     count = 0
@@ -296,14 +297,23 @@ def upsert_aligned_segments(
                 },
             )
             count += 1
-    conn.commit()
+    if commit:
+        conn.commit()
     return count
 
 
-def fetch_segments(conn: psycopg.Connection, work_slugs: list[str] | None = None, limit: int | None = None) -> pd.DataFrame:
+def fetch_segments(conn: psycopg.Connection, work_slugs: list[str] | None = None,
+                   limit: int | None = None, mode: str = 'paper') -> pd.DataFrame:
     """Fetch aligned segments for analysis."""
     params: list[Any] = []
     where = ["s.source_text <> ''", "s.target_text <> ''"]
+    if mode == 'paper':
+        table = 'paper_facing_segments'
+    elif mode == 'bootstrap':
+        table = 'aligned_segments'
+        where.extend(["t.is_machine_generated", "t.translation_source_type='machine_bootstrap'"])
+    else:
+        raise ValueError(f'Unknown analysis mode: {mode}')
     if work_slugs:
         where.append("w.slug = ANY(%s)")
         params.append(work_slugs)
@@ -317,6 +327,12 @@ def fetch_segments(conn: psycopg.Connection, work_slugs: list[str] | None = None
             s.segment_ref,
             s.segment_order,
             s.alignment_level,
+            s.paper_facing_eligible, s.review_status, s.analysis_status,
+            t.is_machine_generated, t.translation_source_type,
+            t.translator, t.translation_label,
+            t.license_status AS translation_rights_status,
+            v.rights_status AS source_rights_status,
+            v.editorial_status AS source_editorial_status,
             s.source_text,
             s.target_text,
             s.source_token_count,
@@ -325,9 +341,10 @@ def fetch_segments(conn: psycopg.Connection, work_slugs: list[str] | None = None
             s.target_char_count,
             s.source_syllable_count,
             s.target_syllable_count
-        FROM aligned_segments s
+        FROM {table} s
         JOIN works w ON w.id = s.work_id
         LEFT JOIN translations t ON t.id = s.translation_id
+        LEFT JOIN source_text_versions v ON v.id=s.source_version_id
         WHERE {' AND '.join(where)}
         ORDER BY w.slug, s.segment_order, s.segment_ref
     """
@@ -337,7 +354,8 @@ def fetch_segments(conn: psycopg.Connection, work_slugs: list[str] | None = None
     with conn.cursor() as cur:
         cur.execute(query, params)
         rows = cur.fetchall()
-    return pd.DataFrame(rows)
+        columns = [column.name for column in cur.description]
+    return pd.DataFrame(rows, columns=columns)
 
 
 def fetch_work_catalog(conn: psycopg.Connection) -> pd.DataFrame:
@@ -351,6 +369,8 @@ def fetch_work_catalog(conn: psycopg.Connection) -> pd.DataFrame:
 def save_analysis_result(conn: psycopg.Connection, result: dict[str, Any], notes: str = "") -> int:
     """Persist one analysis result and return the analysis run id."""
     metrics = result["metrics"]
+    if not metrics.get('run_key'):
+        raise ValueError('Analysis persistence requires a corpus/parameter/code run key')
     with conn.cursor() as cur:
         cur.execute(
             """
@@ -359,7 +379,8 @@ def save_analysis_result(conn: psycopg.Connection, result: dict[str, Any], notes
                 segment_count, source_length_column, target_length_column,
                 intercept, slope, r2, rmse, residual_std,
                 source_feature_count, target_feature_count,
-                source_predictor_r2, target_predictor_r2, parameters, notes
+                source_predictor_r2, target_predictor_r2, parameters, notes,
+                run_key, source_revision, analysis_mode
             )
             VALUES (
                 %(corpus_label)s, %(metric)s, %(baseline_model)s,
@@ -368,8 +389,10 @@ def save_analysis_result(conn: psycopg.Connection, result: dict[str, Any], notes
                 %(intercept)s, %(slope)s, %(r2)s, %(rmse)s,
                 %(residual_std)s, %(source_feature_count)s,
                 %(target_feature_count)s, %(source_predictor_r2)s,
-                %(target_predictor_r2)s, %(parameters)s::jsonb, %(notes)s
+                %(target_predictor_r2)s, %(parameters)s::jsonb, %(notes)s,
+                %(run_key)s, %(source_revision)s, %(analysis_mode)s
             )
+            ON CONFLICT (run_key) DO NOTHING
             RETURNING id
             """,
             {
@@ -384,7 +407,13 @@ def save_analysis_result(conn: psycopg.Connection, result: dict[str, Any], notes
                 "notes": notes,
             },
         )
-        run_id = int(cur.fetchone()["id"])
+        inserted = cur.fetchone()
+        if not inserted:
+            run_id = int(conn.execute('SELECT id FROM analysis_runs WHERE run_key=%s',
+                                     (metrics['run_key'],)).fetchone()['id'])
+            conn.commit()
+            return run_id
+        run_id = int(inserted["id"])
 
         segments = result.get("segments", pd.DataFrame())
         for record in dataframe_to_records(segments):

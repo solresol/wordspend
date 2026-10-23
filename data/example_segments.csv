@@ -1,0 +1,7 @@
+work_slug,segment_ref,source_text,target_text,is_machine_generated,translation_source_type
+synthetic-fixture,1,compact alpha beta gamma,one two three four five six seven eight nine,true,machine_bootstrap
+synthetic-fixture,2,compact delta epsilon zeta,one two three four five six seven eight,true,machine_bootstrap
+synthetic-fixture,3,compact eta theta iota,one two three four five six seven eight ten,true,machine_bootstrap
+synthetic-fixture,4,sprawl alpha beta gamma kappa lambda,one two three,true,machine_bootstrap
+synthetic-fixture,5,sprawl delta epsilon zeta kappa lambda,one two three four,true,machine_bootstrap
+synthetic-fixture,6,sprawl eta theta iota kappa lambda,one two three,true,machine_bootstrap

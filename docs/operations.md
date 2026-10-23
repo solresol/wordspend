@@ -38,7 +38,7 @@ doas rcctl reload httpd
 Suggested service-account cron:
 
 ```cron
-35 4 * * * /home/wordspend/wordspend/scripts/run_daily_pipeline.sh >> /home/wordspend/wordspend/logs/cron.log 2>&1
+35 4 * * * WORDSPEND_ANALYSIS_MODE=bootstrap /home/wordspend/wordspend/scripts/run_daily_pipeline.sh >> /home/wordspend/wordspend/logs/cron.log 2>&1
 ```
 
 Use `IMPORT_PAUSANIAS=1` only when the cron account can read the source
@@ -51,7 +51,8 @@ cd /home/wordspend/wordspend
 export WORDSPEND_DATABASE_URL=dbname=wordspend
 uv run python scripts/init_db.py
 uv run python scripts/load_work_catalog.py
-uv run python scripts/run_analysis.py --from-db --save-db --output-dir build/analysis
+uv run python scripts/sync_prepared_corpus.py
+uv run python scripts/run_analysis.py --from-db --save-db --mode bootstrap --output-dir build/analysis
 uv run python scripts/generate_site.py --analysis-dir build/analysis --output-dir site
 rsync -az --delete site/ wordspend@merah:/var/www/vhosts/wordspend.symmachus.org/htdocs/
 ```
@@ -101,7 +102,9 @@ this checkout, then exercised the complete pipeline on a disposable database
 snapshot with rsync directed to a local test directory. See
 `docs/database-audit-2026-10-22.md` and its companion notebook for evidence.
 
-The service directory `/home/wordspend/wordspend` currently has no `.git`
-directory and still contains May-era application files. Its nightly job is
-active, but the script's conditional Git pull is skipped. Updating this
-development checkout therefore does not update the service deployment.
+The October 24 integration replaces the copied service tree with a Git checkout
+and keeps the old tree as a recoverable backup. The nightly job requires a
+clean checkout and successful fast-forward pull before loading Python. It syncs
+prepared corpus staging, applies explicit analysis gates, records the source
+revision and build status, and publishes preparation/review counts. See
+`docs/database-pipeline.md` for current operational details.
