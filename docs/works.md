@@ -65,7 +65,12 @@
   making them paper-facing eligible.
 - `homer-iliad-en-pope-pg6130`: English (`en`), translated by Alexander Pope,
   Project Gutenberg eBook #6130 plain-text edition, released 2004-07-01 and
-  most recently updated 2026-02-07. Rights status is recorded as
+  most recently updated 2026-02-07. The provider's
+  [transcribed title page](https://www.gutenberg.org/files/6130/6130-h/6130-h.htm)
+  dates this edition to 1899; the registry records the citation and cached
+  title-block checksum/location. This is an edition date, not Pope's original
+  translation date; publisher and physical scan remain unverified.
+  Rights status is recorded as
   `public_domain_us`; machine/human status is `human_published`;
   paper-facing metadata eligibility is `yes`. The raw provider text is fetched
   to `data/raw/translations/homer-iliad-en-pope-pg6130.txt`, with checksum

@@ -18,6 +18,23 @@ Each prepared source row must record:
 - machine/human status
 - paper-facing eligibility
 
+## Historical dates
+
+`publication_date` is the legacy provider release date, explicitly labelled by
+`publication_date_kind=provider_release` and repeated in `provider_release_date`.
+It must not be used as a historical translation period.
+
+`historical_publication_date` records the edition represented by the downloaded
+text, as a four-digit positive year or an ISO date at the precision supported by
+the evidence. A nonblank value requires `historical_publication_date_kind=edition`,
+an HTTP(S) `historical_publication_source_url`, and a nonblank
+`historical_publication_citation`. Use `historical_publication_notes` to record
+evidence location/checksum and limitations. Distinguish a provider's transcribed
+title page from an inspected physical scan. Do not substitute the translation's
+first-publication date for an unverified edition, or invent a month and day.
+Unknown dates remain blank. Bibliographic metadata does not waive alignment
+review or adjudication.
+
 ## Machine/human status
 
 Use these values in `data/translation_sources.csv`:

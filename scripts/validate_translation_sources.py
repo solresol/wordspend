@@ -127,9 +127,22 @@ def validate_registry(path: Path) -> tuple[int, int, list[str]]:
                     errors.append(f'{row_label}: legacy publication_date must be labelled as provider_release')
             historical = row.get('historical_publication_date') or ''
             if historical:
-                validate_iso_date(historical, 'historical_publication_date', row_label, errors)
-                if not row.get('historical_publication_source_url'):
-                    errors.append(f'{row_label}: historical date requires a bibliographic source URL')
+                # Bibliographic title pages often establish only a year. Do not
+                # invent a month/day to satisfy the digital-release date format.
+                if re.fullmatch(r"[0-9]{4}", historical):
+                    if historical == "0000":
+                        errors.append(f'{row_label}: historical_publication_date must have a positive year')
+                else:
+                    validate_iso_date(historical, 'historical_publication_date', row_label, errors)
+                for field in ('historical_publication_source_url', 'historical_publication_citation'):
+                    if not (row.get(field) or '').strip():
+                        errors.append(f'{row_label}: historical date requires {field}')
+                if row.get('historical_publication_source_url'):
+                    validate_url(row['historical_publication_source_url'],
+                                 'historical_publication_source_url', row_label, errors)
+                if row.get('historical_publication_date_kind') != 'edition':
+                    errors.append(f'{row_label}: historical_publication_date_kind must be edition; '
+                                  'do not substitute the translation first-publication date')
             validate_url((row.get("catalog_url") or "").strip(), "catalog_url", row_label, errors)
             validate_url((row.get("download_url") or "").strip(), "download_url", row_label, errors)
 

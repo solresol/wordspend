@@ -106,6 +106,9 @@
   and prevent repeated identical analysis/residual persistence.
 - [x] Enforce machine-bootstrap exclusion from paper-facing claims while
   retaining an explicitly labelled diagnostic build.
+- [x] Record Pope's 1899 edition year from the provider's transcribed title
+  page, with citation, URL, cached-text checksum/location, and explicit edition
+  scope. Accept year-only historical dates without inventing a month/day.
 
 ## Next
 
@@ -116,8 +119,10 @@ another blank book queue; prioritize usable evidence or tooling and report
 when human input is required.
 
 - [ ] Verify historical translation/edition dates against primary bibliographic
-  sources and record their citations. These remain unknown rather than using
-  Gutenberg release dates as historical publication periods.
+  sources and record their citations. Pope's provider-transcribed edition year
+  is recorded; its physical printing/publisher and Butler's underlying edition
+  remain unverified. Do not use Gutenberg release dates or a different
+  printing's date as historical publication periods.
 - [ ] Produce a finer, reviewable alignment between the prepared Ancient Greek
   source lines and Butler translation tokens before lexical residual analysis.
   Books 1–10 candidate queues and human-review worklists are prepared;

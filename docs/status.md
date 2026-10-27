@@ -1,6 +1,26 @@
 # Status
 
-Last updated: 2026-10-24
+Last updated: 2026-10-28
+
+## 2026-10-28 edition-date provenance
+
+- Recorded Pope's provider-transcribed 1899 edition date, citation, source URL,
+  and cached title-block location/SHA-256 in the translation registry. The
+  provider release date remains 2004-07-01. The physical printing and publisher
+  remain unverified; Butler's underlying edition date remains blank.
+- Historical-date validation now accepts a year without fabricated month/day
+  precision and requires a citation, valid HTTP(S) source URL, and explicit
+  edition scope. Translation first-publication dates cannot substitute for
+  edition dates.
+- Confirmed the citation against the cached raw text and live provider text.
+  Both provenance validators and the two-source prepared-text selector pass.
+- All 37 tests pass, including disposable PostgreSQL staging, date/citation
+  persistence, idempotency, review/adjudication gates, and the shell pipeline.
+  The test database used `template0` because `template1` has an unrelated
+  collation-version mismatch; no cluster maintenance was performed.
+- No text bodies, alignments, rights statuses, or human reviews were changed.
+  A read-only live database check still reports zero entered reviews and zero
+  paper-facing segments. Human review/adjudication remains the evidence blocker.
 
 ## Current state
 

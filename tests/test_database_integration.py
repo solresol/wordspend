@@ -43,6 +43,16 @@ class DatabaseIntegrationTests(unittest.TestCase):
             self.assertTrue(sync_snapshot(conn, snapshot, 'test')['unchanged'])
             inventory = conn.execute("SELECT * FROM corpus_preparation_inventory WHERE slug='homer-iliad'").fetchone()
             self.assertEqual([inventory[k] for k in ['source_lines', 'translation_books', 'book_pairs', 'candidates', 'entered_reviews']], [15687, 48, 48, 477, 0])
+            pope = conn.execute("SELECT * FROM translations WHERE registry_id=%s",
+                                ('homer-iliad-en-pope-pg6130',)).fetchone()
+            self.assertEqual(pope['publication_year'], 1899)
+            self.assertEqual(pope['historical_publication_date'], '1899')
+            self.assertEqual(pope['provider_release_date'], '2004-07-01')
+            self.assertEqual(pope['metadata']['historical_publication_date_kind'], 'edition')
+            self.assertTrue(pope['metadata']['historical_publication_citation'])
+            butler = conn.execute("SELECT publication_year FROM translations WHERE registry_id=%s",
+                                  ('homer-iliad-en-butler-pg2199',)).fetchone()
+            self.assertIsNone(butler['publication_year'])
             self.assertTrue(fetch_segments(conn).empty)
             work = get_work_id(conn, 'pausanias-description-of-greece')
             source = upsert_source_version(conn, work_id=work, version_label='synthetic-test-only')

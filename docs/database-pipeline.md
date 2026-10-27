@@ -22,6 +22,10 @@ The former `publication_date` registry field is explicitly labelled a provider
 release date. It populates `provider_release_date`, not a historical publication
 year. `historical_publication_date` stays unknown until a bibliographic source
 has been recorded; no translation period is inferred from Gutenberg dates.
+Pope now carries the provider-transcribed edition year `1899`; Butler remains
+unknown. Historical dates describe editions, not first publication of a
+translation. Citations, evidence scope, and limitations travel in translation
+metadata; a year-only value is retained without fabricated month/day precision.
 
 `corpus_artifacts` stores source lines, translation books, structural book
 pairs, candidates, entered reviews, and fully validated reviews as separate
