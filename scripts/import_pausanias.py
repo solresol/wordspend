@@ -8,6 +8,7 @@ import os
 from typing import Any
 
 import psycopg
+from psycopg.conninfo import conninfo_to_dict, make_conninfo
 from psycopg.rows import dict_row
 
 from wordspend.db import (
@@ -24,8 +25,25 @@ def passage_sort_key(passage_id: str) -> tuple[int, ...]:
     return tuple(int(part) for part in str(passage_id).split(".") if part.isdigit())
 
 
+def pausanias_source_connection():
+    """Guard the Pausanias reader independently of Wordspend's own database."""
+    values = {"host": "/var/run/postgresql", "port": "5433",
+              "dbname": "pausanias", "user": "wordspend"}
+    explicit = os.environ.get("PAUSANIAS_DATABASE_URL")
+    if explicit:
+        values.update(conninfo_to_dict(explicit))
+    conn = psycopg.connect(make_conninfo(**values), row_factory=dict_row)
+    actual = (conn.info.dbname, conn.info.user, conn.info.host,
+              conn.info.port, conn.info.server_version // 10000)
+    expected = (values["dbname"], values["user"], values["host"], int(values["port"]), 18)
+    if actual != expected:
+        conn.close()
+        raise RuntimeError("Refusing Pausanias source: database/role/host/port/major mismatch")
+    conn.read_only = True
+    return conn
+
+
 def fetch_pausanias_rows(limit: int = 0) -> list[dict[str, Any]]:
-    source_dsn = os.environ.get("PAUSANIAS_DATABASE_URL", "dbname=pausanias")
     query = """
         SELECT
             p.id AS segment_ref,
@@ -38,7 +56,7 @@ def fetch_pausanias_rows(limit: int = 0) -> list[dict[str, Any]]:
           AND p.passage IS NOT NULL
           AND btrim(p.passage) <> ''
     """
-    with psycopg.connect(source_dsn, row_factory=dict_row) as conn:
+    with pausanias_source_connection() as conn:
         with conn.cursor() as cur:
             cur.execute(query)
             rows = cur.fetchall()
