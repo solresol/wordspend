@@ -1,0 +1,17 @@
+{
+  "source_id": "homer-iliad-en-butler-pg2199",
+  "evidence_kind": "provider_archived_production_credit",
+  "source_url": "https://www.gutenberg.org/files/2199/old/iliad10.txt",
+  "resolved_url": "https://www.gutenberg.org/files/2199/old/iliad10.txt",
+  "retrieved_at": "2026-11-03T23:06:56.512115+00:00",
+  "http_last_modified": "Wed, 15 Dec 2004 23:07:00 GMT",
+  "raw_path": "data/raw/bibliography/butler-pg2199-iliad10.txt",
+  "raw_sha256": "3b314b1aeb489b9cc0b61bc61dd0835a0867da4fd214801f0797b7cfc7ee4e3c",
+  "raw_bytes": 835756,
+  "credit_line_start": 263,
+  "credit_line_end": 266,
+  "credited_edition_year": "1898",
+  "credited_publisher": "Longmans, Green & Co.",
+  "credit_summary": "Jim Tinsley credits scans of the 1898 Longmans, Green & Co. edition made by Norm Wolcott, and editing from an anonymous online transcription.",
+  "limitations": "Provider credit establishes the named scan edition, not exact fidelity of the current revised Gutenberg text to one physical printing. No physical title-page scan inspected; anonymous transcription ancestry remains unresolved."
+}

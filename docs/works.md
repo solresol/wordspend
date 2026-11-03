@@ -49,7 +49,12 @@
   translation-body text is written to
   `data/prepared/translations/homer-iliad-en-butler-pg2199.txt`, with checksum
   and line-boundary provenance in `data/prepared/translation_texts.csv`. Its
-  24 book bodies exclude the declared editorial summary after each `BOOK`
+  historical source edition is now recorded as Longmans, Green & Co., 1898,
+  based on the [archived Gutenberg production credit](https://www.gutenberg.org/files/2199/old/iliad10.txt).
+  The credit also identifies editing from an anonymous online transcription;
+  exact fidelity of the current digital text to that printing is unverified.
+  Retrieval/checksum evidence is in data/bibliography/butler-pg2199-edition.json.
+  Its 24 book bodies exclude the declared editorial summary after each `BOOK`
   heading and contain 153,268 tokens. Their source offsets, checksums, and
   structural Greek-book alignments are recorded under `data/prepared/`.
   Finer-alignment queues for Books 1–10 are recorded under

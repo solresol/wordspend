@@ -1,6 +1,30 @@
 # Status
 
-Last updated: 2026-10-28
+Last updated: 2026-11-04
+
+## 2026-11-04 Butler edition provenance
+
+- Recovered the archived Gutenberg eBook 2199 production credit identifying
+  scans of the Longmans, Green & Co. 1898 edition, credited to Norm Wolcott,
+  and Jim Tinsley's editing from an anonymous online transcription.
+- Recorded 1898 as the provider-credited scan edition with citation, archive
+  URL, raw checksum and line location. The provider release stays 2000-06-01.
+  The retrieval receipt is in data/bibliography/butler-pg2199-edition.json;
+  its raw download is cached separately from corpus translation inputs.
+- This is provider testimony about the scan source, not verification of a
+  physical printing or exact fidelity of the current revised digital text.
+  Anonymous transcription ancestry and Pope's publisher remain unresolved.
+- Verified the cached receipt hash/byte count, credit line location, and registry
+  cross-links; both provenance validators and two-source selection pass.
+  All 44 tests and 25 subtests pass with a disposable PostgreSQL database,
+  including date persistence, eligibility gates, and the shell pipeline.
+  Used uv run --with pytest pytest -q tests: the newly pulled routing tests
+  require pytest, which is not in the locked dependencies. The initial
+  unittest run passed integration but failed importing that test module.
+- Removed the disposable database. Read-only production checks show zero
+  entered reviews and zero paper-facing segments. No production writes made.
+- No translation bodies, review decisions, or eligibility flags were changed.
+  Human review and adjudication remain necessary for paper-facing segments.
 
 ## 2026-10-28 edition-date provenance
 

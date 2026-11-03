@@ -110,6 +110,10 @@
   page, with citation, URL, cached-text checksum/location, and explicit edition
   scope. Accept year-only historical dates without inventing a month/day.
 
+- [x] Recover Butler's provider-credited 1898 Longmans, Green & Co. scan
+  edition from Gutenberg's archived production note; record the URL, checksum,
+  line location, and anonymous-transcription limitation.
+
 ## Next
 
 The October 22 database integration findings are addressed. See
@@ -120,9 +124,11 @@ when human input is required.
 
 - [ ] Verify historical translation/edition dates against primary bibliographic
   sources and record their citations. Pope's provider-transcribed edition year
-  is recorded; its physical printing/publisher and Butler's underlying edition
-  remain unverified. Do not use Gutenberg release dates or a different
-  printing's date as historical publication periods.
+  is recorded; Butler's archived production credit identifies its 1898
+  Longmans, Green & Co. scan source. Physical printing verification, Pope's
+  publisher, and the fidelity of the revised Butler text to its credited
+  scan edition remain unresolved. Do not use Gutenberg release dates or a
+  different printing's date as historical publication periods.
 - [ ] Produce a finer, reviewable alignment between the prepared Ancient Greek
   source lines and Butler translation tokens before lexical residual analysis.
   Books 1–10 candidate queues and human-review worklists are prepared;

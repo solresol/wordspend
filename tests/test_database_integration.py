@@ -50,9 +50,12 @@ class DatabaseIntegrationTests(unittest.TestCase):
             self.assertEqual(pope['provider_release_date'], '2004-07-01')
             self.assertEqual(pope['metadata']['historical_publication_date_kind'], 'edition')
             self.assertTrue(pope['metadata']['historical_publication_citation'])
-            butler = conn.execute("SELECT publication_year FROM translations WHERE registry_id=%s",
+            butler = conn.execute("SELECT * FROM translations WHERE registry_id=%s",
                                   ('homer-iliad-en-butler-pg2199',)).fetchone()
-            self.assertIsNone(butler['publication_year'])
+            self.assertEqual(butler['publication_year'], 1898)
+            self.assertEqual(butler['historical_publication_date'], '1898')
+            self.assertEqual(butler['provider_release_date'], '2000-06-01')
+            self.assertIn('anonymous', butler['metadata']['historical_publication_notes'])
             self.assertTrue(fetch_segments(conn).empty)
             work = get_work_id(conn, 'pausanias-description-of-greece')
             source = upsert_source_version(conn, work_id=work, version_label='synthetic-test-only')
