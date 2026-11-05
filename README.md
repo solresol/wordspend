@@ -355,7 +355,7 @@ uv run python scripts/generate_site.py \
 Run against PostgreSQL:
 
 ```bash
-export WORDSPEND_DATABASE_URL=dbname=wordspend
+export WORDSPEND_DATABASE_URL='host=/var/run/postgresql port=5433 dbname=wordspend'
 uv run python scripts/init_db.py
 uv run python scripts/load_work_catalog.py
 uv run python scripts/import_pausanias.py --limit 0

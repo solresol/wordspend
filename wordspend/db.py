@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import csv
+import getpass
 import hashlib
 import json
 import os
@@ -11,20 +12,38 @@ from typing import Any, Iterable
 
 import pandas as pd
 import psycopg
+from psycopg.conninfo import conninfo_to_dict, make_conninfo
 from psycopg.rows import dict_row
 
 from .analysis import dataframe_to_records
 from .textstats import length_metrics
 
+DEFAULT_DATABASE_URL = "host=/var/run/postgresql port=5433 dbname=wordspend"
+EXPECTED_SERVER_MAJOR = 18
 
 def database_url() -> str:
     """Return the configured database URL or local peer default."""
-    return os.environ.get("WORDSPEND_DATABASE_URL", "dbname=wordspend")
+    return os.environ.get("WORDSPEND_DATABASE_URL", DEFAULT_DATABASE_URL)
 
 
 def connect(dsn: str | None = None) -> psycopg.Connection:
-    """Open a PostgreSQL connection."""
-    return psycopg.connect(dsn or database_url(), row_factory=dict_row)
+    """Resolve an explicit endpoint and verify it before returning it for SQL.
+
+    Dedicated Wordspend DSN fields override the production defaults. An inherited
+    PGPORT cannot silently send a name-only DSN back to the retained PG16 copy.
+    Preserve the existing OS-role/PGUSER default and explicit credential fields.
+    """
+    values = conninfo_to_dict(DEFAULT_DATABASE_URL)
+    values.update(conninfo_to_dict(dsn or database_url()))
+    values.setdefault("user", os.environ.get("PGUSER") or getpass.getuser())
+    conn = psycopg.connect(make_conninfo(**values), row_factory=dict_row)
+    expected = (values["dbname"], values["user"], values["host"], int(values["port"]), EXPECTED_SERVER_MAJOR)
+    actual = (conn.info.dbname, conn.info.user, conn.info.host, conn.info.port,
+              conn.info.server_version // 10000)
+    if actual != expected:
+        conn.close()
+        raise RuntimeError("Refusing Wordspend SQL: database/role/host/port/major mismatch")
+    return conn
 
 
 def apply_schema(conn: psycopg.Connection, schema_path: str | Path) -> None:

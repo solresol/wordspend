@@ -48,7 +48,7 @@ Pausanias database or when the environment explicitly grants that access.
 
 ```sh
 cd /home/wordspend/wordspend
-export WORDSPEND_DATABASE_URL=dbname=wordspend
+export WORDSPEND_DATABASE_URL='host=/var/run/postgresql port=5433 dbname=wordspend'
 uv run python scripts/init_db.py
 uv run python scripts/load_work_catalog.py
 uv run python scripts/sync_prepared_corpus.py
@@ -60,7 +60,7 @@ rsync -az --delete site/ wordspend@merah:/var/www/vhosts/wordspend.symmachus.org
 ## Smoke Checks
 
 ```sh
-psql -d wordspend -c 'select * from corpus_inventory limit 10'
+psql -h /var/run/postgresql -p 5433 -U wordspend -d wordspend -c 'select * from corpus_inventory limit 10'
 test -f site/index.html
 curl -fsS https://wordspend.symmachus.org/ | head
 ```
