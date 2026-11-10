@@ -114,6 +114,10 @@
   edition from Gutenberg's archived production note; record the URL, checksum,
   line location, and anonymous-transcription limitation.
 
+- [x] Add a reproducible validator for the Butler archived edition-credit receipt,
+  checking cached bytes/hash, exact passage/line range, and registry date/URL links.
+  This verifies recorded provenance, not physical printing fidelity.
+
 ## Next
 
 The October 22 database integration findings are addressed. See

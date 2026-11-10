@@ -35,6 +35,23 @@ first-publication date for an unverified edition, or invent a month and day.
 Unknown dates remain blank. Bibliographic metadata does not waive alignment
 review or adjudication.
 
+For archived production-credit receipts under `data/bibliography/`, run:
+
+```sh
+uv run python scripts/validate_bibliography_receipts.py
+```
+
+The checker requires the ignored raw bibliography cache and fails if it is
+missing or changed. It checks byte count, SHA-256, one-based inclusive credit
+line bounds, exact credit text (line endings normalized), credited year and
+publisher, retrieval timestamp, and the registry's edition date/citation/URL.
+Currently this covers the Butler archived production credit; Pope's title-page
+notes are not yet represented by this receipt format. It does not download new
+evidence, establish physical printing fidelity, or change evidence eligibility.
+On a fresh checkout, retrieve the receipt's `source_url` to its `raw_path` and
+rerun the checker; a changed provider file needs investigation rather than
+replacing the recorded checksum to force a pass.
+
 ## Machine/human status
 
 Use these values in `data/translation_sources.csv`:

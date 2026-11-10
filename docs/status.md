@@ -1,6 +1,23 @@
 # Status
 
-Last updated: 2026-11-04
+Last updated: 2026-11-11
+
+## 2026-11-11 bibliography receipt verification
+
+- Added `scripts/validate_bibliography_receipts.py` to check the Butler archived
+  edition-credit receipt against cached bytes/SHA-256, exact credit passage and
+  inclusive line bounds, retrieval provenance, and registry edition date/URL.
+- Stored the exact credit passage in the existing receipt so location drift is
+  detectable. Missing cache, altered bytes, malformed receipts and mismatched
+  registry links fail closed. This is a local audit command; it does not add a
+  nightly dependency on the separately cached bibliography download.
+- Verified 56 tests and 45 subtests with `uv run --with pytest pytest -q tests`;
+  the database integration test was skipped (no disposable database configured).
+  The live cached receipt, both translation provenance validators, two-source
+  prepared-text selector, and `git diff --check` pass. No database writes made.
+- Physical-printing fidelity, Pope's publisher and anonymous Butler transcription
+  ancestry remain unresolved. No translation body, review decision or eligibility
+  flag was changed; human review/adjudication still blocks paper evidence.
 
 ## 2026-11-04 Butler edition provenance
 
