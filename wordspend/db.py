@@ -18,7 +18,7 @@ from psycopg.rows import dict_row
 from .analysis import dataframe_to_records
 from .textstats import length_metrics
 
-DEFAULT_DATABASE_URL = "host=/var/run/postgresql port=5433 dbname=wordspend"
+DEFAULT_DATABASE_URL = "host=/var/run/postgresql port=5432 dbname=wordspend"
 EXPECTED_SERVER_MAJOR = 18
 
 def database_url() -> str:

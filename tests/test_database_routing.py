@@ -15,7 +15,7 @@ def driver(monkeypatch):
     monkeypatch.setattr(db.getpass, 'getuser', lambda:'wordspend')
     conn = Mock()
     conn.info = SimpleNamespace(dbname='wordspend', user='wordspend', host='/var/run/postgresql',
-                                port=5433, server_version=180006)
+                                port=5432, server_version=180006)
     connect = Mock(return_value=conn)
     monkeypatch.setattr(db.psycopg, 'connect', connect)
     return connect,conn
@@ -23,17 +23,17 @@ def driver(monkeypatch):
 
 def test_default_and_name_only_routes_ignore_inherited_pg16_port(driver, monkeypatch):
     connect,conn = driver
-    monkeypatch.setenv('PGPORT','5432')
+    monkeypatch.setenv('PGPORT','5433')
     for dsn in [None,'dbname=wordspend']:
         assert db.connect(dsn) is conn
         assert conninfo_to_dict(connect.call_args.args[0]) == {
-            'host':'/var/run/postgresql','port':'5433','dbname':'wordspend','user':'wordspend'}
+            'host':'/var/run/postgresql','port':'5432','dbname':'wordspend','user':'wordspend'}
     conn.execute.assert_not_called()
 
 
 @pytest.mark.parametrize('field,value', [
     ('dbname','pausanias'),('user','postgres'),('host','unexpected.example'),
-    ('port',5432),('server_version',160015),
+    ('port',5433),('server_version',160015),
 ])
 def test_wrong_actual_identity_closed_before_sql(driver, field, value):
     _,conn = driver;setattr(conn.info,field,value)
@@ -44,20 +44,20 @@ def test_wrong_actual_identity_closed_before_sql(driver, field, value):
 def test_explicit_isolated_database_and_credentials_are_preserved(driver, monkeypatch):
     connect,conn = driver
     conn.info.dbname='wordspend_test_isolated';conn.info.user='tester'
-    value="dbname=wordspend_test_isolated user=tester password='test fixture only' port=5433"
+    value="dbname=wordspend_test_isolated user=tester password='test fixture only' port=5432"
     monkeypatch.setenv('WORDSPEND_DATABASE_URL',value)
     assert db.database_url()==value
     assert db.connect() is conn
     fields=conninfo_to_dict(connect.call_args.args[0])
     assert fields['dbname']=='wordspend_test_isolated' and fields['user']=='tester'
-    assert fields['password']=='test fixture only' and fields['port']=='5433'
+    assert fields['password']=='test fixture only' and fields['port']=='5432'
 
 
 def test_wordspend_override_does_not_modify_pausanias_source(driver, monkeypatch):
-    monkeypatch.setenv('WORDSPEND_DATABASE_URL','dbname=wordspend_test_destination port=5433')
+    monkeypatch.setenv('WORDSPEND_DATABASE_URL','dbname=wordspend_test_destination port=5432')
     from scripts import import_pausanias as reader
     source=Mock();source.info=SimpleNamespace(dbname='pausanias',user='wordspend',
-        host='/var/run/postgresql',port=5433,server_version=180006)
+        host='/var/run/postgresql',port=5432,server_version=180006)
     monkeypatch.setattr(reader.psycopg,'connect',Mock(return_value=source))
     monkeypatch.delenv('PAUSANIAS_DATABASE_URL',raising=False)
     assert reader.pausanias_source_connection() is source

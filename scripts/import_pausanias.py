@@ -27,7 +27,7 @@ def passage_sort_key(passage_id: str) -> tuple[int, ...]:
 
 def pausanias_source_connection():
     """Guard the Pausanias reader independently of Wordspend's own database."""
-    values = {"host": "/var/run/postgresql", "port": "5433",
+    values = {"host": "/var/run/postgresql", "port": "5432",
               "dbname": "pausanias", "user": "wordspend"}
     explicit = os.environ.get("PAUSANIAS_DATABASE_URL")
     if explicit:
