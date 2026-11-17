@@ -73,7 +73,10 @@
   most recently updated 2026-02-07. The provider's
   [transcribed title page](https://www.gutenberg.org/files/6130/6130-h/6130-h.htm)
   dates this edition to 1899; the registry records the citation and cached
-  title-block checksum/location. This is an edition date, not Pope's original
+  title-block checksum/location. The receipt in
+  `data/bibliography/pope-pg6130-edition.json` verifies the cached title block
+  and original download provenance with `scripts/validate_bibliography_receipts.py`.
+  This is an edition date, not Pope's original
   translation date; publisher and physical scan remain unverified.
   Rights status is recorded as
   `public_domain_us`; machine/human status is `human_published`;

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check cached edition-credit receipts; this does not authenticate a printing."""
+"""Check cached edition provenance receipts; this does not authenticate a printing."""
 from __future__ import annotations
 
 import argparse
@@ -18,17 +18,30 @@ def validate_receipt(path: Path, registry: list[dict[str, str]], root: Path) -> 
         receipt = json.loads(path.read_text(encoding='utf-8'))
         if not isinstance(receipt, dict):
             raise ValueError('receipt must be a JSON object')
-        for field in ('source_id', 'evidence_kind', 'source_url', 'resolved_url',
+        for field in ('source_id', 'evidence_kind', 'source_url',
                       'retrieved_at', 'raw_path', 'raw_sha256', 'credited_edition_year',
-                      'credited_publisher', 'credit_text', 'limitations'):
+                      'credit_text', 'limitations'):
             if not isinstance(receipt.get(field), str) or not receipt[field].strip():
                 raise ValueError(f'{field} must be a nonblank string')
-        if receipt['evidence_kind'] != 'provider_archived_production_credit':
+        kind = receipt['evidence_kind']
+        if kind == 'provider_archived_production_credit':
+            required = ('resolved_url', 'credited_publisher')
+        elif kind == 'provider_transcribed_title_page':
+            required = ('download_url', 'credited_translator')
+            # An absent publisher is unknown, never inferred from another edition.
+            if not isinstance(receipt.get('credited_publisher'), str):
+                raise ValueError('credited_publisher must be a string (blank if unknown)')
+        else:
             raise ValueError('unsupported evidence_kind')
+        for field in required:
+            if not isinstance(receipt.get(field), str) or not receipt[field].strip():
+                raise ValueError(f'{field} must be a nonblank string')
         timestamp = dt.datetime.fromisoformat(receipt['retrieved_at'])
         if timestamp.utcoffset() is None:
             raise ValueError('retrieved_at requires a timezone')
-        for field in ('source_url', 'resolved_url'):
+        for field in ('source_url', *(f for f in ('resolved_url', 'download_url') if f in receipt)):
+            if not isinstance(receipt[field], str):
+                raise ValueError(f'{field} must be an HTTP(S) URL')
             url = urlparse(receipt[field])
             if url.scheme not in {'http', 'https'} or not url.netloc:
                 raise ValueError(f'{field} must be an HTTP(S) URL')
@@ -41,6 +54,20 @@ def validate_receipt(path: Path, registry: list[dict[str, str]], root: Path) -> 
                 or row.get('historical_publication_source_url') != receipt['source_url']
                 or not row.get('historical_publication_citation', '').strip()):
             raise ValueError('historical edition date/citation/URL does not match registry')
+        if kind == 'provider_transcribed_title_page':
+            if row.get('translator') != receipt['credited_translator']:
+                raise ValueError('credited translator does not match registry')
+            with (root / 'data/raw/translation_downloads.csv').open(encoding='utf-8', newline='') as handle:
+                downloads = [r for r in csv.DictReader(handle) if r.get('source_id') == receipt['source_id']]
+            if len(downloads) != 1:
+                raise ValueError('title page requires exactly one download manifest row')
+            download = downloads[0]
+            for field, manifest_field in (('download_url', 'download_url'), ('raw_path', 'raw_path'),
+                                          ('raw_sha256', 'sha256'), ('retrieved_at', 'retrieved_at_utc')):
+                if receipt[field] != download.get(manifest_field):
+                    raise ValueError(f'{field} does not match download manifest')
+            if receipt['download_url'] != row.get('download_url'):
+                raise ValueError('download_url does not match registry')
         raw_path = (root / receipt['raw_path']).resolve()
         if not raw_path.is_relative_to(root.resolve()) or Path(receipt['raw_path']).is_absolute():
             raise ValueError('raw_path must stay within repository')
@@ -57,8 +84,11 @@ def validate_receipt(path: Path, registry: list[dict[str, str]], root: Path) -> 
         credit = '\n'.join(lines[start - 1:end])
         if credit != receipt['credit_text']:
             raise ValueError('credit_text does not match cached line range')
-        if receipt['credited_edition_year'] not in credit or receipt['credited_publisher'] not in credit:
+        if (receipt['credited_edition_year'] not in credit
+                or receipt['credited_publisher'] not in credit):
             raise ValueError('credited year/publisher absent from credit_text')
+        if kind == 'provider_transcribed_title_page' and receipt['credited_translator'] not in credit:
+            raise ValueError('credited translator absent from credit_text')
     except (OSError, ValueError, TypeError) as exc:
         return [f'{path}: {exc}']
     return []
@@ -81,7 +111,7 @@ def main() -> int:
     if errors:
         print('\n'.join(errors), file=sys.stderr)
         return 1
-    print(f'Validated {len(paths)} cached edition-credit receipt(s); physical printing fidelity remains unverified.')
+    print(f'Validated {len(paths)} cached edition provenance receipt(s); physical printing fidelity remains unverified.')
     return 0
 
 

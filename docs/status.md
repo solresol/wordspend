@@ -1,6 +1,25 @@
 # Status
 
-Last updated: 2026-11-11
+Last updated: 2026-11-18
+
+## 2026-11-18 Pope title-page receipt
+
+- Added `data/bibliography/pope-pg6130-edition.json` for the existing cached
+  title block (lines 36–49), recording exact text, SHA-256, bytes, translator,
+  edition year, and original download provenance. The registry links the receipt.
+- Extended the bibliography validator to support provider-transcribed title
+  pages, cross-check their original download manifests and translator, and allow
+  an explicitly unknown publisher. Existing Butler credit requirements remain.
+- The provider returned HTTP 503 during this run; no fresh retrieval is claimed.
+  Verification uses the original checksum-linked June 24 cache. Physical printing
+  fidelity and Pope’s publisher remain unverified.
+- Verified 59 tests and 53 subtests; the disposable database integration test
+  was skipped because no test database was configured. Both bibliography receipts,
+  both translation provenance validators, the two-source prepared-text selector,
+  and `git diff --check` pass. No database writes or corpus-body edits were made.
+- Human review/adjudication still blocks paper evidence; no decisions or
+  eligibility flags were changed.
+
 
 ## 2026-11-11 bibliography receipt verification
 

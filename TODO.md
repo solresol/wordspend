@@ -118,6 +118,10 @@
   checking cached bytes/hash, exact passage/line range, and registry date/URL links.
   This verifies recorded provenance, not physical printing fidelity.
 
+- [x] Verify Pope’s cached 1899 title-page transcription with a structured
+  receipt linked to the original download manifest, exact title block and
+  translator. Keep publisher unknown and physical-printing verification pending.
+
 ## Next
 
 The October 22 database integration findings are addressed. See

@@ -1,0 +1,18 @@
+{
+  "source_id": "homer-iliad-en-pope-pg6130",
+  "evidence_kind": "provider_transcribed_title_page",
+  "source_url": "https://www.gutenberg.org/files/6130/6130-h/6130-h.htm",
+  "download_url": "https://www.gutenberg.org/cache/epub/6130/pg6130.txt",
+  "retrieved_at": "2026-06-24T00:07:57Z",
+  "http_last_modified": "Wed, 03 Jun 2026 10:26:18 GMT",
+  "raw_path": "data/raw/translations/homer-iliad-en-pope-pg6130.txt",
+  "raw_sha256": "ca4f23115b384b0219427ef208e875f0351820b8f80f28259272997ea581c36b",
+  "raw_bytes": 1161373,
+  "credit_line_start": 36,
+  "credit_line_end": 49,
+  "credited_edition_year": "1899",
+  "credited_publisher": "",
+  "credited_translator": "Alexander Pope",
+  "credit_text": "The\nIliad of Homer\n\nTranslated by\nAlexander Pope,\n\nWith Notes and Introduction\nby the\nRev. Theodore Alois Buckley, M.A., F.S.A.\n\nand\nFlaxman’s Designs.\n\n1899",
+  "limitations": "Provider-transcribed title page in the previously cached plain-text download; retrieval time comes from the existing download manifest, not a new retrieval. Publisher is unknown. No physical title-page scan inspected; exact printing fidelity remains unverified. The source_url identifies the HTML edition cited by the registry; download_url identifies the bytes checked here."
+}

@@ -1,4 +1,5 @@
 """Synthetic receipt fixtures, never corpus or human review input."""
+import csv
 import hashlib
 import json
 from pathlib import Path
@@ -69,3 +70,46 @@ class BibliographyReceiptTests(unittest.TestCase):
         for value in ('{', '[]', '{}'):
             path.write_text(value)
             self.assertTrue(validate_receipt(path, [self.row], self.root))
+
+    def title_page_fixture(self):
+        self.raw = b'Title\r\nTranslated by Example Translator\r\n1898\r\n'
+        (self.root / 'raw.txt').write_bytes(self.raw)
+        self.receipt.update(evidence_kind='provider_transcribed_title_page',
+                            credited_publisher='', credited_translator='Example Translator',
+                            download_url='https://example.org/text',
+                            raw_bytes=len(self.raw), raw_sha256=hashlib.sha256(self.raw).hexdigest(),
+                            credit_line_start=2, credit_line_end=3,
+                            credit_text='Translated by Example Translator\n1898')
+        del self.receipt['resolved_url']  # Legacy fetcher did not record redirect URLs.
+        self.row.update(translator='Example Translator', download_url='https://example.org/text')
+        directory = self.root / 'data/raw'
+        directory.mkdir(parents=True)
+        download = dict(source_id=self.receipt['source_id'], download_url=self.receipt['download_url'],
+                        raw_path='raw.txt', sha256=self.receipt['raw_sha256'],
+                        retrieved_at_utc=self.receipt['retrieved_at'])
+        with (directory / 'translation_downloads.csv').open('w', newline='') as handle:
+            writer = csv.DictWriter(handle, fieldnames=download.keys())
+            writer.writeheader()
+            writer.writerow(download)
+
+    def test_title_page_allows_unknown_publisher(self):
+        self.title_page_fixture()
+        self.assertEqual(self.errors(), [])
+
+    def test_title_page_rejects_provenance_drift(self):
+        self.title_page_fixture()
+        for changes in (
+            {'credited_translator': 'Other Translator'}, {'credited_publisher': 'Invented Press'},
+            {'download_url': 'https://example.org/other'}, {'credit_line_end': 2},
+            {'retrieved_at': '2026-11-12T00:00:00+00:00'}, {'raw_sha256': 'bad'},
+            {'credited_publisher': None}, {'credited_translator': ''},
+        ):
+            with self.subTest(changes=changes):
+                self.assertTrue(self.errors(**changes))
+        self.row['translator'] = 'Other Translator'
+        self.assertTrue(self.errors(credited_translator='Other Translator'))
+
+    def test_title_page_requires_download_manifest(self):
+        self.title_page_fixture()
+        (self.root / 'data/raw/translation_downloads.csv').unlink()
+        self.assertTrue(self.errors())
