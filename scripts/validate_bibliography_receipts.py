@@ -49,6 +49,8 @@ def validate_receipt(path: Path, registry: list[dict[str, str]], root: Path) -> 
         if len(matches) != 1:
             raise ValueError('source_id must identify exactly one registry row')
         row = matches[0]
+        if row.get('historical_publication_receipt_path') != path.relative_to(root).as_posix():
+            raise ValueError('receipt path does not match registry link')
         if (row.get('historical_publication_date') != receipt['credited_edition_year']
                 or row.get('historical_publication_date_kind') != 'edition'
                 or row.get('historical_publication_source_url') != receipt['source_url']
@@ -94,6 +96,42 @@ def validate_receipt(path: Path, registry: list[dict[str, str]], root: Path) -> 
     return []
 
 
+def validate_receipts(root: Path, registry: list[dict[str, str]]) -> tuple[int, list[str]]:
+    """Audit registry coverage as well as every receipt present on disk.
+
+    Historical dates require a receipt in this standalone audit. A missing file
+    must not disappear from the audit merely because directory discovery omits it.
+    """
+    paths = set((root / 'data/bibliography').glob('*.json'))
+    errors = []
+    linked_paths = set()
+    for row in registry:
+        link = (row.get('historical_publication_receipt_path') or '').strip()
+        if not link:
+            if row.get('historical_publication_date'):
+                errors.append(f"{row.get('source_id')}: historical date requires a receipt link")
+            continue
+        relative = Path(link)
+        path = root / relative
+        if (relative.parent != Path('data/bibliography') or relative.suffix != '.json'
+                or not path.resolve().is_relative_to(root.resolve())):
+            errors.append(f"{row.get('source_id')}: receipt link must name a JSON file in data/bibliography")
+            continue
+        if path in linked_paths:
+            errors.append(f'{path}: receipt link must belong to exactly one registry row')
+        linked_paths.add(path)
+        paths.add(path)
+    if not paths:
+        errors.append('No bibliography receipts found')
+    for path in sorted(paths):
+        # Do not read a discovered symlink that escapes the repository either.
+        if not path.resolve().is_relative_to(root.resolve()):
+            errors.append(f'{path}: receipt must stay within repository')
+            continue
+        errors.extend(validate_receipt(path, registry, root))
+    return len(paths), errors
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--root', type=Path, default=Path(__file__).resolve().parents[1])
@@ -102,16 +140,13 @@ def main() -> int:
     try:
         with (root / 'data/translation_sources.csv').open(encoding='utf-8', newline='') as handle:
             registry = list(csv.DictReader(handle))
-        paths = sorted((root / 'data/bibliography').glob('*.json'))
-        errors = [] if paths else ['No bibliography receipts found']
-        for path in paths:
-            errors.extend(validate_receipt(path, registry, root))
+        count, errors = validate_receipts(root, registry)
     except OSError as exc:
         errors = [str(exc)]
     if errors:
         print('\n'.join(errors), file=sys.stderr)
         return 1
-    print(f'Validated {len(paths)} cached edition provenance receipt(s); physical printing fidelity remains unverified.')
+    print(f'Validated {count} cached edition provenance receipt(s); physical printing fidelity remains unverified.')
     return 0
 
 

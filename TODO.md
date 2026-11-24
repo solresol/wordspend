@@ -122,6 +122,10 @@
   receipt linked to the original download manifest, exact title block and
   translator. Keep publisher unknown and physical-printing verification pending.
 
+- [x] Require explicit registry-to-receipt links in the bibliography audit, so
+  deleting one receipt cannot silently reduce verification coverage. Reject
+  missing, shared, mismatched, and unlinked receipts.
+
 ## Next
 
 The October 22 database integration findings are addressed. See

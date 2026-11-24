@@ -6,7 +6,7 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from scripts.validate_bibliography_receipts import validate_receipt
+from scripts.validate_bibliography_receipts import validate_receipt, validate_receipts
 
 
 class BibliographyReceiptTests(unittest.TestCase):
@@ -26,7 +26,8 @@ class BibliographyReceiptTests(unittest.TestCase):
         self.row = dict(source_id='synthetic-test', historical_publication_date='1898',
                         historical_publication_date_kind='edition',
                         historical_publication_source_url='https://example.org/credit',
-                        historical_publication_citation='Synthetic fixture')
+                        historical_publication_citation='Synthetic fixture',
+                        historical_publication_receipt_path='receipt.json')
 
     def errors(self, **changes):
         path = self.root / 'receipt.json'
@@ -113,3 +114,43 @@ class BibliographyReceiptTests(unittest.TestCase):
         self.title_page_fixture()
         (self.root / 'data/raw/translation_downloads.csv').unlink()
         self.assertTrue(self.errors())
+
+
+class BibliographyCoverageTests(unittest.TestCase):
+    def setUp(self):
+        BibliographyReceiptTests.setUp(self)
+        directory = self.root / 'data/bibliography'
+        directory.mkdir(parents=True)
+        self.row['historical_publication_receipt_path'] = 'data/bibliography/edition.json'
+        self.path = directory / 'edition.json'
+        self.path.write_text(json.dumps(self.receipt))
+
+    def test_missing_linked_receipt_does_not_silently_disappear(self):
+        second = {**self.row, 'source_id': 'second',
+                  'historical_publication_receipt_path': 'data/bibliography/second.json'}
+        other = self.root / second['historical_publication_receipt_path']
+        other.write_text(json.dumps({**self.receipt, 'source_id': 'second'}))
+        self.assertEqual(validate_receipts(self.root, [self.row, second]), (2, []))
+        self.path.unlink()
+        count, errors = validate_receipts(self.root, [self.row, second])
+        self.assertEqual(count, 2)
+        self.assertTrue(any('edition.json' in error for error in errors))
+
+    def test_historical_date_requires_explicit_link(self):
+        del self.row['historical_publication_receipt_path']
+        self.assertTrue(validate_receipts(self.root, [self.row])[1])
+
+    def test_wrong_source_link_is_rejected(self):
+        second = {**self.row, 'source_id': 'second'}
+        self.assertTrue(validate_receipts(self.root, [self.row, second])[1])
+
+    def test_unsafe_links_are_rejected(self):
+        for link in ('../outside.json', '/tmp/outside.json', 'data/bibliography/file.txt'):
+            with self.subTest(link=link):
+                self.row['historical_publication_receipt_path'] = link
+                self.assertTrue(validate_receipts(self.root, [self.row])[1])
+
+    def test_discovered_unlinked_receipt_is_rejected(self):
+        extra = self.path.with_name('extra.json')
+        extra.write_text(json.dumps(self.receipt))
+        self.assertTrue(validate_receipts(self.root, [self.row])[1])

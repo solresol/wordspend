@@ -1,6 +1,24 @@
 # Status
 
-Last updated: 2026-11-18
+Last updated: 2026-11-25
+
+## 2026-11-25 bibliography audit coverage
+
+- Added explicit `historical_publication_receipt_path` registry links for Butler
+  and Pope. The standalone bibliography audit now requires a link for each
+  historical edition date and validates linked files even when directory discovery
+  cannot find them. Missing, shared, mismatched, unsafe, or unlinked receipts fail.
+- Regression coverage reproduces deletion of one receipt while another remains
+  valid, which previously let the audit silently report success with reduced
+  coverage. No historical date, translation body, or human review was changed.
+- Verified 64 tests and 56 subtests; the PostgreSQL integration test was skipped
+  without a disposable database. Both cached receipts, both translation provenance
+  validators, the two-source prepared selector, and `git diff --check` pass.
+- The provider material checked still does not establish Pope's publisher.
+  Physical printing fidelity and Butler transcription ancestry remain unresolved.
+  All 477 local review rows still await human input; review/adjudication remains
+  the paper-evidence blocker. No database writes or evidence promotion performed.
+
 
 ## 2026-11-18 Pope title-page receipt
 

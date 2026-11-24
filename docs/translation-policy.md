@@ -41,6 +41,13 @@ For edition provenance receipts under `data/bibliography/`, run:
 uv run python scripts/validate_bibliography_receipts.py
 ```
 
+The standalone audit requires `historical_publication_receipt_path` for every
+registry row with a historical edition date. The link must identify a JSON file
+under `data/bibliography/` belonging to that source alone. It checks every linked
+file, including missing files, and rejects unlinked receipts found in that
+directory. Both current translations have explicit links. This audit requirement
+does not add a raw bibliography-cache dependency to nightly staging.
+
 The checker requires the receipt’s ignored raw cache and fails if it is
 missing or changed. It checks byte count, SHA-256, one-based inclusive credit
 line bounds, exact credit text (line endings normalized), credited year and
